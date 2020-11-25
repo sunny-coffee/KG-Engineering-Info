@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/logistics-onto.owl"
+         xmlns="http://example.org/logistics-onto.owl#">
+
+<owl:Ontology rdf:about="http://example.org/logistics-onto.owl"/>
+
+<owl:DatatypeProperty rdf:about="#Charateristic">
+  <rdfs:domain rdf:resource="#Product"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Datenblatt">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Merkmal">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Hub">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#KolbenDurchmesser">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Max_Verdrehwinkel_der_Kolbenstange_">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Dämpfung">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Einbaulage">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Funktionsweise">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Konstruktiver_Aufbau">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Positionserkennung">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#VerdrehsicherungFührung">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Betriebsdruck">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Betriebsmedium">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Hinweis_zum_Betriebs_und_Steuermedium">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Korrosionsbeständigkeitsklasse_KBK">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Umgebungstemperatur">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Max_Drehmoment_der_Verdrehsicherung">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Theoretische_Kraft_bei_6_bar_Rücklauf">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Theoretische_Kraft_bei_6_bar_Vorlauf">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Bewegte_Masse_bei_0_mm_Hub">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Gewichtszuschlag_pro_10_mm_Hub">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Grundgewicht_bei_0_mm_Hub">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Zuschlag_bewegte_Masse_pro_10_mm_Hub">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Befestigungsart">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Pneumatischer_Anschluss">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Werkstoffinformation_Deckel">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Werkstoffinformation_Dichtungen">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Werkstoffinformation_Gehäuse">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Werkstoffinformation_Kolbenstange">
+  <rdfs:domain rdf:resource="#Flachzylinder"/>
+  <rdfs:subPropertyOf rdf:resource="#Charateristic"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Product">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parent class of all products</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Flachzylinder">
+  <rdfs:subClassOf rdf:resource="#Product"/>
+</owl:Class>
+
+<Flachzylinder rdf:about="#DZF-18-80-A-P-A">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Datenblatt rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></Datenblatt>
+  <Merkmal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Werte</Merkmal>
+  <Hub rdf:datatype="http://www.w3.org/2001/XMLSchema#string">80 mm</Hub>
+  <KolbenDurchmesser rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18 mm äquivalenter Durchmesser</KolbenDurchmesser>
+  <Max_Verdrehwinkel_der_Kolbenstange_ rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1,2 deg</Max_Verdrehwinkel_der_Kolbenstange_>
+  <Dämpfung rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P: elastische Dämpfungsringe/-platten beidseitig</Dämpfung>
+  <Einbaulage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beliebig</Einbaulage>
+  <Funktionsweise rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doppeltwirkend</Funktionsweise>
+  <Konstruktiver_Aufbau rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kolben Kolbenstange</Konstruktiver_Aufbau>
+  <Positionserkennung rdf:datatype="http://www.w3.org/2001/XMLSchema#string">für Näherungsschalter</Positionserkennung>
+  <VerdrehsicherungFührung rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ovalkolben</VerdrehsicherungFührung>
+  <Betriebsdruck rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 ... 10 bar</Betriebsdruck>
+  <Betriebsmedium rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Druckluft nach ISO 8573-1:2010 [7:4:4]</Betriebsmedium>
+  <Hinweis_zum_Betriebs_und_Steuermedium rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Geölter Betrieb möglich (im weiteren Betrieb erforderlich)</Hinweis_zum_Betriebs_und_Steuermedium>
+  <Korrosionsbeständigkeitsklasse_KBK rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</Korrosionsbeständigkeitsklasse_KBK>
+  <Umgebungstemperatur rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-20 ... 80 °C</Umgebungstemperatur>
+  <Max_Drehmoment_der_Verdrehsicherung rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0,2 Nm</Max_Drehmoment_der_Verdrehsicherung>
+  <Theoretische_Kraft_bei_6_bar_Rücklauf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">123 N</Theoretische_Kraft_bei_6_bar_Rücklauf>
+  <Theoretische_Kraft_bei_6_bar_Vorlauf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">153 N</Theoretische_Kraft_bei_6_bar_Vorlauf>
+  <Bewegte_Masse_bei_0_mm_Hub rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 g</Bewegte_Masse_bei_0_mm_Hub>
+  <Gewichtszuschlag_pro_10_mm_Hub rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13 g</Gewichtszuschlag_pro_10_mm_Hub>
+  <Grundgewicht_bei_0_mm_Hub rdf:datatype="http://www.w3.org/2001/XMLSchema#string">107 g</Grundgewicht_bei_0_mm_Hub>
+  <Zuschlag_bewegte_Masse_pro_10_mm_Hub rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 g</Zuschlag_bewegte_Masse_pro_10_mm_Hub>
+  <Befestigungsart rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wahlweise: mit Innengewinde mit Zubehör</Befestigungsart>
+  <Pneumatischer_Anschluss rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M5</Pneumatischer_Anschluss>
+  <Werkstoffinformation_Deckel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aluminium-Knetlegierung</Werkstoffinformation_Deckel>
+  <Werkstoffinformation_Dichtungen rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NBR TPE-U(PU)</Werkstoffinformation_Dichtungen>
+  <Werkstoffinformation_Gehäuse rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aluminium gleiteloxiert</Werkstoffinformation_Gehäuse>
+  <Werkstoffinformation_Kolbenstange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hochlegierter Stahl rostfrei</Werkstoffinformation_Kolbenstange>
+</Flachzylinder>
+
+
+</rdf:RDF>
