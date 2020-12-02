@@ -29,7 +29,7 @@ ontologyCreator1 = OntologyCreator(IRI,FILE)
 
 
 
-path = "../data"
+path = "../data/en"
 files= os.listdir(path) 
 
 for file in files:
