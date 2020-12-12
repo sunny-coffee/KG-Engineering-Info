@@ -5,7 +5,8 @@ from pdfminer.pdfparser import PDFParser,PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager,PDFPageInterpreter,PDFTextExtractionNotAllowed
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LTTextBoxHorizontal,LAParams,LTTextLineHorizontal,LTFigure,LTRect,LTLine,LTCurve,LTPage,LTTextLine,LTTextBoxVertical,LTText,LTChar
-
+import re
+import spacy
 
 class TextExtractor:
 
@@ -33,9 +34,11 @@ class TextExtractor:
                 layout = device.get_result()
                 for x in layout:                      
                         if isinstance(x, LTTextBoxHorizontal):
-                            textBox = str(x.get_text()).replace('\n', '').replace('\r', '')
-                            if len(textBox)>15:
-                                text = text + textBox
+                            textBox = str(x.get_text()).replace('\n', '').replace('\r', '').replace('-\n', '').replace('-\r', '').replace(';', '.').replace(':', '.')
+                            
+                            if len(textBox)>15 and textBox.endswith('.') :
+                                newText = re.sub(r"}| e.g..*?(,|.) |\(.*?\)|\[.*?\]|– || –","",textBox).replace(' .', '.').replace(' ,', '.').replace('.–', '.')
+                                text = text + newText
         return text
 
 
