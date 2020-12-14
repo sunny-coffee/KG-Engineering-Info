@@ -7,6 +7,11 @@ from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LTTextBoxHorizontal,LAParams,LTTextLineHorizontal,LTFigure,LTRect,LTLine,LTCurve,LTPage,LTTextLine,LTTextBoxVertical,LTText,LTChar
 import re
 import spacy
+import neuralcoref
+
+nlp1 = spacy.load('en_core_web_sm')
+neuralcoref.add_to_pipe(nlp1)
+nlp2 = spacy.load('en_core_web_sm')
 
 class TextExtractor:
 
@@ -34,11 +39,23 @@ class TextExtractor:
             layout = device.get_result()
             for x in layout:                      
                 if isinstance(x, LTTextBoxHorizontal):
-                    textBox = str(x.get_text()).replace('\n', '').replace('\r', '').replace('-\n', '').replace('-\r', '').replace(';', '.').replace(':', '.')
                     
-                    if len(textBox)>15 and textBox.endswith('.') :
-                        newText = re.sub(r"}| e.g..*?(,|.) |\(.*?\)|\[.*?\]|– || –","",textBox).replace(' .', '.').replace(' ,', '.').replace('.–', '.')
-                        text = text + newText
+                    str1 = re.sub(r"\n|\r",' ' , str(x.get_text()))
+                    str2 = re.sub(r"-\n|-\r", '',str1)
+                    # str2 = re.sub(r"-\n|-\r|The\s|the\s|A\s|a\s|An\s|an\s|All\s|all\s|This\s|That\s|These\s|Those\s|this\s|that\s|these\s|those\s", '',str1)
+                    textBox = re.sub(r";|:", '.',str2)
+                    if len(textBox)>15 and textBox.endswith('. ') :
+                        newText = re.sub(r"}| e.g..*?(,|.) |\(.*?\)|\[.*?\]|– | –|- ","",textBox).replace(' .', '.').replace(' ,', '.').replace('.–', '.')
+                        doc1 = nlp1(newText)
+                        doc2 = nlp2(doc1._.coref_resolved)
+                        for sent in doc2.sents:
+                            # print(sent)
+                            list_dep = list(tok.dep_ for tok in sent)
+                            list_tag = list(tok.tag_ for tok in sent)
+                            hasPredicate = ('VB' in list_tag or 'VBD' in list_tag or 'VBP' in list_tag or 'VBZ' in list_tag)
+                            hasSubject = ('nsubj' in list_dep or 'nsubjpass' in list_dep)
+                            if hasPredicate and hasSubject:
+                                text = text + ' ' + sent.text
         return text
 
 

@@ -1,21 +1,40 @@
 # from pysbd.utils import PySBDFactory
 import spacy
 from text_extractor import TextExtractor
-nlp = spacy.load('en_core_web_sm')
+# import textacy
+from spacy.matcher import Matcher
 
+nlp = spacy.load('en_core_web_sm')
+matcher = Matcher(nlp.vocab)
 filename = "../data/en/PSSuniversal_Inst_Manual_21262-EN-07.pdf"
 
 textExtractor1 = TextExtractor(filename)
 text = textExtractor1.getText()
-print(text)
+# print(text)
 print('___________________________________')
 
 # nlp = spacy.blank('en')
 # nlp.add_pipe(PySBDFactory(nlp))
-
 doc = nlp(text)
-for sent in doc.sents:
-    print(sent)
+# for sent in doc.sents:
+#     print(sent.text)
+    
+    # print(list(tok.pos_ for tok in sent))
+def print_fun(matcher, doc, i, matches):
+    match_id, start, end = matches[i]
+    span = doc[start:end]  
+    print(span)
+
+pattern = [{"LEMMA": "be"}, 
+            {"POS": "VERB"},
+            {"POS": "ADP"}]
+matcher.add("FacebookIs", print_fun, pattern)  # add pattern
+
+matches = matcher(doc)
+
+# pattern = r'(<ADJ> <PUNCT>? <CONJ>?)*'
+
+# print(list(textacy.extract.pos_regex_matches(doc, pattern)))
 # # [My name is Jonas E. Smith., Please turn to p. 55.]
 
 
