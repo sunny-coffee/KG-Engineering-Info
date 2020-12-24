@@ -1,35 +1,50 @@
 from spacy.matcher import Matcher
 
-def getSubjfromSpan(prepObjMatcher,span):
+def getSubjfromSpan(prepObjMatcher,span,verb):
+    subjPobjList = []
+    root_subj = span.root      
+    if root_subj.head == verb:
         subjList = []
-        root_subj = span.root
-       
-        # subjList.append(span.root.text)
+        pobjList = []
+        matches = prepObjMatcher(span)
+        for match_id, start, end in matches:
+            match_span = span[start:end] 
+            if match_span[0].head == root_subj:
+                pobjList.append(match_span.text)
+        subjList.append(root_subj.text)
+        key_subj = root_subj
+        if  ('and' in [tok.text for tok in span]) or ('or' in [tok.text for tok in span]):
+            for tok in span:
+                if tok.head == key_subj and tok.pos_ == "NOUN" and tok.dep_ == "conj":               
+                    subjList.append(tok.text)
+                    key_subj = tok
+        for subj in subjList:
+            subjPobj = subj
+            for pobj in pobjList:
+                subjPobj = subjPobj + ' ' + pobj
+            subjPobjList.append(subjPobj.strip())
+    return subjPobjList
+
+
+
+def getDobjfromSpan(prepObjMatcher,span,verb):
+    objList = []
+    root_subj = span.root      
+    if root_subj.head == verb:
         prepattach = ''
         matches = prepObjMatcher(span)
         for match_id, start, end in matches:
             match_span = span[start:end] 
             if match_span[0].head == root_subj:
                 prepattach = prepattach + ' ' + match_span.text
-        subjList.append(root_subj.text + prepattach)
-        key_subj = root_subj
+        objList.append(root_subj.text + prepattach)
+        key_obj = root_subj
         if  ('and' in [tok.text for tok in span]) or ('or' in [tok.text for tok in span]):
             for tok in span:
-                if tok.head == key_subj and tok.pos_ == "NOUN" and tok.dep_ == "conj":               
-                    subjList.append(tok.text + prepattach)
-                    key_subj = tok
-        return subjList
-
-
-
-def getDobjfromSpan(prepObjMatcher,span):
-    dobjList = []
-    root_obj = span.root
-    dobjList.append(root_obj.text)
-    for tok in span:
-        if tok.head == root_obj and tok.pos_ == "NOUN":
-            dobjList.append(tok.text)
-    return dobjList
+                if tok.head == key_obj and tok.pos_ == "NOUN" and tok.dep_ == "conj":               
+                    objList.append(tok.text + prepattach)
+                    key_obj = tok
+    return objList
 
 def getPobjfromSpan(prepObjMatcher,span,verb):
     pobjList = []
@@ -46,7 +61,7 @@ def getPobjfromSpan(prepObjMatcher,span,verb):
     return pobjList
 
 
-def getInffromSpan(infMatcher,span,verb):
+def getInffromSpan(infMatcher,prepObjMatcher,span,verb):
     infList = []
     
     matches = infMatcher(span)
@@ -57,5 +72,7 @@ def getInffromSpan(infMatcher,span,verb):
         if prep.head == verb:
             inf_verb = match_span[-1]
             dobj = inf_verb._.srl_arg1
-            infList.append([match_span.text, dobj.text])
+            objList = getDobjfromSpan(prepObjMatcher,dobj,inf_verb)
+            for obj in objList:
+                infList.append([match_span.text, obj])
     return infList

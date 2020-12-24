@@ -38,7 +38,7 @@ class TriplesExtractor:
                 subjList = []
                 # print(verb._.srl_arg1)
                 if verb._.srl_arg1 != None:
-                    subjList = getSubjfromSpan(self.prepObjMatcher,verb._.srl_arg1)
+                    subjList = getSubjfromSpan(self.prepObjMatcher,verb._.srl_arg1,verb)
                 # print(subjList)
                 if not len(subjList):            
                     continue
@@ -54,7 +54,7 @@ class TriplesExtractor:
 
                 if len(verb._.srl_argm):
                     for argm in verb._.srl_argm:
-                        infList = getInffromSpan(self.infMatcher,argm, verb)
+                        infList = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
                         # print(infList)
                         for subj in subjList:
                             for inf in infList:
