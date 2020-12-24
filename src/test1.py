@@ -1,20 +1,30 @@
-from spacy.util import filter_spans
-from spacy.tokens import Token
+import spacy
+from spacy import displacy
 from spacy.matcher import Matcher
-from spacy.matcher import PhraseMatcher
+from spacy.util import filter_spans
 import os
 from allennlp.predictors.predictor import Predictor
-import json
+import spacy
+from spacy.tokens import Token
 
-class PrepMerger(object):
+
+nlp = spacy.load('en_core_web_sm')
+
+class VerbMerger(object):
     def __init__(self, nlp):
-        self.matcher = PhraseMatcher(nlp.vocab)
-        with open("phrasal_preposition.json") as f:
-            PREPS = json.loads(f.read())
-        self.matcher.add("PREPOSITION", None, *list(nlp.pipe(PREPS)))
+        self.matcher = Matcher(nlp.vocab)
+        self.matcher.add(
+            "NOUN",
+            None,
+            [{"POS":"AUX", "OP": "*"}, 
+            {"POS": "VERB", "OP": "+"}]
+        )
+
     def __call__(self, doc):
+        # This method is invoked when the component is called on a Doc
         matches = self.matcher(doc)
-        spans = []        
+        spans = []  # Collect the matched spans here
+        
         for match_id, start, end in matches:
             spans.append(doc[start:end])
         filtered = filter_spans(spans)
@@ -22,8 +32,7 @@ class PrepMerger(object):
         with doc.retokenize() as retokenizer:
             for span in filtered:
                 retokenizer.merge(span)
-        return doc   
-
+        return doc
 
 class NounMerger(object):
     def __init__(self, nlp):
@@ -49,31 +58,6 @@ class NounMerger(object):
                 retokenizer.merge(span)
         return doc
 
-class VerbMerger(object):
-    def __init__(self, nlp):
-        self.matcher = Matcher(nlp.vocab)
-        self.matcher.add(
-            "NOUN",
-            None,
-            [{"POS":"VERB"}, 
-            {"POS": "ADP", "DEP": "prt"}]
-        )
-
-    def __call__(self, doc):
-        # This method is invoked when the component is called on a Doc
-        matches = self.matcher(doc)
-        spans = []  # Collect the matched spans here
-        
-        for match_id, start, end in matches:
-            spans.append(doc[start:end])
-        filtered = filter_spans(spans)
-
-        with doc.retokenize() as retokenizer:
-            for span in filtered:
-                retokenizer.merge(span)
-        return doc
-
-
 class SRLComponent(object):
     def __init__(self, model_path):
         self.model_path = model_path
@@ -84,7 +68,8 @@ class SRLComponent(object):
         Token.set_extension('srl_arg0', default = None)
         Token.set_extension('srl_arg1', default = None)
         Token.set_extension('srl_arg2', default = None)
-        Token.set_extension('srl_argm', default = [])
+        Token.set_extension('srl_argm', default = None)
+        
 
     def __call__(self, doc):
         for sent in doc.sents:
@@ -116,39 +101,33 @@ class SRLComponent(object):
                         end = max([i for i, x in enumerate(tags) if x == "I-ARG2"] + [start]) + 1
                         word._.set("srl_arg2", sent[start:end])
 
-                    if "B-ARG3" in tags:
-                        start = tags.index("B-ARG3")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARG3"] + [start]) + 1
-                        word._.set("srl_argm", sent[start:end])
-                    
-                    if "B-ARG4" in tags:
-                        start = tags.index("B-ARG4")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARG4"] + [start]) + 1
-                        word._.set("srl_argm", sent[start:end])
-
-                    argm_list = []
-
-                    if "B-ARGM-MNR" in tags:
-                        start = tags.index("B-ARGM-MNR")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARGM-MNR"] + [start]) + 1
-                        argm_list.append(sent[start:end])
-                    
-                    if "B-ARGM-LOC" in tags:
-                        start = tags.index("B-ARGM-LOC")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARGM-LOC"] + [start]) + 1
-                        argm_list.append(sent[start:end])
-
                     if "B-ARGM-TMP" in tags:
                         start = tags.index("B-ARGM-TMP")
                         end = max([i for i, x in enumerate(tags) if x == "I-ARGM-TMP"] + [start]) + 1
-                        argm_list.append(sent[start:end])
-
-                    if "B-ARGM-PRP" in tags:
-                        start = tags.index("B-ARGM-PRP")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARGM-PRP"] + [start]) + 1
-                        argm_list.append(sent[start:end])
-
-                    word._.set("srl_argm", argm_list)
+                        word._.set("srl_argm", sent[start:end])
                     
 
         return doc
+
+model_path = "../model/bert-base-srl-2020.11.19.tar"
+nlp.add_pipe(VerbMerger(nlp))
+nlp.add_pipe(NounMerger(nlp))
+nlp.add_pipe(SRLComponent(model_path), last=True)
+
+text = 'Earth bars, earth conductors and the housing should be attached to metal parts in order to divert any coupled interference on to large metal areas.'
+
+doc = nlp(text)
+for tok in doc:
+    print(tok,tok.dep_,tok.pos_,tok.tag_,tok.head)
+    print(tok._.srl_arg0,tok._.srl_arg1,tok._.srl_arg2,tok._.srl_argm)
+    # pass
+# displacy.render(doc, style="dep")
+
+
+# model_path = "../model/bert-base-srl-2020.11.19.tar"
+# if os.path.exists(model_path):
+#     predictor = Predictor.from_path(model_path)
+#     for sent in doc.sents:
+
+#         result=predictor.predict(sent.text)
+#         print(result)

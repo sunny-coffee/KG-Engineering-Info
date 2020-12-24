@@ -11,10 +11,13 @@ from allennlp.predictors.predictor import Predictor
 import spacy
 
 nlp = spacy.load('en_core_web_sm')
-text = 'The connection on the module bus can be disconnected in order to form supply groups. On digital failsafe modules, the periphery supply is used to provide test pulses. Failsafe input/output modules will not start until the periphery supply is connected correctly. On analogue input/output modules, the periphery supply is galvanically isolated from the inputs/outputs.'
+text = 'Earth bars, earth conductors and the housing should be attached to metal parts in order to divert any coupled interference on to large metal areas.'
 
 doc = nlp(text)
+for tok in doc:
+    print(tok,tok.dep_,tok.pos_,tok.tag_,tok.head)
 
+# print(('and' in [tok.text for tok in doc]) or ('or' in [tok.text for tok in doc]))  
 
 model_path = "../model/bert-base-srl-2020.11.19.tar"
 if os.path.exists(model_path):

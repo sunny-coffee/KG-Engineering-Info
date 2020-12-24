@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://test.org/onto.owl"
+         xmlns="http://test.org/onto.owl#">
+
+<owl:Ontology rdf:about="http://test.org/onto.owl"/>
+
+<owl:ObjectProperty rdf:about="#has_for_ingredient">
+  <rdfs:domain rdf:resource="#A"/>
+  <rdfs:range rdf:resource="#B"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_ingredient">
+  <rdfs:domain rdf:resource="#A"/>
+  <rdfs:range rdf:resource="#B"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_special_relation">
+  <rdfs:domain rdf:resource="#A"/>
+  <rdfs:range rdf:resource="#has_for_ingredient"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#A">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#B">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#C">
+  <rdfs:subClassOf rdf:resource="#A"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#A"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#has_for_ingredient"/>
+          <owl:someValuesFrom rdf:resource="#B"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<A rdf:about="#a1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_for_ingredient rdf:resource="#b1"/>
+</A>
+
+<B rdf:about="#b1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</B>
+
+
+</rdf:RDF>
