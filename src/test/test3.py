@@ -11,7 +11,7 @@ from allennlp.predictors.predictor import Predictor
 import spacy
 
 nlp = spacy.load('en_core_web_sm')
-text = 'Earth bars, earth conductors and the housing should be attached to metal parts on large metal areas.'
+text = ' Earth bars, earth conductors and the housing should be attached to metal parts of cars in the morning. '
 
 doc = nlp(text)
 for tok in doc:

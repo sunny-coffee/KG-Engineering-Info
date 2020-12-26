@@ -30,33 +30,94 @@ class TriplesExtractor:
                     {"TAG": "VB", "DEP":"acl"}]
         self.infMatcher.add("infinitive", None, pattern)
 
-    def getPassiveTriples(self): 
+    # def getPassiveTriples(self): 
+    #     triples = []
+    #     for tok in self.doc:
+    #         if tok.tag_ == 'VBN':
+    #             verb = tok 
+    #             #生成主语列表   
+    #             subjList = []
+    #             # print(verb._.srl_arg1)
+    #             if verb._.srl_arg1 != None:
+    #                 nounPhrases = getNounPhrasefromSpan(self.prepObjMatcher,verb._.srl_arg1,verb,'subj')
+    #                 if not nounPhrases:
+    #                     continue
+    #                 else:                      
+    #                     [subjList, sub_triples] = nounPhrases
+    #                     triples.extend(sub_triples)
+                        
+    #             #生成介宾状语
+    #             pobjList = []
+    #             # print(verb._.srl_arg2)
+    #             if verb._.srl_arg2 != None:
+    #                 [pobjList, sub_triples] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
+    #             # print(pobjList)
+    #                 triples.extend(sub_triples)
+    #             # if len(pobjList):
+    #             #     for subj in subjList:
+    #             #         for pobj in pobjList:
+    #             #             triples.append({"subject":subj ,"relation": verb.text + ' ' + pobj[0], "object": pobj[1]})
+
+    #             #生成不定式
+    #             if len(verb._.srl_argm):
+    #                 for argm in verb._.srl_argm:
+    #                     [infList, sub_triples] = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
+    #                     triples.extend(sub_triples)
+    #                     # print(infList)
+    #                     for subj in subjList:
+    #                         for inf in infList:
+    #                             triples.append({"subject":subj ,"relation": verb.text + ' ' + inf[0], "object": inf[1]})
+                               
+    #                     [sub_pobjList, sub_triples2] = getPobjfromSpan(self.prepObjMatcher,argm, verb)
+    #                     triples.extend(sub_triples2)
+    #                     pobjList.extend(sub_pobjList)
+    #             if len(pobjList):
+    #                 for subj in subjList:
+    #                     for pobj in pobjList:
+    #                         triples.append({"subject":subj ,"relation": verb.text + ' ' + pobj[0], "object": pobj[1]})
+
+    def getActiveTriples(self): 
         triples = []
         for tok in self.doc:
-            if tok.tag_ == 'VBN':
-                verb = tok    
-                subjList = []
-                # print(verb._.srl_arg1)
-                if verb._.srl_arg1 != None:
-                    nounPhrases = getNounPhrasefromSpan(self.prepObjMatcher,verb._.srl_arg1,verb,'subj')
-                    if not nounPhrases:
-                        continue
-                    else:                      
-                        [subjList, sub_triples] = nounPhrases
-                        triples.extend(sub_triples)
-                        
+            if tok.tag_ == 'VBD' or tok.tag_ == 'VBN' or tok.tag_ == 'VBP' or tok.tag_ == 'VBZ':
+                verb = tok 
 
+                if verb._.srl_arg0 != None:
+                    subjSpan = verb._srl_arg0
+                elif verb._.srl_arg1 != None:
+                    subjSpan = verb._srl_arg1
+                else:
+                    continue
+
+                #生成主语列表   
+                subjList = []
+                nounPhrases = getNounPhrasefromSpan(self.prepObjMatcher,verb._.srl_arg1,verb,'subj')
+                if not nounPhrases:
+                    continue
+                else:                      
+                    [subjList, sub_triples] = nounPhrases
+                    triples.extend(sub_triples)
+                
+                        
+                #生成介宾状语
                 pobjList = []
                 # print(verb._.srl_arg2)
                 if verb._.srl_arg2 != None:
-                    [pobjList, sub_triples] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
-                # print(pobjList)
-                    triples.extend(sub_triples)
-                if len(pobjList):
-                    for subj in subjList:
-                        for pobj in pobjList:
-                            triples.append({"subject":subj ,"relation": verb.text + ' ' + pobj[0], "object": pobj[1]})
+                    arg2_dep = verb._.srl_arg2.root.dep_
+                    if arg2_dep == 'prep':
+                        [pobjList, sub_triples] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
+                    # print(pobjList)
+                        triples.extend(sub_triples)
+                    elif arg2_dep == 'dative':
+                        continue
+                    else:
+                        pass
+                # if len(pobjList):
+                #     for subj in subjList:
+                #         for pobj in pobjList:
+                #             triples.append({"subject":subj ,"relation": verb.text + ' ' + pobj[0], "object": pobj[1]})
 
+                #生成不定式
                 if len(verb._.srl_argm):
                     for argm in verb._.srl_argm:
                         [infList, sub_triples] = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
@@ -65,9 +126,15 @@ class TriplesExtractor:
                         for subj in subjList:
                             for inf in infList:
                                 triples.append({"subject":subj ,"relation": verb.text + ' ' + inf[0], "object": inf[1]})
+                               
+                        [sub_pobjList, sub_triples2] = getPobjfromSpan(self.prepObjMatcher,argm, verb)
+                        triples.extend(sub_triples2)
+                        pobjList.extend(sub_pobjList)
+                if len(pobjList):
+                    for subj in subjList:
+                        for pobj in pobjList:
+                            triples.append({"subject":subj ,"relation": verb.text + ' ' + pobj[0], "object": pobj[1]})
 
-            # if tok.tag_ == 'VBD' or tok.tag_ == 'VBZ' or tok.tag_ == 'VBP' or tok.tag_ == 'VBG':
-            #     verb = tok
 
 
 
