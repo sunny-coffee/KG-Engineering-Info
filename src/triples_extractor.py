@@ -4,7 +4,7 @@ from spacy.matcher import Matcher
 from text_extractor import TextExtractor
 from merge_classes import NounMerger, VerbMerger, SRLComponent, PrepMerger
 import pandas as pd
-from span2triples import getDobjfromSpan, getPobjfromSpan, getSubjfromSpan, getInffromSpan
+from span2triples import getNounPhrasefromSpan, getPobjfromSpan, getInffromSpan
 
 
 class TriplesExtractor:
@@ -38,15 +38,20 @@ class TriplesExtractor:
                 subjList = []
                 # print(verb._.srl_arg1)
                 if verb._.srl_arg1 != None:
-                    subjList = getSubjfromSpan(self.prepObjMatcher,verb._.srl_arg1,verb)
-                # print(subjList)
-                if not len(subjList):            
-                    continue
+                    nounPhrases = getNounPhrasefromSpan(self.prepObjMatcher,verb._.srl_arg1,verb,'subj')
+                    if not nounPhrases:
+                        continue
+                    else:                      
+                        [subjList, sub_triples] = nounPhrases
+                        triples.extend(sub_triples)
+                        
+
                 pobjList = []
                 # print(verb._.srl_arg2)
                 if verb._.srl_arg2 != None:
-                    pobjList = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
+                    [pobjList, sub_triples] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
                 # print(pobjList)
+                    triples.extend(sub_triples)
                 if len(pobjList):
                     for subj in subjList:
                         for pobj in pobjList:
@@ -54,7 +59,8 @@ class TriplesExtractor:
 
                 if len(verb._.srl_argm):
                     for argm in verb._.srl_argm:
-                        infList = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
+                        [infList, sub_triples] = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
+                        triples.extend(sub_triples)
                         # print(infList)
                         for subj in subjList:
                             for inf in infList:
@@ -66,6 +72,7 @@ class TriplesExtractor:
 
 
         df = pd.DataFrame(triples)
+        pd.set_option('display.max_rows', None)
         return df    
 
    

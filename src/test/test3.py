@@ -11,13 +11,13 @@ from allennlp.predictors.predictor import Predictor
 import spacy
 
 nlp = spacy.load('en_core_web_sm')
-text = 'Earth bars, earth conductors and the housing should be attached to metal parts in order to divert any coupled interference on to large metal areas.'
+text = 'Earth bars, earth conductors and the housing should be attached to metal parts on large metal areas.'
 
 doc = nlp(text)
 for tok in doc:
     print(tok,tok.dep_,tok.pos_,tok.tag_,tok.head)
 
-# print(('and' in [tok.text for tok in doc]) or ('or' in [tok.text for tok in doc]))  
+print(('and' in [tok.text for tok in doc]) or ('or' in [tok.text for tok in doc]))  
 
 model_path = "../model/bert-base-srl-2020.11.19.tar"
 if os.path.exists(model_path):

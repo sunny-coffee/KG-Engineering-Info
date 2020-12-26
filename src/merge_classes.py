@@ -116,17 +116,17 @@ class SRLComponent(object):
                         end = max([i for i, x in enumerate(tags) if x == "I-ARG2"] + [start]) + 1
                         word._.set("srl_arg2", sent[start:end])
 
+                    argm_list = []
+
                     if "B-ARG3" in tags:
                         start = tags.index("B-ARG3")
                         end = max([i for i, x in enumerate(tags) if x == "I-ARG3"] + [start]) + 1
-                        word._.set("srl_argm", sent[start:end])
+                        argm_list.append(sent[start:end])
                     
                     if "B-ARG4" in tags:
                         start = tags.index("B-ARG4")
                         end = max([i for i, x in enumerate(tags) if x == "I-ARG4"] + [start]) + 1
-                        word._.set("srl_argm", sent[start:end])
-
-                    argm_list = []
+                        argm_list.append(sent[start:end])
 
                     if "B-ARGM-MNR" in tags:
                         start = tags.index("B-ARGM-MNR")
