@@ -21,7 +21,7 @@ class PrepMerger(object):
 
         with doc.retokenize() as retokenizer:
             for span in filtered:
-                retokenizer.merge(span)
+                retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
         return doc   
 
 
@@ -31,7 +31,8 @@ class NounMerger(object):
         self.matcher.add(
             "NOUN",
             None,
-            [{"DEP":"amod", "OP": "*"}, 
+            [{"POS":"ADJ", "OP": "*"},
+            {"DEP":"nummod", "OP": "*"}, 
             {"POS": "NOUN", "OP": "+"}]
         )
 
@@ -45,9 +46,68 @@ class NounMerger(object):
         filtered = filter_spans(spans)
 
         with doc.retokenize() as retokenizer:
-            for span in filtered:
-                retokenizer.merge(span)
+            for span in filtered:   
+                retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
         return doc
+
+class BetweenMerger(object):
+    def __init__(self, nlp):
+        self.matcher = Matcher(nlp.vocab)
+        self.matcher.add(
+            "BETWEEN",
+            None,
+            [{"LEMMA":"between"},
+            {"POS": "DET", "OP":"*"},
+            {"POS": "NOUN"},
+            {"LEMMA":"and"},
+            {"POS": "DET", "OP":"*"},
+            {"POS": "NOUN"}]
+        )
+
+    def __call__(self, doc):
+        # This method is invoked when the component is called on a Doc
+        matches = self.matcher(doc)
+        spans = []  # Collect the matched spans here
+        
+        for match_id, start, end in matches:
+            spans.append(doc[start+1:end])
+        filtered = filter_spans(spans)
+
+        with doc.retokenize() as retokenizer:
+            for span in filtered:   
+                retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
+        return doc
+
+class DashMerger(object):
+    def __init__(self, nlp):
+        self.matcher = Matcher(nlp.vocab)
+        self.matcher.add(
+            "DASH",
+            None,
+            [{"LEMMA":"-"}]
+        )
+        self.matcher.add(
+            "SLASH",
+            None,
+            [{"LEMMA":"/"}]
+        )
+
+    def __call__(self, doc):
+        # This method is invoked when the component is called on a Doc
+        matches = self.matcher(doc)
+        spans = []  # Collect the matched spans here
+        
+        for match_id, start, end in matches:
+            if not doc[start].whitespace_ and not doc[start-1].whitespace_:
+                spans.append(doc[start-1:end+1])
+        filtered = filter_spans(spans)
+
+        with doc.retokenize() as retokenizer:
+            for span in filtered:
+                retokenizer.merge(span, attrs={"LEMMA": span[0].lemma_ + span[1].lemma_ + span[2].lemma_})
+        return doc
+
+
 
 class VerbMerger(object):
     def __init__(self, nlp):
@@ -70,7 +130,7 @@ class VerbMerger(object):
 
         with doc.retokenize() as retokenizer:
             for span in filtered:
-                retokenizer.merge(span)
+                retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
         return doc
 
 

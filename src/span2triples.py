@@ -6,22 +6,36 @@ def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
     nounList = []
     prepObjList = []
     nounPrepNounList = []      
-    if root_noun.head == verb and type in root_noun.dep_:
+    if root_noun.head == verb and type in root_noun.dep_ and root_noun.pos_ == 'NOUN':
         matches = prepObjMatcher(span)
+
+        # conjList = list(tok.head  for tok in span if tok.lemma_ == 'and' or tok.lemma_ == 'or')
+
+        # exsitConj = len(conjList)
         seq = ''
         for match_id, start, end in matches:
             match_span = span[start:end] 
-            if match_span[0].head == root_noun:
-                prepObjList.append([match_span[0].text, match_span[-1].text])
-                seq = seq + ' ' + match_span.text
-        nounPrepNounList.append((root_noun.text  + seq).strip())
-        nounList.append(root_noun.text)
+            match_prep = match_span[0]
+            # match_pobj = match_span[-1]
+            if match_prep.head == root_noun:
+                prepObjList.append([match_span[0].lemma_, match_span[-1].lemma_])
+                seq = seq + ' ' + match_span.lemma_
+                # child_List = match_pobj.children
+                # if "and" in list(tok.text for tok in child_List):
+                #     for tok in child_List:
+                #         if tok.pos_ == "NOUN" and tok.dep_ == "conj":
+                #             prepObjList.append([match_span[0].lemma_, tok.lemma_])
+                #             seq = seq + ' ' + match_span.lemma_
+
+        nounPrepNounList.append((root_noun.lemma_  + seq).strip())
+        nounList.append(root_noun.lemma_)
         key_noun = root_noun
+
         if  ('and' in [tok.text for tok in span]) or ('or' in [tok.text for tok in span]):
             for tok in span:
                 if tok.head == key_noun and tok.pos_ == "NOUN" and tok.dep_ == "conj":               
-                    nounList.append(tok.text)
-                    nounPrepNounList.append((tok.text + seq).strip())
+                    nounList.append(tok.lemma_)
+                    nounPrepNounList.append((tok.lemma_ + seq).strip())
                     key_noun = tok
     if not len(nounList):            
         return False
@@ -52,13 +66,13 @@ def getPobjfromSpan(prepObjMatcher,span,verb):
                 match_span = span[start:end] 
                 if match_span[0].head == prepObj:
      
-                    prepObjList.append([match_span[0].text, match_span[-1].text])
-                    seq = seq + ' ' + match_span.text
-            nounPrepNoun = (prepObj.text  + seq).strip()
-            pobjList.append([prep.text, nounPrepNoun])
-            print(prepObjList)
+                    prepObjList.append([match_span[0].lemma_, match_span[-1].lemma_])
+                    seq = seq + ' ' + match_span.lemma_
+            nounPrepNoun = (prepObj.lemma_  + seq).strip()
+            pobjList.append([prep.lemma_, nounPrepNoun])
+            # print(prepObjList)
             if len(prepObjList):
-                triples.append({"subject":nounPrepNoun ,"relation": 'is_a', "object": prepObj})
+                triples.append({"subject":nounPrepNoun ,"relation": 'is_a', "object": prepObj.lemma_})
                 for pobj in prepObjList:
                     triples.append({"subject":nounPrepNoun ,"relation": pobj[0], "object": pobj[1]})
     return [pobjList, triples]
@@ -85,5 +99,5 @@ def getInffromSpan(infMatcher,prepObjMatcher,span,verb):
                 [objList, sub_triples] = nounPhrases
                 triples.extend(sub_triples)
             for obj in objList:
-                infList.append([match_span.text, obj])
+                infList.append([match_span.lemma_, obj])
     return [infList, triples]
