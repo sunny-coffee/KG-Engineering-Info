@@ -1,3 +1,4 @@
+from pandas.core.indexes import category
 from spacy.matcher import Matcher
 
 def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
@@ -5,7 +6,10 @@ def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
     root_noun = span.root
     nounList = []
     prepObjList = []
-    nounPrepNounList = []      
+    nounPrepNounList = [] 
+    inhers = []  
+    # for tok in span:
+    #     print(tok, tok.lemma_)   
     if root_noun.head == verb and type in root_noun.dep_ and root_noun.pos_ == 'NOUN':
         matches = prepObjMatcher(span)
 
@@ -20,6 +24,9 @@ def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
             if match_prep.head == root_noun:
                 prepObjList.append([match_span[0].lemma_, match_span[-1].lemma_])
                 seq = seq + ' ' + match_span.lemma_
+                # print(match_span[-1].lemma_ , match_span[-1]._.key)
+                if (len(match_span[-1].lemma_) - len(match_span[-1]._.key)) >= 2:
+                    inhers.append({"subclass": match_span[-1].lemma_,"superclass": match_span[-1]._.key})
                 # child_List = match_pobj.children
                 # if "and" in list(tok.text for tok in child_List):
                 #     for tok in child_List:
@@ -30,33 +37,41 @@ def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
         nounPrepNounList.append((root_noun.lemma_  + seq).strip())
         nounList.append(root_noun.lemma_)
         key_noun = root_noun
-
+        # print(key_noun.lemma_)
+        # print(key_noun.lemma_ , key_noun._.key)
+        if (len(key_noun.lemma_) - len(key_noun._.key))>=2:
+            inhers.append({"subclass": key_noun.lemma_,"superclass": key_noun._.key})
         if  ('and' in [tok.text for tok in span]) or ('or' in [tok.text for tok in span]):
             for tok in span:
                 if tok.head == key_noun and tok.pos_ == "NOUN" and tok.dep_ == "conj":               
                     nounList.append(tok.lemma_)
                     nounPrepNounList.append((tok.lemma_ + seq).strip())
                     key_noun = tok
+                    if (len(key_noun.lemma_) - len(key_noun._.key))>=2:
+                        inhers.append({"subclass": key_noun.lemma_,"superclass": key_noun._.key})
     if not len(nounList):            
         return False
-    triples = []
+
+
+    restrictions =[]
     if len(prepObjList):
         for i, npn in enumerate(nounPrepNounList):
-            triples.append({"subject":npn ,"relation": 'is_a', "object": nounList[i]})
-            for pobj in prepObjList:
-                triples.append({"subject":npn ,"relation": pobj[0], "object": pobj[1]})
+            restrictions.append({"subclass":npn ,"superclass": nounList[i], "relation":prepObjList})
     
-    return [nounPrepNounList, triples]
+    return [nounPrepNounList,  restrictions, inhers]
 
 
 def getPobjfromSpan(prepObjMatcher,span,verb):
     pobjList = []
-    triples = []
+    inhers = []
+    restrictions = []
     matches1 = prepObjMatcher(span)
     for match_id, start, end in matches1:
         match_span1 = span[start:end] 
         prep = match_span1[0]
         prepObj = match_span1[-1]
+        if (len(prepObj.lemma_) - len(prepObj._.key)) >= 2:
+            inhers.append({"subclass": prepObj.lemma_,"superclass": prepObj._.key})
         if prep.head == verb:
             # print('2222')
             prepObjList = []
@@ -68,19 +83,23 @@ def getPobjfromSpan(prepObjMatcher,span,verb):
      
                     prepObjList.append([match_span[0].lemma_, match_span[-1].lemma_])
                     seq = seq + ' ' + match_span.lemma_
+                    # print(match_span[-1].lemma_ , match_span[-1]._.key)
+                    if (len(match_span[-1].lemma_) - len(match_span[-1]._.key)) >= 2:
+                        inhers.append({"subclass": match_span[-1].lemma_,"superclass": match_span[-1]._.key})
             nounPrepNoun = (prepObj.lemma_  + seq).strip()
             pobjList.append([prep.lemma_, nounPrepNoun])
             # print(prepObjList)
+
             if len(prepObjList):
-                triples.append({"subject":nounPrepNoun ,"relation": 'is_a', "object": prepObj.lemma_})
-                for pobj in prepObjList:
-                    triples.append({"subject":nounPrepNoun ,"relation": pobj[0], "object": pobj[1]})
-    return [pobjList, triples]
+                restrictions.append({"subclass":nounPrepNoun , "superclass": prepObj.lemma_, "relation":prepObjList})
+
+    return [pobjList, restrictions, inhers]
 
 
 def getInffromSpan(infMatcher,prepObjMatcher,span,verb):
     infList = []
-    triples = []
+    restrictions = []
+    inhers = []
     matches = infMatcher(span)
     for match_id, start, end in matches:
 
@@ -96,8 +115,9 @@ def getInffromSpan(infMatcher,prepObjMatcher,span,verb):
             if not nounPhrases:
                 continue
             else:                      
-                [objList, sub_triples] = nounPhrases
-                triples.extend(sub_triples)
+                [objList, sub_restrictions, sub_inhers] = nounPhrases
+                inhers.extend(sub_inhers)
+                restrictions.extend(sub_restrictions)
             for obj in objList:
                 infList.append([match_span.lemma_, obj])
-    return [infList, triples]
+    return [infList, restrictions, inhers]

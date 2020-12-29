@@ -1,5 +1,6 @@
 from owlready2 import DatatypeProperty, FunctionalProperty, get_ontology, Inverse, \
      InverseFunctionalProperty, ObjectProperty, Thing, TransitiveProperty, SymmetricProperty,types
+from owlready2.base import SOME
 import pandas as pd
 
 
@@ -19,27 +20,75 @@ class OntologyCreator:
                 domain = [Product]
         onto.save(file=filename)
 
-    def dynamically_add_classes(self, input_df):
+    def dynamically_add_restrictions(self, input_df):
         """create classes from list"""
         onto = get_ontology(self.__filename).load()
         with onto:
             for index, row in input_df.iterrows():
-                if row["relation"] == 'is_a':
-                    # print(row['subject'],row['object'])
-                    new_object = types.new_class(row['object'].replace(" ", "_"),(Thing,))
-                    new_subject = types.new_class(row['subject'].replace(" ", "_"),(new_object,))
-                    # new_subject.is_a.append(new_object)
+
+                sup = getattr(onto,row['superclass'].replace(" ", "_"))
+                if sup != None:
+                    superclass = sup
+                else:
+                    superclass = types.new_class(row['superclass'].replace(" ", "_"),(Thing,))
+
+                subclass = types.new_class(row['subclass'].replace(" ", "_"),(superclass,))
+                subclass.equivalent_to.append(superclass)
+                for rel in row['relation']:
+                    pobj = types.new_class(rel[1].replace(" ", "_"),(Thing,))
+                    sup_predicate = types.new_class((rel[0]).replace(" ", "_"),(ObjectProperty,))
+                    predicate = types.new_class((rel[0]+' '+rel[1]).replace(" ", "_"),(sup_predicate,))
+                    predicate.domain.append(subclass)
+                    predicate.range.append(pobj)
+                    subclass.equivalent_to = [(predicate.some(pobj)) & subclass.equivalent_to[0]]
+        onto.save(file = self.__filename)
+
+    def dynamically_add_relations(self, input_df):
+        """create classes from list"""
+        onto = get_ontology(self.__filename).load()
+        with onto:
+            for index, row in input_df.iterrows():
+                obj = getattr(onto,row['object'].replace(" ", "_"))
+                if obj != None:
+                    new_object = obj
                 else:
                     new_object = types.new_class(row['object'].replace(" ", "_"),(Thing,))
+                
+                subj = getattr(onto,row['subject'].replace(" ", "_"))
+                if subj != None:
+                    new_subject = subj
+                else:
                     new_subject = types.new_class(row['subject'].replace(" ", "_"),(Thing,))
-                    new_relation = types.new_class(row['relation'].replace(" ", "_"),(ObjectProperty,))
-                    new_relation.domain.append(new_subject)
-                    new_relation.range.append(new_object)
+                sup_relation = types.new_class(row['relation'].replace(" ", "_"),(ObjectProperty,))
+                new_relation = types.new_class((row['relation']+ ' ' + row['object']).replace(" ", "_"),(sup_relation,))  
+                new_relation.domain.append(new_subject)
+                new_relation.range.append(new_object)
+        onto.save(file = self.__filename)
 
-            # product_class = types.new_class(className,(getattr(onto,'Product'),))
-            # for i in range(int(input_df.shape[0])):
-            #     new_class = types.new_class(input_df.iloc[i,0].replace(" ", "_").replace(",", ""),(getattr(onto,'Merkmal'),))
-            #     new_class.domain.append(product_class)
+    def dynamically_add_category(self, input_df):
+        """create classes from list"""
+        onto = get_ontology(self.__filename).load()
+        with onto:
+            for index, row in input_df.iterrows():
+                superclass = types.new_class(row['superclass'].replace(" ", "_"),(Thing,))
+                
+                # sub = getattr(onto,row['subclass'].replace(" ", "_"))
+                # print(type(superclass))
+                # print(type(sub))
+                # print(sub.is_a)
+                subclass = types.new_class(row['subclass'].replace(" ", "_"),(superclass,))
+                # if sub != None:
+                #     subclass = sub
+                # subclass.is_a.append(superclass)
+                if Thing in subclass.is_a:
+                    subclass.is_a.remove(Thing)
+                # else:
+                
+                    
+                # sup_relation = types.new_class(row['relation'].replace(" ", "_"),(ObjectProperty,))
+                # new_relation = types.new_class((row['relation']+ ' ' + row['object']).replace(" ", "_"),(sup_relation,))  
+                # new_relation.domain.append(new_subject)
+                # new_relation.range.append(new_object)
         onto.save(file = self.__filename)
 
 

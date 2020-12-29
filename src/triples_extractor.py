@@ -15,15 +15,15 @@ class TriplesExtractor:
         nlp = spacy.load('en_core_web_sm')
         merge_ents = nlp.create_pipe("merge_entities")
         nlp.add_pipe(merge_ents)
-        nlp.add_pipe(PrepMerger(nlp))
-        nlp.add_pipe(DashMerger(nlp))
         nlp.add_pipe(NounMerger(nlp)) 
-        nlp.add_pipe(BetweenMerger(nlp))
-        nlp.add_pipe(VerbMerger(nlp))
+        # nlp.add_pipe(PrepMerger(nlp))
+        nlp.add_pipe(DashMerger(nlp))
+        # nlp.add_pipe(BetweenMerger(nlp))
+        # nlp.add_pipe(VerbMerger(nlp))
         nlp.add_pipe(SRLComponent(model_path), last=True)
         self.doc = nlp(text)
-        # for tok in self.doc:
-        #     print(tok,tok.lemma_,tok.dep_,tok.pos_,tok.tag_,tok.head,tok._.srl_argm)
+        for tok in self.doc:
+            print(tok,tok._.key, tok.lemma_)
         self.prepObjMatcher = Matcher(nlp.vocab)
         pattern = [{"DEP": "prep"},
                     {"POS": "DET", "OP":"*"},
@@ -36,6 +36,8 @@ class TriplesExtractor:
 
     def getPassiveTriples(self): 
         triples = []
+        restrictions = []
+        inhers = []
         for tok in self.doc:
             if tok.tag_ == 'VBN':
                 verb = tok 
@@ -47,16 +49,18 @@ class TriplesExtractor:
                     if not nounPhrases:
                         continue
                     else:                      
-                        [subjList, sub_triples] = nounPhrases
-                        triples.extend(sub_triples)
+                        [subjList, sub_restrictions, sub_inhers] = nounPhrases
+                        restrictions.extend(sub_restrictions)
+                        inhers.extend(sub_inhers)
                         
                 #生成介宾状语
                 pobjList = []
                 # print(verb._.srl_arg2)
                 if verb._.srl_arg2 != None:
-                    [pobjList, sub_triples] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
+                    [pobjList, sub_restrictions, sub_inhers] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
                 # print(pobjList)
-                    triples.extend(sub_triples)
+                    restrictions.extend(sub_restrictions)
+                    inhers.extend(sub_inhers)
                 # if len(pobjList):
                 #     for subj in subjList:
                 #         for pobj in pobjList:
@@ -65,27 +69,33 @@ class TriplesExtractor:
                 #生成不定式
                 if len(verb._.srl_argm):
                     for argm in verb._.srl_argm:
-                        [infList, sub_triples] = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
-                        triples.extend(sub_triples)
+                        [infList, sub_restrictions, sub_inhers] = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
+                        restrictions.extend(sub_restrictions)
+                        inhers.extend(sub_inhers)
                         # print(infList)
                         for subj in subjList:
                             for inf in infList:
                                 triples.append({"subject":subj ,"relation": verb.text + ' ' + inf[0], "object": inf[1]})
                                
-                        [sub_pobjList, sub_triples2] = getPobjfromSpan(self.prepObjMatcher,argm, verb)
-                        triples.extend(sub_triples2)
+                        [sub_pobjList, sub_restrictions2, sub_inhers2] = getPobjfromSpan(self.prepObjMatcher,argm, verb)
+                        restrictions.extend(sub_restrictions2)
                         pobjList.extend(sub_pobjList)
+                        inhers.extend(sub_inhers2)
                 if len(pobjList):
                     for subj in subjList:
                         for pobj in pobjList:
                             triples.append({"subject":subj ,"relation": verb.text + ' ' + pobj[0], "object": pobj[1]})
         
-        df = pd.DataFrame(triples)
+        df_triple = pd.DataFrame(triples)
+        df_restriction = pd.DataFrame(restrictions)
+        df_inherit = pd.DataFrame(inhers)
         pd.set_option('display.max_rows', None)
-        return df
+        return [df_restriction, df_triple, df_inherit]
 
     def getActiveTriples(self): 
         triples = []
+        restrictions = []
+        inhers = []
         for tok in self.doc:
             if tok.tag_ == 'VBD' or tok.tag_ == 'VBG' or tok.tag_ == 'VBP' or tok.tag_ == 'VBZ' or tok.tag_ == 'VB':
                 verb = tok 
@@ -107,17 +117,17 @@ class TriplesExtractor:
                 if not subjPhrases:
                     continue
                 else:                      
-                    [subjList, sub_triples] = subjPhrases
-                    triples.extend(sub_triples)
-                
+                    [subjList, sub_restrictions, sub_inhers] = subjPhrases
+                    restrictions.extend(sub_restrictions)
+                    inhers.extend(sub_inhers)
                 #生成直接宾语列表
                 dobjList = []
                 if dobjSpan != None:
                     dobjPhrases = getNounPhrasefromSpan(self.prepObjMatcher, dobjSpan, verb, 'dobj')
                     if dobjPhrases != False:                     
-                        [dobjList, sub_triples] = dobjPhrases
-                        triples.extend(sub_triples)
-                        
+                        [dobjList, sub_restrictions, sub_inhers] = dobjPhrases
+                        restrictions.extend(sub_restrictions)
+                        inhers.extend(sub_inhers)
                 #生成介宾状语
                 pobjList = []
                 if verb._.srl_arg2 != None:
@@ -125,9 +135,10 @@ class TriplesExtractor:
                     # print(verb._.srl_arg2.root)
                     # print("!!!!!!!!!!!!!!!")
                     if arg2_dep == 'prep':
-                        [pobjList, sub_triples] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
+                        [pobjList, sub_restrictions,sub_inhers] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
                     # print(pobjList)
-                        triples.extend(sub_triples)
+                        restrictions.extend(sub_restrictions)
+                        inhers.extend(sub_inhers)
                     elif arg2_dep == 'dative':
                         continue
                     else:
@@ -140,15 +151,16 @@ class TriplesExtractor:
                 #生成不定式
                 if len(verb._.srl_argm):
                     for argm in verb._.srl_argm:
-                        [infList, sub_triples] = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
-                        triples.extend(sub_triples)
-                        # print(infList)
+                        [infList, sub_restrictions,sub_inhers] = getInffromSpan(self.infMatcher,self.prepObjMatcher,argm, verb)
+                        restrictions.extend(sub_restrictions)
+                        inhers.extend(sub_inhers)
                         for subj in subjList:
                             for inf in infList:
                                 triples.append({"subject":subj ,"relation": verb.lemma_ + ' ' + inf[0], "object": inf[1]})
                                
-                        [sub_pobjList, sub_triples2] = getPobjfromSpan(self.prepObjMatcher,argm, verb)
-                        triples.extend(sub_triples2)
+                        [sub_pobjList, sub_restrictions2, sub_inhers2] = getPobjfromSpan(self.prepObjMatcher,argm, verb)
+                        restrictions.extend(sub_restrictions2)
+                        inhers.extend(sub_inhers2)
                         pobjList.extend(sub_pobjList)
 
                 if len(dobjList):
@@ -163,8 +175,10 @@ class TriplesExtractor:
                             for pobj in pobjList:
                                 triples.append({"subject":subj ,"relation": verb.lemma_ + ' ' + pobj[0], "object": pobj[1]})
         
-        df = pd.DataFrame(triples)
+        df_triple = pd.DataFrame(triples)
+        df_restriction = pd.DataFrame(restrictions)
+        df_inherit = pd.DataFrame(inhers)
         pd.set_option('display.max_rows', None)
-        return df    
+        return [df_restriction, df_triple, df_inherit] 
 
    

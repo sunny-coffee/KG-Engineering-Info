@@ -8,30 +8,13 @@
 
 <owl:Ontology rdf:about="http://test.org/onto.owl"/>
 
-<owl:ObjectProperty rdf:about="#has_for_ingredient">
-  <rdfs:domain rdf:resource="#A"/>
-  <rdfs:range rdf:resource="#B"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#is_a">
-  <rdfs:domain rdf:resource="#A"/>
-  <rdfs:range rdf:resource="#C"/>
-</owl:ObjectProperty>
-
 <owl:Class rdf:about="#A">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#B">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#C">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Drug1">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#A"/>
 </owl:Class>
 
 

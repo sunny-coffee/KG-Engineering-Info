@@ -31,10 +31,12 @@ class NounMerger(object):
         self.matcher.add(
             "NOUN",
             None,
-            [{"POS":"ADJ", "OP": "*"},
+            [{"POS":"PROPN", "OP": "?"},
+            {"POS":"ADJ", "OP": "*"},
             {"DEP":"nummod", "OP": "*"}, 
             {"POS": "NOUN", "OP": "+"}]
         )
+        Token.set_extension('key', default = None)
 
     def __call__(self, doc):
         # This method is invoked when the component is called on a Doc
@@ -47,7 +49,7 @@ class NounMerger(object):
 
         with doc.retokenize() as retokenizer:
             for span in filtered:   
-                retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
+                retokenizer.merge(span, attrs={"lemma": span.lemma_, "_": {"key":span.root.lemma_}})
         return doc
 
 class BetweenMerger(object):
