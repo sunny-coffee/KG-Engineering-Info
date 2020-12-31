@@ -110,16 +110,17 @@ class SRLComponent(object):
         return doc
 
 model_path = "../model/bert-base-srl-2020.11.19.tar"
-nlp.add_pipe(VerbMerger(nlp))
+# nlp.add_pipe(VerbMerger(nlp))
 nlp.add_pipe(NounMerger(nlp))
 nlp.add_pipe(SRLComponent(model_path), last=True)
 
-text = 'Earth bars, earth conductors and the housing should be attached to metal parts in order to divert any coupled interference on to large metal areas.'
+text = 'suppression can lead to errors on the on/off tests and test pulses.'
 
 doc = nlp(text)
 for tok in doc:
     print(tok,tok.dep_,tok.pos_,tok.tag_,tok.head)
     print(tok._.srl_arg0,tok._.srl_arg1,tok._.srl_arg2,tok._.srl_argm)
+    print('______________________')
     # pass
 # displacy.render(doc, style="dep")
 

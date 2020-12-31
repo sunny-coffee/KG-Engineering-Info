@@ -24,9 +24,9 @@ def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
             if match_prep.head == root_noun:
                 prepObjList.append([match_span[0].lemma_, match_span[-1].lemma_])
                 seq = seq + ' ' + match_span.lemma_
-                # print(match_span[-1].lemma_ , match_span[-1]._.key)
-                if (len(match_span[-1].lemma_) - len(match_span[-1]._.key)) >= 2:
-                    inhers.append({"subclass": match_span[-1].lemma_,"superclass": match_span[-1]._.key})
+                if match_span[-1]._.key != None:
+                    if (len(match_span[-1].lemma_) - len(match_span[-1]._.key)) > 2:
+                        inhers.append({"subclass": match_span[-1].lemma_,"superclass": match_span[-1]._.key})
                 # child_List = match_pobj.children
                 # if "and" in list(tok.text for tok in child_List):
                 #     for tok in child_List:
@@ -47,8 +47,9 @@ def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
                     nounList.append(tok.lemma_)
                     nounPrepNounList.append((tok.lemma_ + seq).strip())
                     key_noun = tok
-                    if (len(key_noun.lemma_) - len(key_noun._.key))>=2:
-                        inhers.append({"subclass": key_noun.lemma_,"superclass": key_noun._.key})
+                    if key_noun._.key != None:
+                        if (len(key_noun.lemma_) - len(key_noun._.key))>2:
+                            inhers.append({"subclass": key_noun.lemma_,"superclass": key_noun._.key})
     if not len(nounList):            
         return False
 
@@ -70,8 +71,10 @@ def getPobjfromSpan(prepObjMatcher,span,verb):
         match_span1 = span[start:end] 
         prep = match_span1[0]
         prepObj = match_span1[-1]
-        if (len(prepObj.lemma_) - len(prepObj._.key)) >= 2:
-            inhers.append({"subclass": prepObj.lemma_,"superclass": prepObj._.key})
+        # print(match_span1)
+        if prepObj._.key != None:
+            if (len(prepObj.lemma_) - len(prepObj._.key)) > 2:
+                inhers.append({"subclass": prepObj.lemma_,"superclass": prepObj._.key})
         if prep.head == verb:
             # print('2222')
             prepObjList = []
@@ -84,8 +87,9 @@ def getPobjfromSpan(prepObjMatcher,span,verb):
                     prepObjList.append([match_span[0].lemma_, match_span[-1].lemma_])
                     seq = seq + ' ' + match_span.lemma_
                     # print(match_span[-1].lemma_ , match_span[-1]._.key)
-                    if (len(match_span[-1].lemma_) - len(match_span[-1]._.key)) >= 2:
-                        inhers.append({"subclass": match_span[-1].lemma_,"superclass": match_span[-1]._.key})
+                    if match_span[-1]._.key != None:
+                        if (len(match_span[-1].lemma_) - len(match_span[-1]._.key)) > 2:
+                            inhers.append({"subclass": match_span[-1].lemma_,"superclass": match_span[-1]._.key})
             nounPrepNoun = (prepObj.lemma_  + seq).strip()
             pobjList.append([prep.lemma_, nounPrepNoun])
             # print(prepObjList)

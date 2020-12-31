@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/engineering-info.owl"
+         xmlns="http://example.org/engineering-info.owl#">
+
+<owl:Ontology rdf:about="http://example.org/engineering-info.owl"/>
+
+<owl:ObjectProperty rdf:about="#on"/>
+
+<owl:ObjectProperty rdf:about="#on_on/off_test">
+  <rdfs:domain rdf:resource="#error_on_the_on/off_test"/>
+  <rdfs:range rdf:resource="#on/off_test"/>
+  <rdfs:subPropertyOf rdf:resource="#on"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#lead_to"/>
+
+<owl:ObjectProperty rdf:about="#lead_to_error_on_the_on/off_test">
+  <rdfs:domain rdf:resource="#suppression"/>
+  <rdfs:range rdf:resource="#error_on_the_on/off_test"/>
+  <rdfs:subPropertyOf rdf:resource="#lead_to"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#Merkmal">
+  <rdfs:domain rdf:resource="#Product"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Product">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parent class of all products</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#error">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#error_on_the_on/off_test">
+  <rdfs:subClassOf rdf:resource="#error"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#on_on/off_test"/>
+          <owl:someValuesFrom rdf:resource="#on/off_test"/>
+        </owl:Restriction>
+        <rdf:Description rdf:about="#error"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#on/off_test">
+  <rdfs:subClassOf rdf:resource="#test"/>
+</owl:Class>
+
+<owl:Class rdf:about="#suppression">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#test">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+
+</rdf:RDF>

@@ -165,17 +165,26 @@ class SRLComponent(object):
                     # TODO: Tagging/dependencies can be done more elegant 
                     if "B-ARG0" in tags:
                         start = tags.index("B-ARG0")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARG0"] + [start]) + 1
+                        if "I-ARG0" in tags:
+                            end = max([i for i, x in enumerate(tags) if x == "I-ARG0"] + [start]) + 1
+                        else:
+                            end = start + 1
                         word._.set("srl_arg0", sent[start:end])
 
                     if "B-ARG1" in tags:
                         start = tags.index("B-ARG1")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARG1"] + [start]) + 1
+                        if "I-ARG1" in tags:
+                            end = max([i for i, x in enumerate(tags) if x == "I-ARG1"] + [start]) + 1
+                        else:
+                            end = start + 1
                         word._.set("srl_arg1", sent[start:end])
                     
                     if "B-ARG2" in tags:
                         start = tags.index("B-ARG2")
-                        end = max([i for i, x in enumerate(tags) if x == "I-ARG2"] + [start]) + 1
+                        if "I-ARG2" in tags:
+                            end = max([i for i, x in enumerate(tags) if x == "I-ARG2"] + [start]) + 1
+                        else:
+                            end = start + 1
                         word._.set("srl_arg2", sent[start:end])
 
                     argm_list = []

@@ -14,16 +14,16 @@ class TriplesExtractor:
         model_path = "../model/bert-base-srl-2020.11.19.tar"
         nlp = spacy.load('en_core_web_sm')
         merge_ents = nlp.create_pipe("merge_entities")
-        nlp.add_pipe(merge_ents)
-        nlp.add_pipe(NounMerger(nlp)) 
-        # nlp.add_pipe(PrepMerger(nlp))
+        nlp.add_pipe(merge_ents) 
+        nlp.add_pipe(PrepMerger(nlp))
         nlp.add_pipe(DashMerger(nlp))
-        # nlp.add_pipe(BetweenMerger(nlp))
-        # nlp.add_pipe(VerbMerger(nlp))
+        nlp.add_pipe(BetweenMerger(nlp))
+        nlp.add_pipe(NounMerger(nlp))
+        nlp.add_pipe(VerbMerger(nlp))
         nlp.add_pipe(SRLComponent(model_path), last=True)
         self.doc = nlp(text)
-        for tok in self.doc:
-            print(tok,tok._.key, tok.lemma_)
+        # for tok in self.doc:
+        #     print(tok,tok._.key, tok._.srl_arg0)
         self.prepObjMatcher = Matcher(nlp.vocab)
         pattern = [{"DEP": "prep"},
                     {"POS": "DET", "OP":"*"},
@@ -99,8 +99,9 @@ class TriplesExtractor:
         for tok in self.doc:
             if tok.tag_ == 'VBD' or tok.tag_ == 'VBG' or tok.tag_ == 'VBP' or tok.tag_ == 'VBZ' or tok.tag_ == 'VB':
                 verb = tok 
-
+                # print(tok)
                 dobjSpan = None
+                # print(verb._.srl_arg0.text)
                 if verb._.srl_arg0 != None:
                     subjSpan = verb._.srl_arg0
                     if verb._.srl_arg1 != None:
@@ -110,16 +111,19 @@ class TriplesExtractor:
                         subjSpan= verb._.srl_arg1
                     else:
                         continue
-
                 #生成主语列表   
                 subjList = []
                 subjPhrases = getNounPhrasefromSpan(self.prepObjMatcher,subjSpan,verb,'subj')
+                # print(subjSpan)
+                # print(subjPhrases)
                 if not subjPhrases:
                     continue
                 else:                      
                     [subjList, sub_restrictions, sub_inhers] = subjPhrases
                     restrictions.extend(sub_restrictions)
                     inhers.extend(sub_inhers)
+                # print(subjList)
+                # print('!!!!!!!!!!!!!!!!!!!!!!')
                 #生成直接宾语列表
                 dobjList = []
                 if dobjSpan != None:
