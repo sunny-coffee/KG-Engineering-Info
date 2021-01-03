@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/engineering-info.owl"
+         xmlns="http://example.org/engineering-info.owl#">
+
+<owl:Ontology rdf:about="http://example.org/engineering-info.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOf">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfHousing_dimensions_HxWxD">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Housing_dimensions_HxWxD"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfHousing_type">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Housing_type"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfHousing_material">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Housing_material"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfWeight">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Weight"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfProtection_class">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Protection_class"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfPower_supply">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Power_supply"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfMax._power_consumption">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Max._power_consumption"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfOperating_temperature">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Operating_temperature"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfStorage_temperature">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Storage_temperature"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfHumidity_40_degree">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Humidity_40_degree"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfInterfaces">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Interfaces"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfProcessor">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Processor"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfRAM">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#RAM"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfFlash">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Flash"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfPolarity_protection">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Polarity_protection"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfESD_protection">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#ESD_protection"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfEMI_tests">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#EMI_tests"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfSurge_Burst_tests">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Surge_Burst_tests"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfBuffer_time_RTC">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Buffer_time_RTC"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfOptical_indicator">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Optical_indicator"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfOperating_system">
+  <rdfs:domain rdf:resource="#RevPi_Core_3"/>
+  <rdfs:range rdf:resource="#Operating_system"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfHousing_dimensions_HxWxD">
+  <rdfs:domain rdf:resource="#Housing_dimensions_HxWxD"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfHousing_type">
+  <rdfs:domain rdf:resource="#Housing_type"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfHousing_material">
+  <rdfs:domain rdf:resource="#Housing_material"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfWeight">
+  <rdfs:domain rdf:resource="#Weight"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfProtection_class">
+  <rdfs:domain rdf:resource="#Protection_class"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfPower_supply">
+  <rdfs:domain rdf:resource="#Power_supply"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfMax._power_consumption">
+  <rdfs:domain rdf:resource="#Max._power_consumption"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfOperating_temperature">
+  <rdfs:domain rdf:resource="#Operating_temperature"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfStorage_temperature">
+  <rdfs:domain rdf:resource="#Storage_temperature"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfHumidity_40_degree">
+  <rdfs:domain rdf:resource="#Humidity_40_degree"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfInterfaces">
+  <rdfs:domain rdf:resource="#Interfaces"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfProcessor">
+  <rdfs:domain rdf:resource="#Processor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfRAM">
+  <rdfs:domain rdf:resource="#RAM"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfFlash">
+  <rdfs:domain rdf:resource="#Flash"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfPolarity_protection">
+  <rdfs:domain rdf:resource="#Polarity_protection"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfESD_protection">
+  <rdfs:domain rdf:resource="#ESD_protection"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfEMI_tests">
+  <rdfs:domain rdf:resource="#EMI_tests"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfSurge_Burst_tests">
+  <rdfs:domain rdf:resource="#Surge_Burst_tests"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfBuffer_time_RTC">
+  <rdfs:domain rdf:resource="#Buffer_time_RTC"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfOptical_indicator">
+  <rdfs:domain rdf:resource="#Optical_indicator"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfOperating_system">
+  <rdfs:domain rdf:resource="#Operating_system"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#product_Pilz">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parent class of all Pilz products</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#RevPi_Core_3">
+  <rdfs:subClassOf rdf:resource="#product_Pilz"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Housing_dimensions_HxWxD">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Housing_type">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Housing_material">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Weight">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Protection_class">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Power_supply">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Max._power_consumption">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Operating_temperature">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Storage_temperature">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Humidity_40_degree">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Interfaces">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Processor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RAM">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Flash">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Polarity_protection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ESD_protection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EMI_tests">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Surge_Burst_tests">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Buffer_time_RTC">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Optical_indicator">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Operating_system">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<RevPi_Core_3 rdf:about="#100257">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasAttributeOfHousing_dimensions_HxWxD rdf:resource="#housing_dimensions_hxwxd1"/>
+  <hasAttributeOfHousing_type rdf:resource="#housing_type1"/>
+  <hasAttributeOfHousing_material rdf:resource="#housing_material1"/>
+  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttributeOfProtection_class rdf:resource="#protection_class1"/>
+  <hasAttributeOfPower_supply rdf:resource="#power_supply1"/>
+  <hasAttributeOfMax._power_consumption rdf:resource="#max._power_consumption1"/>
+  <hasAttributeOfOperating_temperature rdf:resource="#operating_temperature1"/>
+  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
+  <hasAttributeOfHumidity_40_degree rdf:resource="#humidity_40_degree1"/>
+  <hasAttributeOfInterfaces rdf:resource="#interfaces1"/>
+  <hasAttributeOfProcessor rdf:resource="#processor1"/>
+  <hasAttributeOfRAM rdf:resource="#ram1"/>
+  <hasAttributeOfFlash rdf:resource="#flash1"/>
+  <hasAttributeOfPolarity_protection rdf:resource="#polarity_protection1"/>
+  <hasAttributeOfESD_protection rdf:resource="#esd_protection1"/>
+  <hasAttributeOfEMI_tests rdf:resource="#emi_tests1"/>
+  <hasAttributeOfSurge_Burst_tests rdf:resource="#surge_burst_tests1"/>
+  <hasAttributeOfBuffer_time_RTC rdf:resource="#buffer_time_rtc1"/>
+  <hasAttributeOfOptical_indicator rdf:resource="#optical_indicator1"/>
+  <hasAttributeOfOperating_system rdf:resource="#operating_system1"/>
+</RevPi_Core_3>
+
+<Housing_dimensions_HxWxD rdf:about="#housing_dimensions_hxwxd1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfHousing_dimensions_HxWxD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">96 x 22.5 x 110.5 mm</valueOfHousing_dimensions_HxWxD>
+</Housing_dimensions_HxWxD>
+
+<Housing_type rdf:about="#housing_type1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfHousing_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DIN rail housing (for DIN rail version EN 50022)</valueOfHousing_type>
+</Housing_type>
+
+<Housing_material rdf:about="#housing_material1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfHousing_material rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polycarbonate</valueOfHousing_material>
+</Housing_material>
+
+<Weight rdf:about="#weight1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#string">approx. 115 g</valueOfWeight>
+</Weight>
+
+<Protection_class rdf:about="#protection_class1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfProtection_class rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP20</valueOfProtection_class>
+</Protection_class>
+
+<Power_supply rdf:about="#power_supply1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfPower_supply rdf:datatype="http://www.w3.org/2001/XMLSchema#string">min. 10.7 V - max. 28.8 V 1</valueOfPower_supply>
+</Power_supply>
+
+<Max._power_consumption rdf:about="#max._power_consumption1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfMax._power_consumption rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 Watt (incl. 2 x 450 mA USB load) 2</valueOfMax._power_consumption>
+</Max._power_consumption>
+
+<Operating_temperature rdf:about="#operating_temperature1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfOperating_temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-40 °C to +55 °C (exceeds EN61131-2 requirements) 3</valueOfOperating_temperature>
+</Operating_temperature>
+
+<Storage_temperature rdf:about="#storage_temperature1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfStorage_temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-40 °C to +85 °C (exceeds EN61131-2 requirements)</valueOfStorage_temperature>
+</Storage_temperature>
+
+<Humidity_40_degree rdf:about="#humidity_40_degree1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfHumidity_40_degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up to 93% (non-condensing)</valueOfHumidity_40_degree>
+</Humidity_40_degree>
+
+<Interfaces rdf:about="#interfaces1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfInterfaces rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 x USB 2.0 A (each can be charged with 500mA) | 1 x Micro-USB |  
+1 x Micro HDMI | 1 x RJ45 (Ethernet) 10/100 Mbit/s</valueOfInterfaces>
+</Interfaces>
+
+<Processor rdf:about="#processor1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfProcessor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCM2837, 1.2 GHz, quad-core</valueOfProcessor>
+</Processor>
+
+<RAM rdf:about="#ram1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfRAM rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 GByte</valueOfRAM>
+</RAM>
+
+<Flash rdf:about="#flash1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfFlash rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 GByte</valueOfFlash>
+</Flash>
+
+<Polarity_protection rdf:about="#polarity_protection1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfPolarity_protection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</valueOfPolarity_protection>
+</Polarity_protection>
+
+<ESD_protection rdf:about="#esd_protection1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfESD_protection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 kV / 8 kV (according to EN61131-2 and IEC 61000-6-2)</valueOfESD_protection>
+</ESD_protection>
+
+<EMI_tests rdf:about="#emi_tests1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfEMI_tests rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Passed (according to EN61131-2 and IEC 61000-6-2)</valueOfEMI_tests>
+</EMI_tests>
+
+<Surge_Burst_tests rdf:about="#surge_burst_tests1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfSurge_Burst_tests rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Passed (according to EN61131-2 and IEC 61000-6-2 using  
+                  power supply , Ethernet line und IO lines)</valueOfSurge_Burst_tests>
+</Surge_Burst_tests>
+
+<Buffer_time_RTC rdf:about="#buffer_time_rtc1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfBuffer_time_RTC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">min. 24 h</valueOfBuffer_time_RTC>
+</Buffer_time_RTC>
+
+<Optical_indicator rdf:about="#optical_indicator1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfOptical_indicator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Three status LEDs (bi-color), two of them freely programmable</valueOfOptical_indicator>
+</Optical_indicator>
+
+<Operating_system rdf:about="#operating_system1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfOperating_system rdf:datatype="http://www.w3.org/2001/XMLSchema#string">customized Raspbian incl. RT-Patch</valueOfOperating_system>
+</Operating_system>
+
+
+</rdf:RDF>

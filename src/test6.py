@@ -1,19 +1,22 @@
 from owlready2 import DatatypeProperty, FunctionalProperty, get_ontology, Inverse, \
      InverseFunctionalProperty, ObjectProperty, Thing, TransitiveProperty, SymmetricProperty,types
 import pandas as pd
-import camelot
+# import camelot
 import re
-from pdfminer.pdfparser import PDFParser,PDFDocument
-from pdfminer.pdfinterp import PDFResourceManager,PDFPageInterpreter,PDFTextExtractionNotAllowed
-from pdfminer.converter import PDFPageAggregator
-from pdfminer.layout import LTTextBoxHorizontal,LAParams
+
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfdocument import PDFDocument
+from pdfminer.pdfparser import PDFParser
+
 
 filename = "../data/en/data_sheet/Pilz/RevPi_DIO_Data_Sheet_1004859-EN-01.pdf"
 
 pd_file = open(filename, "rb")
 parser = PDFParser(pd_file)
 
-document = PDFDocument()
+document = PDFDocument(parser)
 parser.set_document(document)
 document.set_parser(parser)
 
@@ -29,13 +32,15 @@ for page in pages:
     for x in layout:                      
         if isinstance(x, LTTextBoxHorizontal):
             str1 = x.get_text()
+            
+            print(re.findall(r"a(.+?)b", str))
             # Article\sNo.::\s(\d{6})
 
 
 IRI = "http://example.org/engineering-info.owl"
 FILE = "test6.owl"
 
-tables = camelot.read_pdf(filename, pages="1-end", flavor='lattice')
+# tables = camelot.read_pdf(filename, pages="1-end", flavor='lattice')
 # for table in tables:
 #     pd.set_option('display.max_rows', None)
 #     tdf = table.df
@@ -52,20 +57,20 @@ tables = camelot.read_pdf(filename, pages="1-end", flavor='lattice')
 
 
 
-onto = get_ontology(IRI)
-with onto:
-    # classes
-    class product_Pilz(Thing):
-        comment = ["parent class of all Pilz products"]
-    class PSEN_Cable_M8_M8_8p(product_Pilz):
-        pass
-    class hasAttributeOf(ObjectProperty):
-        domain = [PSEN_Cable_M8_M8_8p]
-        range = [str]
-    for table in tables:
-        pd.set_option('display.max_rows', None)
-        tdf = table.df
-        print(tdf)
+# onto = get_ontology(IRI)
+# with onto:
+#     # classes
+#     class product_Pilz(Thing):
+#         comment = ["parent class of all Pilz products"]
+#     class PSEN_Cable_M8_M8_8p(product_Pilz):
+#         pass
+#     class hasAttributeOf(ObjectProperty):
+#         domain = [PSEN_Cable_M8_M8_8p]
+#         range = [str]
+#     for table in tables:
+#         pd.set_option('display.max_rows', None)
+#         tdf = table.df
+#         print(tdf)
 
 
 
@@ -88,4 +93,4 @@ with onto:
         #                 if len(row[attr]):
         #                     attr_instance = getattr(onto, attr)(re.sub(r"\s|,|-|/", '_',row[attr].replace('-\n','').replace('\n',' ')))
         #                     getattr(product_instance, 'hasAttributeOf'+attr).append(attr_instance)
-onto.save(file=FILE)
+# onto.save(file=FILE)
