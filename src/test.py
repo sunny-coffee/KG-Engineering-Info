@@ -31,7 +31,7 @@ if not passiveTriples[1].empty:
     ontologyCreator1.dynamically_add_relations(passiveTriples[1])
 if not passiveTriples[2].empty:
     ontologyCreator1.dynamically_add_category(passiveTriples[2])
-print(passiveTriples[1])
+# print(passiveTriples[1])
 
 if not activeTriples[0].empty:
     ontologyCreator1.dynamically_add_restrictions(activeTriples[0])
@@ -39,5 +39,5 @@ if not activeTriples[1].empty:
     ontologyCreator1.dynamically_add_relations(activeTriples[1])
 if not activeTriples[2].empty:
     ontologyCreator1.dynamically_add_category(activeTriples[2])
-print(activeTriples[1])
+# print(activeTriples[1])
 

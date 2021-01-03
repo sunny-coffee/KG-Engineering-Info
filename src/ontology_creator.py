@@ -1,6 +1,5 @@
 from owlready2 import DatatypeProperty, FunctionalProperty, get_ontology, Inverse, \
      InverseFunctionalProperty, ObjectProperty, Thing, TransitiveProperty, SymmetricProperty,types
-from owlready2.base import SOME
 import pandas as pd
 
 

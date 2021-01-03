@@ -3,10 +3,10 @@ from table_extractor import TableExtractor
 from ontology_creator import OntologyCreator
 import os
 
-IRI = "http://example.org/engineering-info.owl"
-FILE = "engineering-info.owl"
+# IRI = "http://example.org/engineering-info.owl"
+# FILE = "engineering-info.owl"
 
-ontologyCreator1 = OntologyCreator(IRI,FILE)
+# ontologyCreator1 = OntologyCreator(IRI,FILE)
 
 
 
