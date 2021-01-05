@@ -9,18 +9,155 @@
 <owl:Ontology rdf:about="http://example.org/engineering-info.owl"/>
 
 <owl:ObjectProperty rdf:about="#hasAttributeOf">
-  <rdfs:domain rdf:resource="#PSEN_Cable_M8_M8_8p"/>
+  <rdfs:domain rdf:resource="#S1EN"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfType">
+  <rdfs:domain rdf:resource="#S1EN"/>
+  <rdfs:range rdf:resource="#TypeOfS1EN"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfUB">
+  <rdfs:domain rdf:resource="#S1EN"/>
+  <rdfs:range rdf:resource="#UBOfS1EN"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfRon">
+  <rdfs:domain rdf:resource="#S1EN"/>
+  <rdfs:range rdf:resource="#RonOfS1EN"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttributeOfOrder_no.">
+  <rdfs:domain rdf:resource="#S1EN"/>
+  <rdfs:range rdf:resource="#Order_no.OfS1EN"/>
+  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfType">
+  <rdfs:domain rdf:resource="#TypeOfS1EN"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfUB">
+  <rdfs:domain rdf:resource="#UBOfS1EN"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfRon">
+  <rdfs:domain rdf:resource="#RonOfS1EN"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#valueOfOrder_no.">
+  <rdfs:domain rdf:resource="#Order_no.OfS1EN"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Product">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parent class of all products</rdfs:comment>
+</owl:Class>
 
 <owl:Class rdf:about="#product_Pilz">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parent class of all Pilz products</rdfs:comment>
 </owl:Class>
 
-<owl:Class rdf:about="#PSEN_Cable_M8_M8_8p">
+<owl:Class rdf:about="#S1EN">
   <rdfs:subClassOf rdf:resource="#product_Pilz"/>
 </owl:Class>
+
+<owl:Class rdf:about="#Type">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TypeOfS1EN">
+  <rdfs:subClassOf rdf:resource="#Type"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UB">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UBOfS1EN">
+  <rdfs:subClassOf rdf:resource="#UB"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ron">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RonOfS1EN">
+  <rdfs:subClassOf rdf:resource="#Ron"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_no.">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Order_no.OfS1EN">
+  <rdfs:subClassOf rdf:resource="#Order_no."/>
+</owl:Class>
+
+<S1EN rdf:about="#884_100">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasAttributeOfType rdf:resource="#typeofs1en1"/>
+  <hasAttributeOfUB rdf:resource="#ubofs1en1"/>
+  <hasAttributeOfRon rdf:resource="#ronofs1en1"/>
+  <hasAttributeOfOrder_no. rdf:resource="#order_no.ofs1en1"/>
+</S1EN>
+
+<TypeOfS1EN rdf:about="#typeofs1en1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1EN</valueOfType>
+</TypeOfS1EN>
+
+<UBOfS1EN rdf:about="#ubofs1en1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfUB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 - 240 VAC/DC</valueOfUB>
+</UBOfS1EN>
+
+<RonOfS1EN rdf:about="#ronofs1en1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfRon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50 KΩ</valueOfRon>
+</RonOfS1EN>
+
+<Order_no.OfS1EN rdf:about="#order_no.ofs1en1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">884 100</valueOfOrder_no.>
+</Order_no.OfS1EN>
+
+<S1EN rdf:about="#884_110">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasAttributeOfType rdf:resource="#typeofs1en2"/>
+  <hasAttributeOfUB rdf:resource="#ubofs1en2"/>
+  <hasAttributeOfRon rdf:resource="#ronofs1en2"/>
+  <hasAttributeOfOrder_no. rdf:resource="#order_no.ofs1en2"/>
+</S1EN>
+
+<TypeOfS1EN rdf:about="#typeofs1en2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1EN</valueOfType>
+</TypeOfS1EN>
+
+<UBOfS1EN rdf:about="#ubofs1en2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfUB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 - 240 VAC/DC</valueOfUB>
+</UBOfS1EN>
+
+<RonOfS1EN rdf:about="#ronofs1en2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfRon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">200 KΩ</valueOfRon>
+</RonOfS1EN>
+
+<Order_no.OfS1EN rdf:about="#order_no.ofs1en2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">884 110</valueOfOrder_no.>
+</Order_no.OfS1EN>
 
 
 </rdf:RDF>

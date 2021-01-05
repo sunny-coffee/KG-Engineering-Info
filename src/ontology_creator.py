@@ -1,7 +1,7 @@
 from owlready2 import DatatypeProperty, FunctionalProperty, get_ontology, Inverse, \
      InverseFunctionalProperty, ObjectProperty, Thing, TransitiveProperty, SymmetricProperty,types
 import pandas as pd
-
+import re
 
 class OntologyCreator:
     # __iri: str
@@ -15,8 +15,6 @@ class OntologyCreator:
             # classes
             class Product(Thing):
                 comment = ["parent class of all products"]
-            class Merkmal(DatatypeProperty):
-                domain = [Product]
         onto.save(file=filename)
 
     def dynamically_add_restrictions(self, input_df):
@@ -89,6 +87,54 @@ class OntologyCreator:
                 # new_relation.domain.append(new_subject)
                 # new_relation.range.append(new_object)
         onto.save(file = self.__filename)
+    
+    def add_from_referenceList(self, referenceList):
+        """create classes from list"""
+        onto = get_ontology(self.__filename).load()
+        with onto:
+            # classes
+            class product_Pilz(Thing):
+                comment = ["parent class of all Pilz products"]
+            class S1EN(product_Pilz):
+                pass
+            class hasAttributeOf(ObjectProperty):
+                domain = [S1EN]
+                range = [str]
+
+            for tdf in referenceList:
+                attrList = list(tdf.iloc[0,i] for i in range(tdf.shape[1]))
+                if ('Product type' in attrList or 'Type' in attrList) and 'Order no.' in attrList:
+                    tdf.columns = attrList
+                    tdf.drop(index=[0], inplace=True)
+                    # print(tdf)
+                    for attr in attrList:
+                        if len(attr):                   
+                            attrspan = self.processStr(attr)
+                            attrSuperClass = types.new_class(attrspan,(Thing,))
+                            attrClass = types.new_class(attrspan+'OfS1EN',(attrSuperClass,))
+                            value = types.new_class('valueOf'+attrspan,(DatatypeProperty,))
+                            value.domain.append(attrClass)
+                            value.range.append(str)
+                            relation = types.new_class('hasAttributeOf'+attrspan,(hasAttributeOf,))
+                            relation.domain.append(S1EN)
+                            relation.range.append(attrClass)
+                    for index, row in tdf.iterrows():
+                        product_instance = S1EN(self.processStr(row['Order no.']))
+                        for attr in attrList:
+                            if len(attr):
+                                if len(row[attr]):
+                                    attrspan = self.processStr(attr)
+                                    attr_instance = getattr(onto, attrspan+'OfS1EN')()
+                                    getattr(attr_instance, 'valueOf'+attrspan).append(row[attr])
+                                    getattr(product_instance, 'hasAttributeOf'+attrspan).append(attr_instance)
+        onto.save(file = self.__filename)
+
+    def processStr(self,str):
+        str1 = re.sub(r"\s+|,|-|/|\(|\)|:|\|", ' ',str).replace("-\n", "").replace("\n", " ")
+        str2 = str1.replace('°C',' degree').replace(' x ','x').replace('  ',' ').strip()
+        str3 = str2.replace(' ','_')
+        return str3
+
 
 
     # def dynamically_add_classes(self, className, input_df):
