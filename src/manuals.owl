@@ -32,20 +32,18 @@
   <rdfs:subPropertyOf rdf:resource="#of"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#of_symbol">
+  <rdfs:domain rdf:resource="#definition_of_symbol"/>
+  <rdfs:range rdf:resource="#symbol"/>
+  <rdfs:subPropertyOf rdf:resource="#of"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#for"/>
 
 <owl:ObjectProperty rdf:about="#for_respective_application">
-  <rdfs:domain rdf:resource="#relevant_safety_regulation_for_the_respective_application"/>
+  <rdfs:domain rdf:resource="#evant_safety_regulation_for_the_respective_application"/>
   <rdfs:range rdf:resource="#respective_application"/>
   <rdfs:subPropertyOf rdf:resource="#for"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#in"/>
-
-<owl:ObjectProperty rdf:about="#in_industrial_environment">
-  <rdfs:domain rdf:resource="#use_in_an_industrial_environment"/>
-  <rdfs:range rdf:resource="#industrial_environment"/>
-  <rdfs:subPropertyOf rdf:resource="#in"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#of_manufacture">
@@ -60,26 +58,12 @@
   <rdfs:subPropertyOf rdf:resource="#of"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#of_supply_group">
-  <rdfs:domain rdf:resource="#C-rail_of_the_supply_group"/>
-  <rdfs:range rdf:resource="#supply_group"/>
-  <rdfs:subPropertyOf rdf:resource="#of"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#as"/>
 
 <owl:ObjectProperty rdf:about="#as_air_conditioning">
   <rdfs:domain rdf:resource="#additional_measure_as_air_conditioning"/>
   <rdfs:range rdf:resource="#air_conditioning"/>
   <rdfs:subPropertyOf rdf:resource="#as"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#on"/>
-
-<owl:ObjectProperty rdf:about="#on_installation">
-  <rdfs:domain rdf:resource="#further_information_on_installation"/>
-  <rdfs:range rdf:resource="#installation"/>
-  <rdfs:subPropertyOf rdf:resource="#on"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#within"/>
@@ -96,34 +80,20 @@
   <rdfs:subPropertyOf rdf:resource="#of"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#of_at_least_2.5_mm2">
-  <rdfs:domain rdf:resource="#conductor_cross_section_of_at_least_2.5_mm2"/>
-  <rdfs:range rdf:resource="#at_least_2.5_mm2"/>
-  <rdfs:subPropertyOf rdf:resource="#of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#to_central_earth_bar">
-  <rdfs:domain rdf:resource="#connection_to_the_central_earth_bar"/>
-  <rdfs:range rdf:resource="#central_earth_bar"/>
-  <rdfs:subPropertyOf rdf:resource="#to"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#from_group">
-  <rdfs:domain rdf:resource="#cable_from_group"/>
-  <rdfs:range rdf:resource="#group"/>
-  <rdfs:subPropertyOf rdf:resource="#from"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#for_cable_shield">
-  <rdfs:domain rdf:resource="#earth_bar_for_the_cable_shield"/>
-  <rdfs:range rdf:resource="#cable_shield"/>
-  <rdfs:subPropertyOf rdf:resource="#for"/>
-</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#in"/>
 
 <owl:ObjectProperty rdf:about="#in_EMC_protection">
   <rdfs:domain rdf:resource="#EMC_protection_in_EMC_protection"/>
   <rdfs:range rdf:resource="#EMC_protection"/>
   <rdfs:subPropertyOf rdf:resource="#in"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#with"/>
+
+<owl:ObjectProperty rdf:about="#with_interference_voltage">
+  <rdfs:domain rdf:resource="#supply_with_interference_voltage"/>
+  <rdfs:range rdf:resource="#interference_voltage"/>
+  <rdfs:subPropertyOf rdf:resource="#with"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#for_FS_application">
@@ -132,26 +102,17 @@
   <rdfs:subPropertyOf rdf:resource="#for"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#of_same_function">
-  <rdfs:domain rdf:resource="#module_of_the_same_function"/>
-  <rdfs:range rdf:resource="#same_function"/>
-  <rdfs:subPropertyOf rdf:resource="#of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#of_input/output_module">
-  <rdfs:domain rdf:resource="#maximum_number_of_input/output_module"/>
-  <rdfs:range rdf:resource="#input/output_module"/>
-  <rdfs:subPropertyOf rdf:resource="#of"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#for_fs_application">
   <rdfs:domain rdf:resource="#input/output_module_for_fs_application"/>
   <rdfs:range rdf:resource="#fs_application"/>
   <rdfs:subPropertyOf rdf:resource="#for"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#on"/>
+
 <owl:ObjectProperty rdf:about="#on_base_module">
   <rdfs:domain rdf:resource="#connection_on_the_base_module"/>
+  <rdfs:domain rdf:resource="#electronic_module_on_the_base_module_to_the_base_module"/>
   <rdfs:domain rdf:resource="#contact_spring_on_the_base_module"/>
   <rdfs:range rdf:resource="#base_module"/>
   <rdfs:subPropertyOf rdf:resource="#on"/>
@@ -187,23 +148,6 @@
   <rdfs:subPropertyOf rdf:resource="#of"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#on_relevant_base_module">
-  <rdfs:domain rdf:resource="#electronic_module_on_the_relevant_base_module"/>
-  <rdfs:range rdf:resource="#relevant_base_module"/>
-  <rdfs:subPropertyOf rdf:resource="#on"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#to_the_right_of"/>
-
-<owl:ObjectProperty rdf:about="#to_the_right_of_relevant_base_module">
-  <rdfs:domain rdf:resource="#base_module_to_the_right_of_the_relevant_base_module"/>
-  <rdfs:domain rdf:resource="#compact_module_to_the_right_of_the_relevant_base_module"/>
-  <rdfs:range rdf:resource="#relevant_base_module"/>
-  <rdfs:subPropertyOf rdf:resource="#to_the_right_of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#with"/>
-
 <owl:ObjectProperty rdf:about="#with_output">
   <rdfs:domain rdf:resource="#electronic_module_with_output"/>
   <rdfs:range rdf:resource="#output"/>
@@ -214,20 +158,6 @@
   <rdfs:domain rdf:resource="#mechanic_of_the_electronic_module"/>
   <rdfs:range rdf:resource="#electronic_module"/>
   <rdfs:subPropertyOf rdf:resource="#of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#in/out"/>
-
-<owl:ObjectProperty rdf:about="#in/out_cycle">
-  <rdfs:domain rdf:resource="#50_plug_in/out_cycle"/>
-  <rdfs:range rdf:resource="#cycle"/>
-  <rdfs:subPropertyOf rdf:resource="#in/out"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#with_screw_terminal">
-  <rdfs:domain rdf:resource="#base_module_with_screw_terminal"/>
-  <rdfs:range rdf:resource="#screw_terminal"/>
-  <rdfs:subPropertyOf rdf:resource="#with"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#of_compact_module">
@@ -242,10 +172,10 @@
   <rdfs:subPropertyOf rdf:resource="#for"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#on_electronic_module">
-  <rdfs:domain rdf:resource="#supply_on_electronic_module"/>
-  <rdfs:range rdf:resource="#electronic_module"/>
-  <rdfs:subPropertyOf rdf:resource="#on"/>
+<owl:ObjectProperty rdf:about="#for_output">
+  <rdfs:domain rdf:resource="#supply_for_the_output"/>
+  <rdfs:range rdf:resource="#output"/>
+  <rdfs:subPropertyOf rdf:resource="#for"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#on_module_bus">
@@ -259,12 +189,6 @@
   <rdfs:domain rdf:resource="#output_on_the_analogue_module"/>
   <rdfs:range rdf:resource="#analogue_module"/>
   <rdfs:subPropertyOf rdf:resource="#on"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#for_output">
-  <rdfs:domain rdf:resource="#supply_for_the_output"/>
-  <rdfs:range rdf:resource="#output"/>
-  <rdfs:subPropertyOf rdf:resource="#for"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#of_power_supply">
@@ -353,14 +277,6 @@
   <rdfs:subPropertyOf rdf:resource="#described_in"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#designed_for"/>
-
-<owl:ObjectProperty rdf:about="#designed_for_use_in_an_industrial_environment">
-  <rdfs:domain rdf:resource="#pssuniversal"/>
-  <rdfs:range rdf:resource="#use_in_an_industrial_environment"/>
-  <rdfs:subPropertyOf rdf:resource="#designed_for"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#altered_in"/>
 
 <owl:ObjectProperty rdf:about="#altered_in_way">
@@ -393,20 +309,12 @@
   <rdfs:subPropertyOf rdf:resource="#ensured_for"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#connected_to"/>
+<owl:ObjectProperty rdf:about="#operated_at"/>
 
-<owl:ObjectProperty rdf:about="#connected_to_C-rail_of_the_supply_group">
-  <rdfs:domain rdf:resource="#protective_earth"/>
-  <rdfs:range rdf:resource="#C-rail_of_the_supply_group"/>
-  <rdfs:subPropertyOf rdf:resource="#connected_to"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#connected_for"/>
-
-<owl:ObjectProperty rdf:about="#connected_for_safety_reason">
-  <rdfs:domain rdf:resource="#protective_earth"/>
-  <rdfs:range rdf:resource="#safety_reason"/>
-  <rdfs:subPropertyOf rdf:resource="#connected_for"/>
+<owl:ObjectProperty rdf:about="#operated_at_ambient_temperature">
+  <rdfs:domain rdf:resource="#pssu_system"/>
+  <rdfs:range rdf:resource="#ambient_temperature"/>
+  <rdfs:subPropertyOf rdf:resource="#operated_at"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#required_in"/>
@@ -417,13 +325,7 @@
   <rdfs:subPropertyOf rdf:resource="#required_in"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#found_in"/>
-
-<owl:ObjectProperty rdf:about="#found_in_chapter">
-  <rdfs:domain rdf:resource="#further_information_on_installation"/>
-  <rdfs:range rdf:resource="#chapter"/>
-  <rdfs:subPropertyOf rdf:resource="#found_in"/>
-</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#designed_for"/>
 
 <owl:ObjectProperty rdf:about="#designed_for_use_within_an_electromagnetic_industrial_environment">
   <rdfs:domain rdf:resource="#PSSu"/>
@@ -447,35 +349,13 @@
   <rdfs:subPropertyOf rdf:resource="#transferred_from"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#operated_at"/>
-
 <owl:ObjectProperty rdf:about="#operated_at_distance_of_more_than_0.6_m.">
   <rdfs:domain rdf:resource="#HF_transmitter"/>
   <rdfs:range rdf:resource="#distance_of_more_than_0.6_m."/>
   <rdfs:subPropertyOf rdf:resource="#operated_at"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#used_for_connection_to_the_central_earth_bar">
-  <rdfs:domain rdf:resource="#conductor_cross_section_of_at_least_2.5_mm2"/>
-  <rdfs:range rdf:resource="#connection_to_the_central_earth_bar"/>
-  <rdfs:subPropertyOf rdf:resource="#used_for"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#protected_from"/>
-
-<owl:ObjectProperty rdf:about="#protected_from_corrosion">
-  <rdfs:domain rdf:resource="#connection"/>
-  <rdfs:range rdf:resource="#corrosion"/>
-  <rdfs:subPropertyOf rdf:resource="#protected_from"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#laid_in"/>
-
-<owl:ObjectProperty rdf:about="#laid_in_separate_group">
-  <rdfs:domain rdf:resource="#cable_from_group"/>
-  <rdfs:range rdf:resource="#separate_group"/>
-  <rdfs:subPropertyOf rdf:resource="#laid_in"/>
-</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="#connected_to"/>
 
 <owl:ObjectProperty rdf:about="#connected_to_different_earth_connection">
   <rdfs:domain rdf:resource="#PSSu_system"/>
@@ -556,7 +436,7 @@
 <owl:ObjectProperty rdf:about="#used_as"/>
 
 <owl:ObjectProperty rdf:about="#used_as_ground_conductor_bar">
-  <rdfs:domain rdf:resource="#earth_bar_for_the_cable_shield"/>
+  <rdfs:domain rdf:resource="#earth_bar"/>
   <rdfs:range rdf:resource="#ground_conductor_bar"/>
   <rdfs:subPropertyOf rdf:resource="#used_as"/>
 </owl:ObjectProperty>
@@ -569,29 +449,12 @@
   <rdfs:subPropertyOf rdf:resource="#planned_with"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#connected_to_the_right_of"/>
+<owl:ObjectProperty rdf:about="#fitted_with"/>
 
-<owl:ObjectProperty rdf:about="#connected_to_the_right_of_head_module">
-  <rdfs:domain rdf:resource="#supply_voltage_module"/>
-  <rdfs:range rdf:resource="#head_module"/>
-  <rdfs:subPropertyOf rdf:resource="#connected_to_the_right_of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#combined_with"/>
-
-<owl:ObjectProperty rdf:about="#combined_with_compact_module">
-  <rdfs:domain rdf:resource="#Base_module"/>
-  <rdfs:domain rdf:resource="#electronic_module"/>
-  <rdfs:range rdf:resource="#compact_module"/>
-  <rdfs:subPropertyOf rdf:resource="#combined_with"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#combined_into"/>
-
-<owl:ObjectProperty rdf:about="#combined_into_group">
-  <rdfs:domain rdf:resource="#module_of_the_same_function"/>
-  <rdfs:range rdf:resource="#group"/>
-  <rdfs:subPropertyOf rdf:resource="#combined_into"/>
+<owl:ObjectProperty rdf:about="#fitted_with_main_filter">
+  <rdfs:domain rdf:resource="#supply_with_interference_voltage"/>
+  <rdfs:range rdf:resource="#main_filter"/>
+  <rdfs:subPropertyOf rdf:resource="#fitted_with"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#used_on"/>
@@ -600,20 +463,6 @@
   <rdfs:domain rdf:resource="#input/output_module_for_fs_application"/>
   <rdfs:range rdf:resource="#head_module"/>
   <rdfs:subPropertyOf rdf:resource="#used_on"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#required_in_order_to_refresh"/>
-
-<owl:ObjectProperty rdf:about="#required_in_order_to_refresh_module_supply">
-  <rdfs:domain rdf:resource="#additional_supply_voltage_module"/>
-  <rdfs:range rdf:resource="#module_supply"/>
-  <rdfs:subPropertyOf rdf:resource="#required_in_order_to_refresh"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#required_in_order_to_refresh_periphery_supply">
-  <rdfs:domain rdf:resource="#additional_supply_voltage_module"/>
-  <rdfs:range rdf:resource="#periphery_supply"/>
-  <rdfs:subPropertyOf rdf:resource="#required_in_order_to_refresh"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#divided_into"/>
@@ -660,6 +509,8 @@
   <rdfs:subPropertyOf rdf:resource="#listed_in"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#found_in"/>
+
 <owl:ObjectProperty rdf:about="#found_in_technical_detail_in_the_datum_sheet">
   <rdfs:domain rdf:resource="#detail_of_the_mechanical_coding"/>
   <rdfs:range rdf:resource="#technical_detail_in_the_datum_sheet"/>
@@ -671,12 +522,6 @@
 <owl:ObjectProperty rdf:about="#removed_from_electronic_module">
   <rdfs:domain rdf:resource="#counterpart"/>
   <rdfs:range rdf:resource="#electronic_module"/>
-  <rdfs:subPropertyOf rdf:resource="#removed_from"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#removed_from_base_module">
-  <rdfs:domain rdf:resource="#counterpart"/>
-  <rdfs:range rdf:resource="#base_module"/>
   <rdfs:subPropertyOf rdf:resource="#removed_from"/>
 </owl:ObjectProperty>
 
@@ -694,6 +539,21 @@
   <rdfs:subPropertyOf rdf:resource="#described_on"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#installed_in_control_cabinet">
+  <rdfs:domain rdf:resource="#rail"/>
+  <rdfs:range rdf:resource="#control_cabinet"/>
+  <rdfs:subPropertyOf rdf:resource="#installed_in"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#moved_to"/>
+
+<owl:ObjectProperty rdf:about="#moved_to_right">
+  <rdfs:domain rdf:resource="#base_module"/>
+  <rdfs:domain rdf:resource="#compact_module"/>
+  <rdfs:range rdf:resource="#right"/>
+  <rdfs:subPropertyOf rdf:resource="#moved_to"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#installed_to_the_right_of"/>
 
 <owl:ObjectProperty rdf:about="#installed_to_the_right_of_head_module">
@@ -701,6 +561,8 @@
   <rdfs:range rdf:resource="#head_module"/>
   <rdfs:subPropertyOf rdf:resource="#installed_to_the_right_of"/>
 </owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#protected_from"/>
 
 <owl:ObjectProperty rdf:about="#protected_from_contamination">
   <rdfs:domain rdf:resource="#contact"/>
@@ -710,31 +572,10 @@
 
 <owl:ObjectProperty rdf:about="#designed_for_50_plug">
   <rdfs:domain rdf:resource="#mechanic_of_the_base_module"/>
+  <rdfs:domain rdf:resource="#mechanic_of_the_electronic_module"/>
   <rdfs:domain rdf:resource="#mechanic_of_the_compact_module"/>
   <rdfs:range rdf:resource="#50_plug"/>
   <rdfs:subPropertyOf rdf:resource="#designed_for"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#designed_for_50_plug_in/out_cycle">
-  <rdfs:domain rdf:resource="#mechanic_of_the_electronic_module"/>
-  <rdfs:range rdf:resource="#50_plug_in/out_cycle"/>
-  <rdfs:subPropertyOf rdf:resource="#designed_for"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#installed_to_the_left_of"/>
-
-<owl:ObjectProperty rdf:about="#installed_to_the_left_of_head_module">
-  <rdfs:domain rdf:resource="#base_module_with_screw_terminal"/>
-  <rdfs:range rdf:resource="#head_module"/>
-  <rdfs:subPropertyOf rdf:resource="#installed_to_the_left_of"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#supplied_via"/>
-
-<owl:ObjectProperty rdf:about="#supplied_via_head_module">
-  <rdfs:domain rdf:resource="#PSSu_system_voltage"/>
-  <rdfs:range rdf:resource="#head_module"/>
-  <rdfs:subPropertyOf rdf:resource="#supplied_via"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#integrated_within"/>
@@ -746,27 +587,26 @@
   <rdfs:subPropertyOf rdf:resource="#integrated_within"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#distributed_to"/>
-
-<owl:ObjectProperty rdf:about="#distributed_to_module">
-  <rdfs:domain rdf:resource="#PSSu_system_voltage"/>
-  <rdfs:range rdf:resource="#module"/>
-  <rdfs:subPropertyOf rdf:resource="#distributed_to"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#generated_from"/>
 
-<owl:ObjectProperty rdf:about="#generated_from_module_supply">
+<owl:ObjectProperty rdf:about="#generated_from_periphery_supply">
   <rdfs:domain rdf:resource="#supply_for_the_input"/>
-  <rdfs:domain rdf:resource="#supply_for_the_output"/>
-  <rdfs:range rdf:resource="#module_supply"/>
+  <rdfs:range rdf:resource="#periphery_supply"/>
   <rdfs:subPropertyOf rdf:resource="#generated_from"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#generated_on"/>
+
+<owl:ObjectProperty rdf:about="#generated_on_compact_module">
+  <rdfs:domain rdf:resource="#supply_for_the_input"/>
+  <rdfs:range rdf:resource="#compact_module"/>
+  <rdfs:subPropertyOf rdf:resource="#generated_on"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#fed_to"/>
 
 <owl:ObjectProperty rdf:about="#fed_to_module_terminal">
-  <rdfs:domain rdf:resource="#supply_on_electronic_module"/>
+  <rdfs:domain rdf:resource="#supply_for_the_output"/>
   <rdfs:range rdf:resource="#module_terminal"/>
   <rdfs:subPropertyOf rdf:resource="#fed_to"/>
 </owl:ObjectProperty>
@@ -779,16 +619,10 @@
   <rdfs:subPropertyOf rdf:resource="#disconnected_in_order_to_form"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#used_on_digital_failsafe_module">
-  <rdfs:domain rdf:resource="#module_supply"/>
-  <rdfs:range rdf:resource="#digital_failsafe_module"/>
-  <rdfs:subPropertyOf rdf:resource="#used_on"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#isolated_from"/>
 
 <owl:ObjectProperty rdf:about="#isolated_from_input/output">
-  <rdfs:domain rdf:resource="#module_supply"/>
+  <rdfs:domain rdf:resource="#periphery_supply"/>
   <rdfs:range rdf:resource="#input/output"/>
   <rdfs:subPropertyOf rdf:resource="#isolated_from"/>
 </owl:ObjectProperty>
@@ -796,31 +630,29 @@
 <owl:ObjectProperty rdf:about="#isolated_on"/>
 
 <owl:ObjectProperty rdf:about="#isolated_on_analogue_input/output_module">
-  <rdfs:domain rdf:resource="#module_supply"/>
+  <rdfs:domain rdf:resource="#periphery_supply"/>
   <rdfs:range rdf:resource="#analogue_input/output_module"/>
   <rdfs:subPropertyOf rdf:resource="#isolated_on"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#looped_through_on"/>
 
-<owl:ObjectProperty rdf:about="#looped_through_on_Failsafe_input/output_module">
+<owl:ObjectProperty rdf:about="#looped_through_on_compact_module">
   <rdfs:domain rdf:resource="#C-rail"/>
-  <rdfs:range rdf:resource="#Failsafe_input/output_module"/>
+  <rdfs:range rdf:resource="#compact_module"/>
   <rdfs:subPropertyOf rdf:resource="#looped_through_on"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#isolated_from_module_supply">
+<owl:ObjectProperty rdf:about="#isolated_from_periphery_supply">
   <rdfs:domain rdf:resource="#input_on_the_analogue_module"/>
   <rdfs:domain rdf:resource="#output_on_the_analogue_module"/>
-  <rdfs:range rdf:resource="#module_supply"/>
+  <rdfs:range rdf:resource="#periphery_supply"/>
   <rdfs:subPropertyOf rdf:resource="#isolated_from"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#generated_on"/>
-
-<owl:ObjectProperty rdf:about="#generated_on_Failsafe_input/output_module">
+<owl:ObjectProperty rdf:about="#generated_on_base_module">
   <rdfs:domain rdf:resource="#supply_for_the_output"/>
-  <rdfs:range rdf:resource="#Failsafe_input/output_module"/>
+  <rdfs:range rdf:resource="#base_module"/>
   <rdfs:subPropertyOf rdf:resource="#generated_on"/>
 </owl:ObjectProperty>
 
@@ -842,12 +674,6 @@
   <rdfs:domain rdf:resource="#module_supply"/>
   <rdfs:range rdf:resource="#case_of_a_short_circuit"/>
   <rdfs:subPropertyOf rdf:resource="#maintained_in"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#connected_to_protective_earth">
-  <rdfs:domain rdf:resource="#C-rail_of_the_supply_group"/>
-  <rdfs:range rdf:resource="#protective_earth"/>
-  <rdfs:subPropertyOf rdf:resource="#connected_to"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#looped_across"/>
@@ -882,20 +708,6 @@
   <rdfs:subPropertyOf rdf:resource="#configured_on"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#detected_in"/>
-
-<owl:ObjectProperty rdf:about="#detected_in_way">
-  <rdfs:domain rdf:resource="#Most_wiring_error"/>
-  <rdfs:range rdf:resource="#way"/>
-  <rdfs:subPropertyOf rdf:resource="#detected_in"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#connected_to_pssuniversal">
-  <rdfs:domain rdf:resource="#voltage"/>
-  <rdfs:range rdf:resource="#pssuniversal"/>
-  <rdfs:subPropertyOf rdf:resource="#connected_to"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#of_supply_voltage">
   <rdfs:domain rdf:resource="#tolerance_of_the_supply_voltage"/>
   <rdfs:range rdf:resource="#supply_voltage"/>
@@ -912,6 +724,12 @@
   <rdfs:domain rdf:resource="#size_of_the_fuse"/>
   <rdfs:range rdf:resource="#fuse"/>
   <rdfs:subPropertyOf rdf:resource="#of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#on_housing">
+  <rdfs:domain rdf:resource="#surface_temperature_on_the_housing"/>
+  <rdfs:range rdf:resource="#housing"/>
+  <rdfs:subPropertyOf rdf:resource="#on"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#between"/>
@@ -960,6 +778,24 @@
   <rdfs:subPropertyOf rdf:resource="#against"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#with_live_component">
+  <rdfs:domain rdf:resource="#contact_with_live_component"/>
+  <rdfs:range rdf:resource="#live_component"/>
+  <rdfs:subPropertyOf rdf:resource="#with"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#to_base_module">
+  <rdfs:domain rdf:resource="#electronic_module_on_the_base_module_to_the_base_module"/>
+  <rdfs:range rdf:resource="#base_module"/>
+  <rdfs:subPropertyOf rdf:resource="#to"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#between_module">
+  <rdfs:domain rdf:resource="#electrical_contact_between_the_module"/>
+  <rdfs:range rdf:resource="#module"/>
+  <rdfs:subPropertyOf rdf:resource="#between"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#without"/>
 
 <owl:ObjectProperty rdf:about="#without_C-rail">
@@ -974,6 +810,14 @@
   <rdfs:domain rdf:resource="#installation_manual"/>
   <rdfs:range rdf:resource="#information"/>
   <rdfs:subPropertyOf rdf:resource="#contain"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#note"/>
+
+<owl:ObjectProperty rdf:about="#note_general_safety_guideline">
+  <rdfs:domain rdf:resource="#general_safety_guideline"/>
+  <rdfs:range rdf:resource="#general_safety_guideline"/>
+  <rdfs:subPropertyOf rdf:resource="#note"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#require"/>
@@ -1014,19 +858,17 @@
   <rdfs:subPropertyOf rdf:resource="#damage"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#affect"/>
-
-<owl:ObjectProperty rdf:about="#affect_own_environment">
-  <rdfs:domain rdf:resource="#device"/>
-  <rdfs:range rdf:resource="#own_environment"/>
-  <rdfs:subPropertyOf rdf:resource="#affect"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#reach"/>
 
 <owl:ObjectProperty rdf:about="#reach_PSSu">
   <rdfs:domain rdf:resource="#electromagnetic_interference"/>
   <rdfs:range rdf:resource="#PSSu"/>
+  <rdfs:subPropertyOf rdf:resource="#reach"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reach_interference_sink">
+  <rdfs:domain rdf:resource="#interference"/>
+  <rdfs:range rdf:resource="#interference_sink"/>
   <rdfs:subPropertyOf rdf:resource="#reach"/>
 </owl:ObjectProperty>
 
@@ -1052,6 +894,14 @@
   <rdfs:domain rdf:resource="#live_cable"/>
   <rdfs:range rdf:resource="#magnetic_field"/>
   <rdfs:subPropertyOf rdf:resource="#produce"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#emit"/>
+
+<owl:ObjectProperty rdf:about="#emit_signal">
+  <rdfs:domain rdf:resource="#cable"/>
+  <rdfs:range rdf:resource="#signal"/>
+  <rdfs:subPropertyOf rdf:resource="#emit"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#occur_in"/>
@@ -1111,14 +961,6 @@
   <rdfs:subPropertyOf rdf:resource="#connect_shield_to"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#connect_shield_via"/>
-
-<owl:ObjectProperty rdf:about="#connect_shield_via_C-rail">
-  <rdfs:domain rdf:resource="#module"/>
-  <rdfs:range rdf:resource="#C-rail"/>
-  <rdfs:subPropertyOf rdf:resource="#connect_shield_via"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#need_suppression">
   <rdfs:domain rdf:resource="#digital_semiconductor_output_on_the_pssuniversal"/>
   <rdfs:range rdf:resource="#suppression"/>
@@ -1133,6 +975,22 @@
   <rdfs:subPropertyOf rdf:resource="#lead_to"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#extend_over"/>
+
+<owl:ObjectProperty rdf:about="#extend_over_wide_area">
+  <rdfs:domain rdf:resource="#installation"/>
+  <rdfs:range rdf:resource="#wide_area"/>
+  <rdfs:subPropertyOf rdf:resource="#extend_over"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#follow_to"/>
+
+<owl:ObjectProperty rdf:about="#follow_to_right">
+  <rdfs:domain rdf:resource="#input/output_module"/>
+  <rdfs:range rdf:resource="#right"/>
+  <rdfs:subPropertyOf rdf:resource="#follow_to"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#require_additional_voltage_supply_module">
   <rdfs:domain rdf:resource="#supply_group"/>
   <rdfs:range rdf:resource="#additional_voltage_supply_module"/>
@@ -1145,20 +1003,6 @@
   <rdfs:domain rdf:resource="#supply_group"/>
   <rdfs:range rdf:resource="#start_of_each_group"/>
   <rdfs:subPropertyOf rdf:resource="#require_additional_voltage_supply_module_at"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#denote"/>
-
-<owl:ObjectProperty rdf:about="#denote_connection_column">
-  <rdfs:domain rdf:resource="#first_digit"/>
-  <rdfs:range rdf:resource="#connection_column"/>
-  <rdfs:subPropertyOf rdf:resource="#denote"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#denote_connection_level">
-  <rdfs:domain rdf:resource="#second_digit"/>
-  <rdfs:range rdf:resource="#connection_level"/>
-  <rdfs:subPropertyOf rdf:resource="#denote"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#remain_after"/>
@@ -1187,6 +1031,7 @@
 
 <owl:ObjectProperty rdf:about="#remain_on_electronic_module">
   <rdfs:domain rdf:resource="#one_part"/>
+  <rdfs:domain rdf:resource="#element"/>
   <rdfs:range rdf:resource="#electronic_module"/>
   <rdfs:subPropertyOf rdf:resource="#remain_on"/>
 </owl:ObjectProperty>
@@ -1218,23 +1063,9 @@
 <owl:ObjectProperty rdf:about="#supply_to"/>
 
 <owl:ObjectProperty rdf:about="#supply_to_sensor">
-  <rdfs:domain rdf:resource="#module_supply"/>
+  <rdfs:domain rdf:resource="#periphery_supply"/>
   <rdfs:range rdf:resource="#sensor"/>
   <rdfs:subPropertyOf rdf:resource="#supply_to"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#supply_on"/>
-
-<owl:ObjectProperty rdf:about="#supply_on_digital_input">
-  <rdfs:domain rdf:resource="#module_supply"/>
-  <rdfs:range rdf:resource="#digital_input"/>
-  <rdfs:subPropertyOf rdf:resource="#supply_on"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#supply_on_compact_module">
-  <rdfs:domain rdf:resource="#module_supply"/>
-  <rdfs:range rdf:resource="#compact_module"/>
-  <rdfs:subPropertyOf rdf:resource="#supply_on"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#connect_functional_earth">
@@ -1243,26 +1074,11 @@
   <rdfs:subPropertyOf rdf:resource="#connect"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#connect_functional_earth_to"/>
-
-<owl:ObjectProperty rdf:about="#connect_functional_earth_to_c-rail">
-  <rdfs:domain rdf:resource="#contact_spring_on_the_base_module"/>
-  <rdfs:range rdf:resource="#c-rail"/>
-  <rdfs:subPropertyOf rdf:resource="#connect_functional_earth_to"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#require_common_0_v_reference_potential">
-  <rdfs:domain rdf:resource="#module_supply"/>
-  <rdfs:domain rdf:resource="#periphery_supply"/>
-  <rdfs:range rdf:resource="#common_0_v_reference_potential"/>
-  <rdfs:subPropertyOf rdf:resource="#require"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#make"/>
 
-<owl:ObjectProperty rdf:about="#make_electrical_contact">
+<owl:ObjectProperty rdf:about="#make_electrical_contact_between_the_module">
   <rdfs:domain rdf:resource="#contact_spring"/>
-  <rdfs:range rdf:resource="#electrical_contact"/>
+  <rdfs:range rdf:resource="#electrical_contact_between_the_module"/>
   <rdfs:subPropertyOf rdf:resource="#make"/>
 </owl:ObjectProperty>
 
@@ -1279,10 +1095,6 @@
   <rdfs:range rdf:resource="#analogue_module_without_a_C-rail"/>
   <rdfs:subPropertyOf rdf:resource="#connect_shielding_connection_on"/>
 </owl:ObjectProperty>
-
-<owl:DatatypeProperty rdf:about="#Merkmal">
-  <rdfs:domain rdf:resource="#Product"/>
-</owl:DatatypeProperty>
 
 <owl:Class rdf:about="#Product">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -1358,12 +1170,35 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#relevant_safety_regulation">
+<owl:Class rdf:about="#definition">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#definition_of_symbol">
+  <rdfs:subClassOf rdf:resource="#definition"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#of_symbol"/>
+          <owl:someValuesFrom rdf:resource="#symbol"/>
+        </owl:Restriction>
+        <rdf:Description rdf:about="#definition"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#symbol">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#evant_safety_regulation">
   <rdfs:subClassOf rdf:resource="#regulation"/>
 </owl:Class>
 
-<owl:Class rdf:about="#relevant_safety_regulation_for_the_respective_application">
-  <rdfs:subClassOf rdf:resource="#relevant_safety_regulation"/>
+<owl:Class rdf:about="#evant_safety_regulation_for_the_respective_application">
+  <rdfs:subClassOf rdf:resource="#evant_safety_regulation"/>
   <owl:equivalentClass>
     <owl:Class>
       <owl:intersectionOf rdf:parseType="Collection">
@@ -1371,7 +1206,7 @@
           <owl:onProperty rdf:resource="#for_respective_application"/>
           <owl:someValuesFrom rdf:resource="#respective_application"/>
         </owl:Restriction>
-        <rdf:Description rdf:about="#relevant_safety_regulation"/>
+        <rdf:Description rdf:about="#evant_safety_regulation"/>
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
@@ -1379,29 +1214,6 @@
 
 <owl:Class rdf:about="#respective_application">
   <rdfs:subClassOf rdf:resource="#application"/>
-</owl:Class>
-
-<owl:Class rdf:about="#use">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#use_in_an_industrial_environment">
-  <rdfs:subClassOf rdf:resource="#use"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#in_industrial_environment"/>
-          <owl:someValuesFrom rdf:resource="#industrial_environment"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#use"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#industrial_environment">
-  <rdfs:subClassOf rdf:resource="#environment"/>
 </owl:Class>
 
 <owl:Class rdf:about="#date">
@@ -1450,45 +1262,6 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#C-rail">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#C-rail_of_the_supply_group">
-  <rdfs:subClassOf rdf:resource="#C-rail"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#of_supply_group"/>
-          <owl:someValuesFrom rdf:resource="#supply_group"/>
-        </owl:Restriction>
-        <owl:Class>
-          <owl:intersectionOf rdf:parseType="Collection">
-            <owl:Restriction>
-              <owl:onProperty rdf:resource="#of_supply_group"/>
-              <owl:someValuesFrom rdf:resource="#supply_group"/>
-            </owl:Restriction>
-            <owl:Class>
-              <owl:intersectionOf rdf:parseType="Collection">
-                <owl:Restriction>
-                  <owl:onProperty rdf:resource="#of_supply_group"/>
-                  <owl:someValuesFrom rdf:resource="#supply_group"/>
-                </owl:Restriction>
-                <rdf:Description rdf:about="#C-rail"/>
-              </owl:intersectionOf>
-            </owl:Class>
-          </owl:intersectionOf>
-        </owl:Class>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#supply_group">
-  <rdfs:subClassOf rdf:resource="#group"/>
-</owl:Class>
-
 <owl:Class rdf:about="#additional_measure">
   <rdfs:subClassOf rdf:resource="#measure"/>
 </owl:Class>
@@ -1512,26 +1285,7 @@
   <rdfs:subClassOf rdf:resource="#conditioning"/>
 </owl:Class>
 
-<owl:Class rdf:about="#further_information">
-  <rdfs:subClassOf rdf:resource="#information"/>
-</owl:Class>
-
-<owl:Class rdf:about="#further_information_on_installation">
-  <rdfs:subClassOf rdf:resource="#further_information"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#on_installation"/>
-          <owl:someValuesFrom rdf:resource="#installation"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#further_information"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#installation">
+<owl:Class rdf:about="#use">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -1577,98 +1331,6 @@
   <rdfs:subClassOf rdf:resource="#m."/>
 </owl:Class>
 
-<owl:Class rdf:about="#conductor_cross_section">
-  <rdfs:subClassOf rdf:resource="#section"/>
-</owl:Class>
-
-<owl:Class rdf:about="#conductor_cross_section_of_at_least_2.5_mm2">
-  <rdfs:subClassOf rdf:resource="#conductor_cross_section"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#of_at_least_2.5_mm2"/>
-          <owl:someValuesFrom rdf:resource="#at_least_2.5_mm2"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#conductor_cross_section"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#at_least_2.5_mm2">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#connection">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#connection_to_the_central_earth_bar">
-  <rdfs:subClassOf rdf:resource="#connection"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#to_central_earth_bar"/>
-          <owl:someValuesFrom rdf:resource="#central_earth_bar"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#connection"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#central_earth_bar">
-  <rdfs:subClassOf rdf:resource="#bar"/>
-</owl:Class>
-
-<owl:Class rdf:about="#cable">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#cable_from_group">
-  <rdfs:subClassOf rdf:resource="#cable"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#from_group"/>
-          <owl:someValuesFrom rdf:resource="#group"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#cable"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#group">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#earth_bar">
-  <rdfs:subClassOf rdf:resource="#bar"/>
-</owl:Class>
-
-<owl:Class rdf:about="#earth_bar_for_the_cable_shield">
-  <rdfs:subClassOf rdf:resource="#earth_bar"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#for_cable_shield"/>
-          <owl:someValuesFrom rdf:resource="#cable_shield"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#earth_bar"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#cable_shield">
-  <rdfs:subClassOf rdf:resource="#shield"/>
-</owl:Class>
-
 <owl:Class rdf:about="#EMC_protection">
   <rdfs:subClassOf rdf:resource="#protection"/>
 </owl:Class>
@@ -1686,6 +1348,29 @@
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#supply">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#supply_with_interference_voltage">
+  <rdfs:subClassOf rdf:resource="#supply"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#with_interference_voltage"/>
+          <owl:someValuesFrom rdf:resource="#interference_voltage"/>
+        </owl:Restriction>
+        <rdf:Description rdf:about="#supply"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#interference_voltage">
+  <rdfs:subClassOf rdf:resource="#voltage"/>
 </owl:Class>
 
 <owl:Class rdf:about="#input/output_module">
@@ -1711,48 +1396,6 @@
   <rdfs:subClassOf rdf:resource="#application"/>
 </owl:Class>
 
-<owl:Class rdf:about="#module">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#module_of_the_same_function">
-  <rdfs:subClassOf rdf:resource="#module"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#of_same_function"/>
-          <owl:someValuesFrom rdf:resource="#same_function"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#module"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#same_function">
-  <rdfs:subClassOf rdf:resource="#function"/>
-</owl:Class>
-
-<owl:Class rdf:about="#maximum_number">
-  <rdfs:subClassOf rdf:resource="#number"/>
-</owl:Class>
-
-<owl:Class rdf:about="#maximum_number_of_input/output_module">
-  <rdfs:subClassOf rdf:resource="#maximum_number"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#of_input/output_module"/>
-          <owl:someValuesFrom rdf:resource="#input/output_module"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#maximum_number"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
 <owl:Class rdf:about="#input/output_module_for_fs_application">
   <rdfs:subClassOf rdf:resource="#input/output_module"/>
   <owl:equivalentClass>
@@ -1770,6 +1413,10 @@
 
 <owl:Class rdf:about="#fs_application">
   <rdfs:subClassOf rdf:resource="#application"/>
+</owl:Class>
+
+<owl:Class rdf:about="#connection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#connection_on_the_base_module">
@@ -1902,55 +1549,6 @@
   <rdfs:subClassOf rdf:resource="#module"/>
 </owl:Class>
 
-<owl:Class rdf:about="#electronic_module_on_the_relevant_base_module">
-  <rdfs:subClassOf rdf:resource="#electronic_module"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#on_relevant_base_module"/>
-          <owl:someValuesFrom rdf:resource="#relevant_base_module"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#electronic_module"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#relevant_base_module">
-  <rdfs:subClassOf rdf:resource="#module"/>
-</owl:Class>
-
-<owl:Class rdf:about="#base_module_to_the_right_of_the_relevant_base_module">
-  <rdfs:subClassOf rdf:resource="#base_module"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#to_the_right_of_relevant_base_module"/>
-          <owl:someValuesFrom rdf:resource="#relevant_base_module"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#base_module"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#compact_module_to_the_right_of_the_relevant_base_module">
-  <rdfs:subClassOf rdf:resource="#compact_module"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#to_the_right_of_relevant_base_module"/>
-          <owl:someValuesFrom rdf:resource="#relevant_base_module"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#compact_module"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
 <owl:Class rdf:about="#electronic_module_with_output">
   <rdfs:subClassOf rdf:resource="#electronic_module"/>
   <owl:equivalentClass>
@@ -1985,48 +1583,6 @@
   </owl:equivalentClass>
 </owl:Class>
 
-<owl:Class rdf:about="#50_plug">
-  <rdfs:subClassOf rdf:resource="#plug"/>
-</owl:Class>
-
-<owl:Class rdf:about="#50_plug_in/out_cycle">
-  <rdfs:subClassOf rdf:resource="#50_plug"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#in/out_cycle"/>
-          <owl:someValuesFrom rdf:resource="#cycle"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#50_plug"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#cycle">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#base_module_with_screw_terminal">
-  <rdfs:subClassOf rdf:resource="#base_module"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#with_screw_terminal"/>
-          <owl:someValuesFrom rdf:resource="#screw_terminal"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#base_module"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#screw_terminal">
-  <rdfs:subClassOf rdf:resource="#terminal"/>
-</owl:Class>
-
 <owl:Class rdf:about="#mechanic_of_the_compact_module">
   <rdfs:subClassOf rdf:resource="#mechanic"/>
   <owl:equivalentClass>
@@ -2040,10 +1596,6 @@
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#supply">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#supply_for_the_input">
@@ -2065,16 +1617,24 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#supply_on_electronic_module">
+<owl:Class rdf:about="#supply_for_the_output">
   <rdfs:subClassOf rdf:resource="#supply"/>
   <owl:equivalentClass>
     <owl:Class>
       <owl:intersectionOf rdf:parseType="Collection">
         <owl:Restriction>
-          <owl:onProperty rdf:resource="#on_electronic_module"/>
-          <owl:someValuesFrom rdf:resource="#electronic_module"/>
+          <owl:onProperty rdf:resource="#for_output"/>
+          <owl:someValuesFrom rdf:resource="#output"/>
         </owl:Restriction>
-        <rdf:Description rdf:about="#supply"/>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#for_output"/>
+              <owl:someValuesFrom rdf:resource="#output"/>
+            </owl:Restriction>
+            <rdf:Description rdf:about="#supply"/>
+          </owl:intersectionOf>
+        </owl:Class>
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
@@ -2128,21 +1688,6 @@
           <owl:someValuesFrom rdf:resource="#analogue_module"/>
         </owl:Restriction>
         <rdf:Description rdf:about="#output"/>
-      </owl:intersectionOf>
-    </owl:Class>
-  </owl:equivalentClass>
-</owl:Class>
-
-<owl:Class rdf:about="#supply_for_the_output">
-  <rdfs:subClassOf rdf:resource="#supply"/>
-  <owl:equivalentClass>
-    <owl:Class>
-      <owl:intersectionOf rdf:parseType="Collection">
-        <owl:Restriction>
-          <owl:onProperty rdf:resource="#for_output"/>
-          <owl:someValuesFrom rdf:resource="#output"/>
-        </owl:Restriction>
-        <rdf:Description rdf:about="#supply"/>
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
@@ -2375,6 +1920,10 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#module">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#respective_operating_manual">
   <rdfs:subClassOf rdf:resource="#manual"/>
 </owl:Class>
@@ -2399,20 +1948,16 @@
   <rdfs:subClassOf rdf:resource="#isolation"/>
 </owl:Class>
 
-<owl:Class rdf:about="#protective_earth">
-  <rdfs:subClassOf rdf:resource="#earth"/>
+<owl:Class rdf:about="#ambient_temperature">
+  <rdfs:subClassOf rdf:resource="#temperature"/>
 </owl:Class>
 
-<owl:Class rdf:about="#safety_reason">
-  <rdfs:subClassOf rdf:resource="#reason"/>
+<owl:Class rdf:about="#pssu_system">
+  <rdfs:subClassOf rdf:resource="#system"/>
 </owl:Class>
 
 <owl:Class rdf:about="#extreme_ambient_condition">
   <rdfs:subClassOf rdf:resource="#condition"/>
-</owl:Class>
-
-<owl:Class rdf:about="#chapter">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#PSSu">
@@ -2435,14 +1980,6 @@
   <rdfs:subClassOf rdf:resource="#transmitter"/>
 </owl:Class>
 
-<owl:Class rdf:about="#corrosion">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#separate_group">
-  <rdfs:subClassOf rdf:resource="#group"/>
-</owl:Class>
-
 <owl:Class rdf:about="#different_earth_connection">
   <rdfs:subClassOf rdf:resource="#connection"/>
 </owl:Class>
@@ -2457,6 +1994,10 @@
 
 <owl:Class rdf:about="#equipotential_bonding_cable">
   <rdfs:subClassOf rdf:resource="#cable"/>
+</owl:Class>
+
+<owl:Class rdf:about="#cable_shield">
+  <rdfs:subClassOf rdf:resource="#shield"/>
 </owl:Class>
 
 <owl:Class rdf:about="#interference_current">
@@ -2515,24 +2056,20 @@
   <rdfs:subClassOf rdf:resource="#bar"/>
 </owl:Class>
 
+<owl:Class rdf:about="#earth_bar">
+  <rdfs:subClassOf rdf:resource="#bar"/>
+</owl:Class>
+
 <owl:Class rdf:about="#particular_care">
   <rdfs:subClassOf rdf:resource="#care"/>
 </owl:Class>
 
+<owl:Class rdf:about="#main_filter">
+  <rdfs:subClassOf rdf:resource="#filter"/>
+</owl:Class>
+
 <owl:Class rdf:about="#head_module">
   <rdfs:subClassOf rdf:resource="#module"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Base_module">
-  <rdfs:subClassOf rdf:resource="#module"/>
-</owl:Class>
-
-<owl:Class rdf:about="#additional_supply_voltage_module">
-  <rdfs:subClassOf rdf:resource="#module"/>
-</owl:Class>
-
-<owl:Class rdf:about="#periphery_supply">
-  <rdfs:subClassOf rdf:resource="#supply"/>
 </owl:Class>
 
 <owl:Class rdf:about="#connection_level">
@@ -2567,12 +2104,20 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#Base_module">
+  <rdfs:subClassOf rdf:resource="#module"/>
+</owl:Class>
+
 <owl:Class rdf:about="#individual_step">
   <rdfs:subClassOf rdf:resource="#step"/>
 </owl:Class>
 
 <owl:Class rdf:about="#page">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#control_cabinet">
+  <rdfs:subClassOf rdf:resource="#cabinet"/>
 </owl:Class>
 
 <owl:Class rdf:about="#contamination">
@@ -2583,16 +2128,20 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#PSSu_system_voltage">
-  <rdfs:subClassOf rdf:resource="#voltage"/>
+<owl:Class rdf:about="#50_plug">
+  <rdfs:subClassOf rdf:resource="#plug"/>
+</owl:Class>
+
+<owl:Class rdf:about="#periphery_supply">
+  <rdfs:subClassOf rdf:resource="#supply"/>
 </owl:Class>
 
 <owl:Class rdf:about="#module_terminal">
   <rdfs:subClassOf rdf:resource="#terminal"/>
 </owl:Class>
 
-<owl:Class rdf:about="#digital_failsafe_module">
-  <rdfs:subClassOf rdf:resource="#module"/>
+<owl:Class rdf:about="#supply_group">
+  <rdfs:subClassOf rdf:resource="#group"/>
 </owl:Class>
 
 <owl:Class rdf:about="#input/output">
@@ -2603,8 +2152,8 @@
   <rdfs:subClassOf rdf:resource="#module"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Failsafe_input/output_module">
-  <rdfs:subClassOf rdf:resource="#module"/>
+<owl:Class rdf:about="#C-rail">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#common_power_supply">
@@ -2629,14 +2178,6 @@
 
 <owl:Class rdf:about="#various_test">
   <rdfs:subClassOf rdf:resource="#test"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Most_wiring_error">
-  <rdfs:subClassOf rdf:resource="#error"/>
-</owl:Class>
-
-<owl:Class rdf:about="#voltage">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#purpose">
@@ -2667,10 +2208,6 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#environment">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
 <owl:Class rdf:about="#seal">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
@@ -2691,11 +2228,11 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#earth">
+<owl:Class rdf:about="#system">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#reason">
+<owl:Class rdf:about="#temperature">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -2707,15 +2244,7 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#protection">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#sufficient_protection">
-  <rdfs:subClassOf rdf:resource="#protection"/>
-</owl:Class>
-
-<owl:Class rdf:about="#information">
+<owl:Class rdf:about="#environment">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -2727,8 +2256,8 @@
   <rdfs:subClassOf rdf:resource="#procedure"/>
 </owl:Class>
 
-<owl:Class rdf:about="#interference_voltage">
-  <rdfs:subClassOf rdf:resource="#voltage"/>
+<owl:Class rdf:about="#voltage">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#wave">
@@ -2759,20 +2288,16 @@
   <rdfs:subClassOf rdf:resource="#difference"/>
 </owl:Class>
 
-<owl:Class rdf:about="#section">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#bar">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#system">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
 <owl:Class rdf:about="#control_system">
   <rdfs:subClassOf rdf:resource="#system"/>
+</owl:Class>
+
+<owl:Class rdf:about="#group">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#cable_group">
+  <rdfs:subClassOf rdf:resource="#group"/>
 </owl:Class>
 
 <owl:Class rdf:about="#line">
@@ -2783,11 +2308,19 @@
   <rdfs:subClassOf rdf:resource="#line"/>
 </owl:Class>
 
+<owl:Class rdf:about="#cable">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#current">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#shield">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#bar">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -2827,15 +2360,15 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#protection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#care">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#function">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#number">
+<owl:Class rdf:about="#filter">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -2879,15 +2412,15 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#same_mechanical_coding">
-  <rdfs:subClassOf rdf:resource="#coding"/>
-</owl:Class>
-
 <owl:Class rdf:about="#sheet">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#step">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#cabinet">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -2899,16 +2432,8 @@
   <rdfs:subClassOf rdf:resource="#reaction"/>
 </owl:Class>
 
-<owl:Class rdf:about="#terminal">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#mechanism">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#locking_mechanism">
-  <rdfs:subClassOf rdf:resource="#mechanism"/>
+<owl:Class rdf:about="#element_counterpart">
+  <rdfs:subClassOf rdf:resource="#counterpart"/>
 </owl:Class>
 
 <owl:Class rdf:about="#bracket">
@@ -2929,6 +2454,10 @@
 
 <owl:Class rdf:about="#separate_supply_voltage_module">
   <rdfs:subClassOf rdf:resource="#module"/>
+</owl:Class>
+
+<owl:Class rdf:about="#terminal">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#bus">
@@ -2955,23 +2484,15 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#section">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#FS_section">
   <rdfs:subClassOf rdf:resource="#section"/>
 </owl:Class>
 
 <owl:Class rdf:about="#test">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#button">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#actuator_button">
-  <rdfs:subClassOf rdf:resource="#button"/>
-</owl:Class>
-
-<owl:Class rdf:about="#error">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -3036,6 +2557,25 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#surface_temperature">
+  <rdfs:subClassOf rdf:resource="#temperature"/>
+</owl:Class>
+
+<owl:Class rdf:about="#surface_temperature_on_the_housing">
+  <rdfs:subClassOf rdf:resource="#surface_temperature"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#on_housing"/>
+          <owl:someValuesFrom rdf:resource="#housing"/>
+        </owl:Restriction>
+        <rdf:Description rdf:about="#surface_temperature"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
 <owl:Class rdf:about="#different_potential">
   <rdfs:subClassOf rdf:resource="#potential"/>
 </owl:Class>
@@ -3078,6 +2618,10 @@
   </owl:equivalentClass>
 </owl:Class>
 
+<owl:Class rdf:about="#error">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#error_on_the_on/off_test">
   <rdfs:subClassOf rdf:resource="#error"/>
   <owl:equivalentClass>
@@ -3114,6 +2658,10 @@
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#function">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#function_of_the_base">
@@ -3169,10 +2717,6 @@
   <rdfs:subClassOf rdf:resource="#influence"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ambient_temperature">
-  <rdfs:subClassOf rdf:resource="#temperature"/>
-</owl:Class>
-
 <owl:Class rdf:about="#ambient_temperature_of_the_PSSu_system">
   <rdfs:subClassOf rdf:resource="#ambient_temperature"/>
   <owl:equivalentClass>
@@ -3183,6 +2727,56 @@
           <owl:someValuesFrom rdf:resource="#PSSu_system"/>
         </owl:Restriction>
         <rdf:Description rdf:about="#ambient_temperature"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#contact_with_live_component">
+  <rdfs:subClassOf rdf:resource="#contact"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#with_live_component"/>
+          <owl:someValuesFrom rdf:resource="#live_component"/>
+        </owl:Restriction>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#with_live_component"/>
+              <owl:someValuesFrom rdf:resource="#live_component"/>
+            </owl:Restriction>
+            <rdf:Description rdf:about="#contact"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#live_component">
+  <rdfs:subClassOf rdf:resource="#component"/>
+</owl:Class>
+
+<owl:Class rdf:about="#electronic_module_on_the_base_module_to_the_base_module">
+  <rdfs:subClassOf rdf:resource="#electronic_module"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#to_base_module"/>
+          <owl:someValuesFrom rdf:resource="#base_module"/>
+        </owl:Restriction>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#on_base_module"/>
+              <owl:someValuesFrom rdf:resource="#base_module"/>
+            </owl:Restriction>
+            <rdf:Description rdf:about="#electronic_module"/>
+          </owl:intersectionOf>
+        </owl:Class>
       </owl:intersectionOf>
     </owl:Class>
   </owl:equivalentClass>
@@ -3207,6 +2801,25 @@
   </owl:equivalentClass>
 </owl:Class>
 
+<owl:Class rdf:about="#electrical_contact">
+  <rdfs:subClassOf rdf:resource="#contact"/>
+</owl:Class>
+
+<owl:Class rdf:about="#electrical_contact_between_the_module">
+  <rdfs:subClassOf rdf:resource="#electrical_contact"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#between_module"/>
+          <owl:someValuesFrom rdf:resource="#module"/>
+        </owl:Restriction>
+        <rdf:Description rdf:about="#electrical_contact"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
 <owl:Class rdf:about="#analogue_module_without_a_C-rail">
   <rdfs:subClassOf rdf:resource="#analogue_module"/>
   <owl:equivalentClass>
@@ -3222,8 +2835,16 @@
   </owl:equivalentClass>
 </owl:Class>
 
+<owl:Class rdf:about="#information">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#installation_manual">
   <rdfs:subClassOf rdf:resource="#manual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#general_safety_guideline">
+  <rdfs:subClassOf rdf:resource="#guideline"/>
 </owl:Class>
 
 <owl:Class rdf:about="#VDC_supply">
@@ -3238,11 +2859,11 @@
   <rdfs:subClassOf rdf:resource="#discharge"/>
 </owl:Class>
 
-<owl:Class rdf:about="#own_environment">
-  <rdfs:subClassOf rdf:resource="#environment"/>
+<owl:Class rdf:about="#electromagnetic_interference">
+  <rdfs:subClassOf rdf:resource="#interference"/>
 </owl:Class>
 
-<owl:Class rdf:about="#electromagnetic_interference">
+<owl:Class rdf:about="#interference_sink">
   <rdfs:subClassOf rdf:resource="#interference"/>
 </owl:Class>
 
@@ -3266,6 +2887,10 @@
   <rdfs:subClassOf rdf:resource="#cable"/>
 </owl:Class>
 
+<owl:Class rdf:about="#signal">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#air_gap">
   <rdfs:subClassOf rdf:resource="#gap"/>
 </owl:Class>
@@ -3286,10 +2911,6 @@
   <rdfs:subClassOf rdf:resource="#current"/>
 </owl:Class>
 
-<owl:Class rdf:about="#cabinet">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
 <owl:Class rdf:about="#digital_input">
   <rdfs:subClassOf rdf:resource="#input"/>
 </owl:Class>
@@ -3302,20 +2923,16 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#wide_area">
+  <rdfs:subClassOf rdf:resource="#area"/>
+</owl:Class>
+
+<owl:Class rdf:about="#installation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
 <owl:Class rdf:about="#additional_voltage_supply_module">
   <rdfs:subClassOf rdf:resource="#module"/>
-</owl:Class>
-
-<owl:Class rdf:about="#connection_column">
-  <rdfs:subClassOf rdf:resource="#column"/>
-</owl:Class>
-
-<owl:Class rdf:about="#first_digit">
-  <rdfs:subClassOf rdf:resource="#digit"/>
-</owl:Class>
-
-<owl:Class rdf:about="#second_digit">
-  <rdfs:subClassOf rdf:resource="#digit"/>
 </owl:Class>
 
 <owl:Class rdf:about="#wiring">
@@ -3354,20 +2971,12 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#c-rail">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#common_0_v_reference_potential">
-  <rdfs:subClassOf rdf:resource="#potential"/>
-</owl:Class>
-
-<owl:Class rdf:about="#electrical_contact">
-  <rdfs:subClassOf rdf:resource="#contact"/>
-</owl:Class>
-
 <owl:Class rdf:about="#shielding_connection">
   <rdfs:subClassOf rdf:resource="#connection"/>
+</owl:Class>
+
+<owl:Class rdf:about="#guideline">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#spike">
@@ -3380,14 +2989,6 @@
 
 <owl:Class rdf:about="#various_way">
   <rdfs:subClassOf rdf:resource="#way"/>
-</owl:Class>
-
-<owl:Class rdf:about="#coupling">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#DC_coupling">
-  <rdfs:subClassOf rdf:resource="#coupling"/>
 </owl:Class>
 
 <owl:Class rdf:about="#resistance">
@@ -3414,12 +3015,12 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#digit">
+<owl:Class rdf:about="#earth">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#column">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#pssuniversal_type_system">
+  <rdfs:subClassOf rdf:resource="#system"/>
 </owl:Class>
 
 <owl:Class rdf:about="#compartment">
@@ -3430,8 +3031,12 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#temperature">
+<owl:Class rdf:about="#shock">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#electric_shock">
+  <rdfs:subClassOf rdf:resource="#shock"/>
 </owl:Class>
 
 <owl:Class rdf:about="#direction">
@@ -3440,10 +3045,6 @@
 
 <owl:Class rdf:about="#downward_direction">
   <rdfs:subClassOf rdf:resource="#direction"/>
-</owl:Class>
-
-<owl:Class rdf:about="#final_base_module">
-  <rdfs:subClassOf rdf:resource="#module"/>
 </owl:Class>
 
 <owl:Class rdf:about="#failsafe_input/output_module">

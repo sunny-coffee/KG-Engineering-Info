@@ -248,7 +248,16 @@ class TableExtractor:
 
 tableExtactor1 = TableExtractor(filename)
 otherList , referenceList = tableExtactor1.getTable()
-for x in otherList:
-    print(x)
-for x in referenceList:
-    print(x)
+# for x in otherList:
+#     print(x)
+# print('__________________________')
+# for x in referenceList:
+#     print(x)
+
+IRI = "http://example.org/engineering-info.owl"
+FILE = "test.owl"
+# FILE = "test.owl"
+
+ontologyCreator1 = OntologyCreator(IRI,FILE)
+instances = ontologyCreator1.add_from_referenceList(referenceList)
+ontologyCreator1.add_from_otherList(otherList, instances)

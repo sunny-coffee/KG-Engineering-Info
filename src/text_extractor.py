@@ -1,10 +1,8 @@
 # import PyPDF2 
 # import textract
 # import os
-from pdfminer.pdfparser import PDFParser,PDFDocument
-from pdfminer.pdfinterp import PDFResourceManager,PDFPageInterpreter,PDFTextExtractionNotAllowed
-from pdfminer.converter import PDFPageAggregator
-from pdfminer.layout import LTTextBoxHorizontal,LAParams,LTTextLineHorizontal,LTFigure,LTRect,LTLine,LTCurve,LTPage,LTTextLine,LTTextBoxVertical,LTText,LTChar
+from pdfminer.high_level import extract_pages
+from pdfminer.layout import LTTextContainer
 import re
 import spacy
 import neuralcoref
@@ -21,24 +19,11 @@ class TextExtractor:
         self.__filename = filename
 
     def getText(self):
-        pd_file = open(self.__filename, "rb")
-        parser = PDFParser(pd_file)
-
-        document = PDFDocument()
-        parser.set_document(document)
-        document.set_parser(parser)
-
-        src = PDFResourceManager()
-        device = PDFPageAggregator(src,laparams=LAParams())
-        inter = PDFPageInterpreter(src,device)
-        pages = document.get_pages()
         text =""
-        for page in pages:
-            #print(page.contents)
-            inter.process_page(page)
-            layout = device.get_result()
-            for x in layout:                      
-                if isinstance(x, LTTextBoxHorizontal):
+        for page in extract_pages(self.__filename):
+
+            for x in page:                      
+                if isinstance(x, LTTextContainer):
                     
                     str1 = re.sub(r"\n|\r",' ' , str(x.get_text()))
                     str2 = re.sub(r"-\n|-\r", '',str1)
@@ -58,6 +43,11 @@ class TextExtractor:
                                 text = text + ' ' + sent.text
         return text
 
+# filename = "../data/en/PSSuniversal_Inst_Manual_21262-EN-07.pdf"
+
+# textExtractor1 = TextExtractor(filename)
+# text = textExtractor1.getText()
+# print(text)
 
 
     # def getCategory(self):

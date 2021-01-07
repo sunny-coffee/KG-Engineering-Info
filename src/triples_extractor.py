@@ -2,7 +2,7 @@ import spacy
 from spacy.matcher import Matcher
 from spacy.matcher import Matcher
 from text_extractor import TextExtractor
-from merge_classes import NounMerger, VerbMerger, SRLComponent, PrepMerger, DashMerger , BetweenMerger
+from custom_components import NounMerger, VerbMerger, SRLComponent, PrepMerger, DashMerger , BetweenMerger
 import pandas as pd
 from span2triples import getNounPhrasefromSpan, getPobjfromSpan, getInffromSpan
 
