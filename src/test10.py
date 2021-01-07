@@ -10,13 +10,13 @@ import re
 from ontology_creator import OntologyCreator
 
 def processStr(str):
-    str1 = re.sub(r"\s+|,|-|/|\(|\)|:|\|", ' ',str).replace("-\n", "").replace("\n", " ")
+    str1 = re.sub(r"\s+|,|-|/|\(|\)|:|\||\n", ' ',str.replace("-\n", "").replace("- ", ""))
     str2 = str1.replace('°C',' degree').replace(' x ','x').replace('  ',' ').strip()
     str3 = str2.replace(' ','_')
     return str3
 
 
-filename = "../data/en/data_sheet/Pilz/S1EN_Data_Sheet_1001845-EN-01.pdf"
+filename = "../data/en/data_sheet/Pilz/S1MN_Data_sheet_1003088-EN-01.pdf"
 
 referenceList = []
 otherList = []
@@ -25,7 +25,13 @@ pd.set_option('display.max_rows', None)
 labels = ['General','Electrical data','Measuring circuit','Relay outputs','Times','Environmental data','Mechanical data','Product type','Type']
 
 def extractStream(filename, page_num, regionList):
-    tables = camelot.read_pdf(filename, pages=str(page_num), flavor='stream', table_areas=regionList)
+    tables = []
+    for region in regionList:
+        try:
+            table = camelot.read_pdf(filename, pages=str(page_num), flavor='stream', table_areas=[region])
+            tables.append(table[0])
+        except BaseException:
+            pass
     firstDF = tables[0].df
     frames = []
     if firstDF.shape[1] > 2 and firstDF.iloc[0,0] in labels and all(list(type(x)==int for x in range(1,firstDF.shape[1]))):
@@ -43,11 +49,11 @@ def extractStream(filename, page_num, regionList):
                         for value in valueList:
                             df.iloc[i-1][value] = df.iloc[i-1][value] + ' ' + df.iloc[i][value]
                         df.drop(index=[i], inplace=True)
-
+                df.reset_index(drop=True, inplace=True)
                 for i in reversed(range(len(df))):
                     if any(list(len(df.iloc[i][value]) == 0 for value in valueList)):
                         if all(list(len(df.iloc[i][value]) == 0 for value in valueList)):
-                            if i == len(df) - 1:
+                            if i == len(df) - 1 or df.iloc[i][attr][0].islower():
                                 df.iloc[i-1][attr] = df.iloc[i-1][attr] + ' ' + df.iloc[i][attr]
                                 df.drop(index=[i], inplace=True)
                             else:
@@ -94,6 +100,7 @@ def extractStream(filename, page_num, regionList):
                             df.drop(index=[i], inplace=True)
                 frames.append(df)
     result = pd.concat(frames)
+    result.reset_index(drop=True, inplace=True)
     return result
 
 def extractLattice(filename, page_num, regionList):
@@ -110,6 +117,8 @@ def extractLattice(filename, page_num, regionList):
 
 for page in extract_pages(filename):
     page_num = page.pageid
+    if page_num != 11:
+        continue
     page_width = page.width
     page_height = page.height
     # print(page_width, page_height)
@@ -123,7 +132,7 @@ for page in extract_pages(filename):
     maxSizeList = []
     for element in page:
         if isinstance(element, LTCurve):
-            if element.height < 0.5:
+            if element.height < 2:
                 if not element.bbox[1] in y_dict:
                     y_dict[element.bbox[1]] = element.width
                 else:
@@ -144,10 +153,12 @@ for page in extract_pages(filename):
                     y = sum(coorList)/len(coorList) + max(sizeList)
                 else:
                     y = None
-                if label in labels and y != None:
+                # print(label)
+                if any(sep in label for sep in labels)and y != None:
                     maxSizeList.append(max(sizeList))
                     labelList.append({'label':label, 'y':y})
     yLineList = [k for k,v in y_dict.items() if v>400 ]
+    # print(yLineList)
     if len(maxSizeList):
         characterSize = sum(maxSizeList)/len(maxSizeList)
     df_label = pd.DataFrame(labelList)
@@ -187,6 +198,11 @@ for page in extract_pages(filename):
             sepList.append(yList[0])
             sepList.append(yList[-1])
             sepList = sorted(list(set(sepList)),reverse=True)
+            # print(sepList)
+            for i in range(len(sepList)-1):
+                if sepList[i] - sepList[i+1] < characterSize:
+                    sepList.pop(i+1)
+
             regionList = []
             for i in range(len(sepList)-1):
                 list1 = [0, sepList[i], page_width, sepList[i+1]+2.5]
@@ -201,9 +217,10 @@ for page in extract_pages(filename):
         # print(df_label)
         for row in  df_label.itertuples():
             if getattr(row, 'label') != 'Product type' and getattr(row, 'label') != 'Type':
+                # print(getattr(row, 'sub_regions'))
                 result = extractStream(filename, page_num, getattr(row, 'sub_regions'))
                 if len(result):
-                    # otherList.append(result)
+                    otherList.append(result)
                     print(result)                  
             else:
                 resLattice = extractLattice(filename, page_num, getattr(row, 'region'))
@@ -219,9 +236,9 @@ for page in extract_pages(filename):
         # print(df_label)
 
 # for x in otherList:
-#     print(x)
-# print(len(otherList))
-    # for index, row in x.iterrows():
-    #     print(row['attr'])
+# #     print(x)
+# # print(len(otherList))
+#     for index, row in x.iterrows():
+#         print(row['Mechanical data'])
 # for x in otherList:
-#     print(x)
+    # print(x)
