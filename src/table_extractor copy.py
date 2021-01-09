@@ -9,6 +9,7 @@ import pandas as pd
 import re
 from ontology_creator import OntologyCreator
 import spacy
+from tree_extractor import Tree
 
 def processStr(str):
     str1 = re.sub(r"\s+|,|-|/|\(|\)|:|\||\n", ' ',str.replace("-\n", "").replace("- ", ""))
@@ -28,7 +29,7 @@ class TableExtractor:
 
     def extractStream(self,filename, page_num, regionList, extractType='other'):
         tables = []
-        nlp = spacy.load('en_core_web_sm')
+        nlp = spacy.load('en_core_web_lg')
         for region in regionList:
             try:
                 table = camelot.read_pdf(filename, pages=str(page_num), flavor='stream', table_areas=[region])
@@ -45,6 +46,7 @@ class TableExtractor:
                 df = table.df
                 if index == 0:
                     df.drop(index=[index], inplace=True)
+                    df.reset_index(drop=True, inplace=True)
                 if df.shape[1] == firstDF.shape[1]:
                     df.columns = attrList
                     if extractType == 'reference':
@@ -57,33 +59,41 @@ class TableExtractor:
                     valueList = attrList[1:]
                     attr = attrList[0]
                     for i in reversed(range(len(df))):
-                        if len(df.iloc[i][attr]) == 0:
+                        if i!=0 and len(df.iloc[i][attr]) == 0:
                             for value in valueList:
                                 df.iloc[i-1][value] = df.iloc[i-1][value] + ' ' + df.iloc[i][value]
                             df.drop(index=[i], inplace=True)
-                    df.reset_index(drop=True, inplace=True)
-                    for i in reversed(range(len(df))):
-                        if any(list(len(df.iloc[i][value]) == 0 for value in valueList)):
-                            if all(list(len(df.iloc[i][value]) == 0 for value in valueList)):
-                                if i == len(df) - 1 or df.iloc[i][attr][0].islower():
-                                    df.iloc[i-1][attr] = df.iloc[i-1][attr] + ' ' + df.iloc[i][attr]
-                                    df.drop(index=[i], inplace=True)
+                    # df.reset_index(drop=True, inplace=True)
+                    # for i in reversed(range(len(df))):
+                        elif i!=0 and df.iloc[i][attr][0].islower() and not(all(list(len(df.iloc[i-1][value]) == 0 for value in valueList))and not any(list(len(df.iloc[i][value]) == 0 for value in valueList))):
+                            for value in attrList:
+                                df.iloc[i-1][value] = df.iloc[i-1][value] + ' ' + df.iloc[i][value]
+                            df.drop(index=[i], inplace=True)
+                        else:
+                            if any(list(len(df.iloc[i][value]) == 0 for value in valueList)):
+                                if all(list(len(df.iloc[i][value]) == 0 for value in valueList)):
+                                    if i == len(df) - 1:
+                                        df.iloc[i-1][attr] = df.iloc[i-1][attr] + ' ' + df.iloc[i][attr]
+                                        df.drop(index=[i], inplace=True)
+                                    else:
+                                        # next_len = len(df.iloc[i+1][attr])
+                                        for j in range(i+1, len(df)):
+                                            # attr_len = len(df.iloc[j][attr])
+                                            # if abs((attr_len - next_len)/next_len) < 0.2:
+                                            #     print('!!!!!!!!!!!!!!!!')
+                                            #     print(abs((attr_len - next_len)/next_len))
+                                            #     print(df.iloc[i+1][attr])
+                                            #     print(df.iloc[j][attr])
+                                            df.iloc[j][attr] = df.iloc[i][attr] + ' ' + df.iloc[j][attr]
+                                        df.drop(index=[i], inplace=True)  
                                 else:
-                                    # next_len = len(df.iloc[i+1][attr])
-                                    for j in range(i+1, len(df)):
-                                        # attr_len = len(df.iloc[j][attr])
-                                        # if abs((attr_len - next_len)/next_len) < 0.2:
-                                        #     print('!!!!!!!!!!!!!!!!')
-                                        #     print(abs((attr_len - next_len)/next_len))
-                                        #     print(df.iloc[i+1][attr])
-                                        #     print(df.iloc[j][attr])
-                                        df.iloc[j][attr] = df.iloc[i][attr] + ' ' + df.iloc[j][attr]
-                                    df.drop(index=[i], inplace=True)  
-                            else:
-                                if extractType == 'other':
-                                    for value in attrList:
-                                        df.iloc[i-1][value] = df.iloc[i-1][value] + ' ' + df.iloc[i][value]
-                                df.drop(index=[i], inplace=True)                                   
+                                    # print(i)
+                                    # print(df.iloc[i])
+                                    # print(df)
+                                    if extractType == 'other':
+                                        for value in attrList:
+                                            df.iloc[i-1][value] = df.iloc[i-1][value] + ' ' + df.iloc[i][value]
+                                    df.drop(index=[i], inplace=True)                                   
                     # print(df)
                     frames.append(df)
         elif firstDF.shape == (1,1) or (firstDF.shape[1] == 2 and (len(firstDF.iloc[0,1]) == 0 or type(firstDF.iloc[0,1])==int)):
@@ -110,17 +120,92 @@ class TableExtractor:
                             df.drop(index=[i], inplace=True)
                     # df.reset_index(drop=True, inplace=True)
                     # for i in reversed(range(len(df))):
-                        if len(df.iloc[i][value]) == 0:
-                            if i == len(df) - 1 or df.iloc[i][attr][0].islower():
-                                df.iloc[i-1][attr] = df.iloc[i-1][attr] + ' ' + df.iloc[i][attr]
-                                df.drop(index=[i], inplace=True)
+                            
+                        elif i!=0 and (df.iloc[i][attr][0].islower() or df.iloc[i][attr][0:2] == 'EN') and not(len(df.iloc[i-1][value]) == 0 and len(df.iloc[i][value]) != 0 ):
+                            attr1 = nlp(df.iloc[i-1][attr])
+                            attr2 = nlp(df.iloc[i][attr])
+                            attr_sim = attr1.similarity(attr2)
+                            if len(df.iloc[i-1][value]) != 0 and len(df.iloc[i][value]) != 0:
+                                value1 = nlp(df.iloc[i-1][value])
+                                value2 = nlp(df.iloc[i][value])
+                                val_sim = value1.similarity(value2)
                             else:
-                                next_len = len(df.iloc[i+1][attr])
-                                for j in range(i+1, len(df)):
-                                    attr_len = len(df.iloc[j][attr])
-                                    if abs((attr_len - next_len)/next_len) < 0.4:
-                                        df.iloc[j][attr] = df.iloc[i][attr] + ' ' + df.iloc[j][attr]
+                                val_sim = 0
+                            # print(attr1, attr2)
+                            # print(max([attr_sim, val_sim]))
+                            if max([attr_sim, val_sim]) < 0.8:
+                                
+                                for value in attrList:
+                                    df.iloc[i-1][value] = df.iloc[i-1][value] + ' ' + df.iloc[i][value]
                                 df.drop(index=[i], inplace=True)
+                        elif len(df.iloc[i][value]) == 0 and  i == len(df) - 1:
+                            df.iloc[i-1][attr] = df.iloc[i-1][attr] + ' ' + df.iloc[i][attr]
+                            df.drop(index=[i], inplace=True)
+                    df.reset_index(drop=True, inplace=True)
+                    
+                    parList = []
+                    # childList = []
+                    treeList = []
+                    parentTree = None  
+                    for index, row in df.iterrows():
+                        tree = Tree(index)
+                        treeList.append(tree)
+                        if len(row[value]) == 0:
+                            parentTree = tree
+                            if len(parList):
+                                if parList[-1].key == index - 1:
+                                    parList[-1].insertChild(parentTree)
+                            parList.append(parentTree)
+                        else:
+                            if parentTree != None:
+                                child = tree
+                                parentTree.insertChild(child)
+                                # childList.append(child)
+                        
+                    if len(parList) >= 2 and any(list(par.parent == None for par in parList[1:])):
+                        for i in range(1,len(parList)):
+                            childNum = len(parList[i].childs)
+                            isInserted = False
+                            for par in parList[0:i]:
+                                if len(par.childs) == childNum:
+                                    # nlp(df.iloc[parList[i].childs[j]][attr]).similarity(nlp(df.iloc[par.childs[j]][attr])
+                                    min_sim =  min(list(nlp(df.iloc[parList[i].childs[j].key][attr]).similarity(nlp(df.iloc[par.childs[j].key][attr])) for j in range(childNum)))
+                                    if min_sim > 0.85:
+                                        isInserted = TrueisInserted = True
+                                        if par.parent != None:
+                                            par.parent.insertChild(parList[i])
+
+                            if isInserted == False:
+                                if parList[i].parent == None:
+                                    doc1 = nlp(df.iloc[parList[i].key][attr])
+                                    max_j = 0
+                                    max_sim = 0
+                                    for j in range(0, parList[i].key):
+                                        doc2 = nlp(df.iloc[j][attr])
+                                        sim = doc1.similarity(doc2)
+                                        if sim > max_sim:
+                                            max_j = j
+                                            max_sim = sim
+                                    if max_sim > 0.7:
+                                        # print('!!!!!!!')
+                                        # print(df.iloc[treeList[max_j].key][attr])
+                                        # print(df.iloc[parList[i].key][attr])
+                                        if treeList[max_j].parent != None:
+                                            treeList[max_j].parent.insertChild(parList[i])
+
+                    for item in treeList:
+                        if item  not in parList:
+                            iterItem = item
+                            # print('--------------')
+                            while True:
+                                if iterItem.parent != None:
+                                    # print( iterItem.parent.key, df.iloc[iterItem.parent.key][attr], '|||||', item.key,df.iloc[item.key][attr])
+                                    df.iloc[item.key][attr] = df.iloc[iterItem.parent.key][attr] + '_' + df.iloc[item.key][attr]
+                                    iterItem = iterItem.getParent()
+                                else:
+                                    break
+                    
+                    df.drop(index=list(par.key for par in parList), inplace=True)
                     frames.append(df)
         result = pd.concat(frames)
         result.reset_index(drop=True, inplace=True)
@@ -255,13 +340,13 @@ class TableExtractor:
                                 self.referenceList.append(result)
         return self.otherList, self.referenceList
 
-filename = "../data/en/data_sheet/Pilz/S1MO_Data_Sheet_1001859-EN-02.pdf"
+filename = "../data/en/data_sheet/Pilz/P2HZ_X1_Data_sheet_1002151-EN-02.pdf"
 
 tableExtactor1 = TableExtractor(filename)
 otherList , referenceList = tableExtactor1.getTable()
-for x in otherList:
-    for index, row in x.iterrows():
-        print(row[0], row[1], row[2])
+# for x in otherList:
+#     for index, row in x.iterrows():
+#         print(row[0], row[1])
 # print('__________________________')
 # for x in referenceList:
 #     print(x)

@@ -1,6 +1,5 @@
 import spacy
 from spacy.matcher import Matcher
-from spacy.matcher import Matcher
 from text_extractor import TextExtractor
 from custom_components import NounMerger, VerbMerger, SRLComponent, PrepMerger, DashMerger , BetweenMerger
 import pandas as pd

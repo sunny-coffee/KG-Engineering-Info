@@ -12,7 +12,7 @@ text = textExtractor1.getText()
 # used as the ground conductor bar.   If an earth bar for the cable shields is to be used as the earth conductor, comply with the latest regulations for earthing an earth bar for the cable shields. '''
 # text = "suppression can lead to errors on the on/off tests and test pulses."
 triplesExtractor1 = TriplesExtractor(text)
-print(triplesExtractor1.getPassiveTriples())
+# print(triplesExtractor1.getPassiveTriples())
 passiveTriples = triplesExtractor1.getPassiveTriples()
 # print(passiveTriples[0])
 

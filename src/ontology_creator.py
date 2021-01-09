@@ -14,7 +14,7 @@ class OntologyCreator:
         onto.save(file=filename)
 
     def dynamically_add_restrictions(self, input_df):
-        """create classes from list"""
+        """create restriction from list"""
         onto = get_ontology(self.__filename).load()
         with onto:
             for index, row in input_df.iterrows():
@@ -30,6 +30,8 @@ class OntologyCreator:
                 for rel in row['relation']:
                     pobj = types.new_class(rel[1].replace(" ", "_"),(Thing,))
                     sup_predicate = types.new_class((rel[0]).replace(" ", "_"),(ObjectProperty,))
+                    sup_predicate.domain.append(subclass)
+                    sup_predicate.range.append(pobj)
                     predicate = types.new_class((rel[0]+' '+rel[1]).replace(" ", "_"),(sup_predicate,))
                     predicate.domain.append(subclass)
                     predicate.range.append(pobj)
@@ -53,6 +55,8 @@ class OntologyCreator:
                 else:
                     new_subject = types.new_class(row['subject'].replace(" ", "_"),(Thing,))
                 sup_relation = types.new_class(row['relation'].replace(" ", "_"),(ObjectProperty,))
+                sup_relation.domain.append(new_subject)
+                sup_relation.range.append(new_object)
                 new_relation = types.new_class((row['relation']+ ' ' + row['object']).replace(" ", "_"),(sup_relation,))  
                 new_relation.domain.append(new_subject)
                 new_relation.range.append(new_object)
@@ -93,40 +97,66 @@ class OntologyCreator:
                 comment = ["parent class of all Pilz products"]
             class P2HZ_X1(product_Pilz):
                 pass
-            class hasAttributeOf(ObjectProperty):
-                domain = [P2HZ_X1]
-
+            # class hasAttributeOf(ObjectProperty):
+            #     domain = [P2HZ_X1]
+            attrSuperClass = types.new_class('Order_reference',(Thing,))
             for tdf in referenceList:
-                attrList = tdf.columns
-                # print(attrList)
-                if ('Product type' in attrList or 'Type' in attrList) and 'Order no.' in attrList:
-                    # print('11111')
-                    # print(tdf)
-                    for attr in attrList:
-                        if len(attr):                   
-                            attrspan = self.processStr(attr)
-                            attrSuperClass = types.new_class(attrspan,(Thing,))
-                            attrClass = types.new_class(attrspan+'_of_S1EN',(attrSuperClass,))
-                            value = types.new_class('valueOf'+attrspan,(DatatypeProperty, FunctionalProperty,))
-                            value.domain.append(attrClass)
-                            value.range.append(str)
-                            relation = types.new_class('hasAttributeOf'+attrspan,(hasAttributeOf,))
-                            relation.domain.append(P2HZ_X1)
-                            relation.range.append(attrClass)
-                    for index, row in tdf.iterrows():
-                        product_instance = P2HZ_X1(self.processStr(row['Order no.'].replace(' ','')))
-                        instances.append(product_instance)
-                        for attr in attrList:
-                            if len(attr):
-                                if len(row[attr]):
-                                    attrspan = self.processStr(attr)
-                                    attr_instance = getattr(onto, attrspan+'_of_S1EN')()
-                                    # print(type(getattr(attr_instance, 'valueOf'+attrspan)))
-                                    # print(type(row[attr]))
-                                    setattr(attr_instance, 'valueOf'+attrspan, row[attr])
-                                    getattr(product_instance, 'hasAttributeOf'+attrspan).append(attr_instance)
+                    attrList = tdf.columns
+                    # print(attrList)
+                    if ('Product type' in attrList or 'Type' in attrList) and 'Order no.' in attrList:
+                        # print('11111')
+                        # print(tdf)
+
+                        for index, row in tdf.iterrows():
+                            product_instance = P2HZ_X1(self.processStr(row['Order no.'].replace(' ','')))
+                            instances.append(product_instance)
+                            for attr in attrList:
+                                if len(attr):
+                                    if len(row[attr]):
+                                        attrspan = self.processStr(attr)
+                                        attrClass = types.new_class(attrspan,(attrSuperClass,))
+                                        value = types.new_class('value',(DatatypeProperty, FunctionalProperty,))
+                                        value.domain.append(attrClass)
+                                        value.range.append(str)
+                                        relation = types.new_class('hasAttribute',(ObjectProperty,FunctionalProperty,))
+                                        relation.domain.append(P2HZ_X1)
+                                        relation.range.append(attrClass)
+                                        attr_instance = attrClass()
+                                        setattr(attr_instance, 'value', row[attr])
+                                        setattr(product_instance, 'hasAttributeOf', attr_instance)
         onto.save(file = self.__filename)
         return instances
+        #     for tdf in referenceList:
+        #         attrList = tdf.columns
+        #         # print(attrList)
+        #         if ('Product type' in attrList or 'Type' in attrList) and 'Order no.' in attrList:
+        #             # print('11111')
+        #             # print(tdf)
+        #             for attr in attrList:
+        #                 if len(attr):                   
+        #                     attrspan = self.processStr(attr)
+        #                     attrSuperClass = types.new_class(attrspan,(Thing,))
+        #                     attrClass = types.new_class(attrspan+'_of_S1EN',(attrSuperClass,))
+        #                     value = types.new_class('valueOf'+attrspan,(DatatypeProperty, FunctionalProperty,))
+        #                     value.domain.append(attrClass)
+        #                     value.range.append(str)
+        #                     relation = types.new_class('hasAttributeOf'+attrspan,(hasAttributeOf,))
+        #                     relation.domain.append(P2HZ_X1)
+        #                     relation.range.append(attrClass)
+        #             for index, row in tdf.iterrows():
+        #                 product_instance = P2HZ_X1(self.processStr(row['Order no.'].replace(' ','')))
+        #                 instances.append(product_instance)
+        #                 for attr in attrList:
+        #                     if len(attr):
+        #                         if len(row[attr]):
+        #                             attrspan = self.processStr(attr)
+        #                             attr_instance = getattr(onto, attrspan+'_of_S1EN')()
+        #                             # print(type(getattr(attr_instance, 'valueOf'+attrspan)))
+        #                             # print(type(row[attr]))
+        #                             setattr(attr_instance, 'valueOf'+attrspan, row[attr])
+        #                             getattr(product_instance, 'hasAttributeOf'+attrspan).append(attr_instance)
+        # onto.save(file = self.__filename)
+        # return instances
 
     def add_from_otherList(self, otherList, instances):
         onto = get_ontology(self.__filename).load()
@@ -135,8 +165,8 @@ class OntologyCreator:
                 comment = ["parent class of all Pilz products"]
             class P2HZ_X1(product_Pilz):
                 pass
-            class hasAttributeOf(ObjectProperty):
-                domain = [P2HZ_X1]
+            # class hasAttributeOf(ObjectProperty):
+            #     domain = [P2HZ_X1]
 
             for tdf in otherList:
                 if tdf.shape[1] == 2:
@@ -148,22 +178,29 @@ class OntologyCreator:
                         iterinstances = [product_instance]
                     else:
                         iterinstances = instances
-                    
+
+                    attrSuperClass = types.new_class(self.processStr(attr),(Thing,))
                     for index, row in tdf.iterrows():
                         attrspan = self.processStr(row[attr])
                         # print(attrspan)
-                        attrClass = types.new_class(attrspan,(Thing,))
-                        value = types.new_class('valueOf'+attrspan,(DatatypeProperty, FunctionalProperty,))
+                        attrClass = types.new_class(attrspan,(attrSuperClass,))
+                        # value = types.new_class('valueOf'+attrspan,(DatatypeProperty, FunctionalProperty,))
+                        value = types.new_class('value',(DatatypeProperty, FunctionalProperty,))
                         value.domain.append(attrClass)
                         value.range.append(str)
-                        relation = types.new_class('hasAttributeOf'+attrspan,(hasAttributeOf,))
+                        # relation = types.new_class('hasAttribute'+attrspan,(hasAttributeOf,))
+                        # relation.domain.append(P2HZ_X1)
+                        # relation.range.append(attrClass)
+                        relation = types.new_class('hasAttribute',(ObjectProperty,FunctionalProperty,))
                         relation.domain.append(P2HZ_X1)
                         relation.range.append(attrClass)
                         attr_instance = attrClass()
                         # print(row[val])
-                        setattr(attr_instance, 'valueOf'+attrspan, row[val])
+                        # setattr(attr_instance, 'valueOf'+attrspan, row[val])
+                        setattr(attr_instance, 'value', row[val])
                         for instance in iterinstances:
-                            getattr(instance, 'hasAttributeOf'+attrspan).append(attr_instance)
+                            # getattr(instance, 'hasAttributeOf'+attrspan).append(attr_instance)
+                            setattr(instance, 'hasAttribute', attr_instance)
 
             # for tdf in otherList:
             #     attrList = tdf.columns

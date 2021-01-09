@@ -8,798 +8,146 @@
 
 <owl:Ontology rdf:about="http://example.org/engineering-info.owl"/>
 
-<owl:ObjectProperty rdf:about="#hasAttributeOf">
+<owl:ObjectProperty rdf:about="#hasAttribute">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#P2HZ_X1"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfType">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Type_of_S1EN"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfFeatures">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Features_of_S1EN"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfTerminals">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Terminals_of_S1EN"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfOrder_no.">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Order_no._of_S1EN"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfSupply_voltage_Supply_voltage_UB_AC">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
+  <rdfs:range rdf:resource="#Type"/>
+  <rdfs:range rdf:resource="#Features"/>
+  <rdfs:range rdf:resource="#Terminals"/>
+  <rdfs:range rdf:resource="#Order_no."/>
   <rdfs:range rdf:resource="#Supply_voltage_Supply_voltage_UB_AC"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfSupply_voltage_Supply_voltage_UB_DC">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Supply_voltage_Supply_voltage_UB_DC"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfVoltage_tolerance">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Voltage_tolerance"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfPower_consumption_at_UB_AC">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Power_consumption_at_UB_AC"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfPower_consumption_at_UB_DC">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Power_consumption_at_UB_DC"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfFrequency_range_AC">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Frequency_range_AC"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfResidual_ripple_DC">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Residual_ripple_DC"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Number_of_output_contacts_Safety_contacts_S_instantaneous"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Number_of_output_contacts_Auxiliary_contacts_N_C"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfConventional_thermal_current">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
+  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V"/>
+  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min"/>
+  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V"/>
+  <rdfs:range rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min"/>
   <rdfs:range rdf:resource="#Conventional_thermal_current"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfContact_material">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Contact_material"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfSemiconductor_outputs_short_circuit_proof">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
+  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Safety_contacts"/>
+  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Auxiliary_contacts"/>
+  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts"/>
+  <rdfs:range rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts"/>
   <rdfs:range rdf:resource="#Semiconductor_outputs_short_circuit_proof"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfExternal_supply_voltage">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#External_supply_voltage"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Max._overall_cable_resistance_Rlmax_per_input_circuit"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#PL_in_accordance_with_EN_ISO_13849_1_2006"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfCategory_in_accordance_with_EN_954_1">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Category_in_accordance_with_EN_954_1"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#SIL_CL_in_accordance_with_EN_IEC_62061"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfPFH_in_accordance_with_EN_IEC_62061">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#PFH_in_accordance_with_EN_IEC_62061"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfSIL_in_accordance_with_IEC_61511">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#SIL_in_accordance_with_IEC_61511"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfPFD_in_accordance_with_IEC_61511">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#PFD_in_accordance_with_IEC_61511"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#TM_year_in_accordance_with_EN_ISO_13849_1_2006"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfRecovery_time">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
+  <rdfs:range rdf:resource="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574"/>
+  <rdfs:range rdf:resource="#N_O_contact"/>
+  <rdfs:range rdf:resource="#N_C_contact"/>
   <rdfs:range rdf:resource="#Recovery_time"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfSimultaneity_channel_1_and_2">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Simultaneity_channel_1_and_2"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfEMC">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#EMC"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfVibration_to_EN_60068_2_6_Frequency">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Vibration_to_EN_60068_2_6_Frequency"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfVibration_to_EN_60068_2_6_Amplitude">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Vibration_to_EN_60068_2_6_Amplitude"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfClimatic_suitability">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Climatic_suitability"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Airgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Airgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfRated_insulation_voltage">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Rated_insulation_voltage"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfRated_impulse_withstand_voltage">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Rated_impulse_withstand_voltage"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfAmbient_temperature">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Ambient_temperature"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfStorage_temperature">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Storage_temperature"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfProtection_type_Mounting_e.g._cabinet">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Protection_type_Mounting_e.g._cabinet"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfProtection_type_Housing">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Protection_type_Housing"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfProtection_type_Terminals">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Protection_type_Terminals"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfHousing_material_Housing">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Housing_material_Housing"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfHousing_material_Front">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Housing_material_Front"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_1_core_flexible"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
-  <rdfs:range rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfTorque_setting_with_screw_terminals">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
+  <rdfs:range rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__with_crimp_connectors_without_insulating_sleeve"/>
+  <rdfs:range rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__without_crimp_connectors_or_with_TWIN_crimp_connectors"/>
   <rdfs:range rdf:resource="#Torque_setting_with_screw_terminals"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfDimensions_Height">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Dimensions_Height"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfDimensions_Width">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Dimensions_Width"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfDimensions_Depth">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Dimensions_Depth"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasAttributeOfWeight">
-  <rdfs:domain rdf:resource="#P2HZ_X1"/>
   <rdfs:range rdf:resource="#Weight"/>
-  <rdfs:subPropertyOf rdf:resource="#hasAttributeOf"/>
 </owl:ObjectProperty>
 
-<owl:DatatypeProperty rdf:about="#valueOfType">
+<owl:DatatypeProperty rdf:about="#value">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Type_of_S1EN"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfFeatures">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Features_of_S1EN"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfTerminals">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Terminals_of_S1EN"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfOrder_no.">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Order_no._of_S1EN"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfSupply_voltage_Supply_voltage_UB_AC">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Type"/>
+  <rdfs:domain rdf:resource="#Features"/>
+  <rdfs:domain rdf:resource="#Terminals"/>
+  <rdfs:domain rdf:resource="#Order_no."/>
   <rdfs:domain rdf:resource="#Supply_voltage_Supply_voltage_UB_AC"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfSupply_voltage_Supply_voltage_UB_DC">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Supply_voltage_Supply_voltage_UB_DC"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfVoltage_tolerance">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Voltage_tolerance"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfPower_consumption_at_UB_AC">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Power_consumption_at_UB_AC"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfPower_consumption_at_UB_DC">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Power_consumption_at_UB_DC"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfFrequency_range_AC">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Frequency_range_AC"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfResidual_ripple_DC">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Residual_ripple_DC"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfNumber_of_output_contacts_Safety_contacts_S_instantaneous">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Number_of_output_contacts_Safety_contacts_S_instantaneous"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfNumber_of_output_contacts_Auxiliary_contacts_N_C">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Number_of_output_contacts_Auxiliary_contacts_N_C"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfConventional_thermal_current">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V"/>
+  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min"/>
+  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V"/>
+  <rdfs:domain rdf:resource="#Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min"/>
   <rdfs:domain rdf:resource="#Conventional_thermal_current"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfContact_material">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Contact_material"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfSemiconductor_outputs_short_circuit_proof">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Safety_contacts"/>
+  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Auxiliary_contacts"/>
+  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts"/>
+  <rdfs:domain rdf:resource="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts"/>
   <rdfs:domain rdf:resource="#Semiconductor_outputs_short_circuit_proof"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfExternal_supply_voltage">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#External_supply_voltage"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfMax._overall_cable_resistance_Rlmax_per_input_circuit">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Max._overall_cable_resistance_Rlmax_per_input_circuit"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfPL_in_accordance_with_EN_ISO_13849_1_2006">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#PL_in_accordance_with_EN_ISO_13849_1_2006"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfCategory_in_accordance_with_EN_954_1">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Category_in_accordance_with_EN_954_1"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfSIL_CL_in_accordance_with_EN_IEC_62061">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#SIL_CL_in_accordance_with_EN_IEC_62061"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfPFH_in_accordance_with_EN_IEC_62061">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#PFH_in_accordance_with_EN_IEC_62061"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfSIL_in_accordance_with_IEC_61511">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#SIL_in_accordance_with_IEC_61511"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfPFD_in_accordance_with_IEC_61511">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#PFD_in_accordance_with_IEC_61511"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfTM_year_in_accordance_with_EN_ISO_13849_1_2006">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#TM_year_in_accordance_with_EN_ISO_13849_1_2006"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfRecovery_time">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574"/>
+  <rdfs:domain rdf:resource="#N_O_contact"/>
+  <rdfs:domain rdf:resource="#N_C_contact"/>
   <rdfs:domain rdf:resource="#Recovery_time"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfSimultaneity_channel_1_and_2">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Simultaneity_channel_1_and_2"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfEMC">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#EMC"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfVibration_to_EN_60068_2_6_Frequency">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Vibration_to_EN_60068_2_6_Frequency"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfVibration_to_EN_60068_2_6_Amplitude">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Vibration_to_EN_60068_2_6_Amplitude"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfClimatic_suitability">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Climatic_suitability"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Airgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Airgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfRated_insulation_voltage">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Rated_insulation_voltage"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfRated_impulse_withstand_voltage">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Rated_impulse_withstand_voltage"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfAmbient_temperature">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Ambient_temperature"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfStorage_temperature">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Storage_temperature"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfProtection_type_Mounting_e.g._cabinet">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Protection_type_Mounting_e.g._cabinet"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfProtection_type_Housing">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Protection_type_Housing"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfProtection_type_Terminals">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Protection_type_Terminals"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfHousing_material_Housing">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Housing_material_Housing"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfHousing_material_Front">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Housing_material_Front"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_1_core_flexible"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfTorque_setting_with_screw_terminals">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__with_crimp_connectors_without_insulating_sleeve"/>
+  <rdfs:domain rdf:resource="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__without_crimp_connectors_or_with_TWIN_crimp_connectors"/>
   <rdfs:domain rdf:resource="#Torque_setting_with_screw_terminals"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfDimensions_Height">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Dimensions_Height"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfDimensions_Width">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Dimensions_Width"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfDimensions_Depth">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Dimensions_Depth"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-</owl:DatatypeProperty>
-
-<owl:DatatypeProperty rdf:about="#valueOfWeight">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Weight"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
@@ -813,1327 +161,816 @@
   <rdfs:subClassOf rdf:resource="#product_Pilz"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Type">
+<owl:Class rdf:about="#Order_reference">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Type_of_S1EN">
-  <rdfs:subClassOf rdf:resource="#Type"/>
+<owl:Class rdf:about="#Type">
+  <rdfs:subClassOf rdf:resource="#Order_reference"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Features">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Features_of_S1EN">
-  <rdfs:subClassOf rdf:resource="#Features"/>
+  <rdfs:subClassOf rdf:resource="#Order_reference"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Terminals">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Terminals_of_S1EN">
-  <rdfs:subClassOf rdf:resource="#Terminals"/>
+  <rdfs:subClassOf rdf:resource="#Order_reference"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Order_no.">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Order_reference"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Order_no._of_S1EN">
-  <rdfs:subClassOf rdf:resource="#Order_no."/>
+<owl:Class rdf:about="#Electrical_data">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Supply_voltage_Supply_voltage_UB_AC">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Supply_voltage_Supply_voltage_UB_DC">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Voltage_tolerance">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Power_consumption_at_UB_AC">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Power_consumption_at_UB_DC">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Frequency_range_AC">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Residual_ripple_DC">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Number_of_output_contacts_Safety_contacts_S_instantaneous">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Number_of_output_contacts_Auxiliary_contacts_N_C">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Conventional_thermal_current">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Contact_material">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Safety_contacts">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Auxiliary_contacts">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Semiconductor_outputs_short_circuit_proof">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#External_supply_voltage">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Max._overall_cable_resistance_Rlmax_per_input_circuit">
+  <rdfs:subClassOf rdf:resource="#Electrical_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Safety_related_characteristic_data">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#PL_in_accordance_with_EN_ISO_13849_1_2006">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Safety_related_characteristic_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Category_in_accordance_with_EN_954_1">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Safety_related_characteristic_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#SIL_CL_in_accordance_with_EN_IEC_62061">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Safety_related_characteristic_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#PFH_in_accordance_with_EN_IEC_62061">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Safety_related_characteristic_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#SIL_in_accordance_with_IEC_61511">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Safety_related_characteristic_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#PFD_in_accordance_with_IEC_61511">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Safety_related_characteristic_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#TM_year_in_accordance_with_EN_ISO_13849_1_2006">
+  <rdfs:subClassOf rdf:resource="#Safety_related_characteristic_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Times">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574">
+  <rdfs:subClassOf rdf:resource="#Times"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#N_O_contact">
+  <rdfs:subClassOf rdf:resource="#Times"/>
+</owl:Class>
+
+<owl:Class rdf:about="#N_C_contact">
+  <rdfs:subClassOf rdf:resource="#Times"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Recovery_time">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Times"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Simultaneity_channel_1_and_2">
+  <rdfs:subClassOf rdf:resource="#Times"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Environmental_data">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#EMC">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Vibration_to_EN_60068_2_6_Frequency">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Vibration_to_EN_60068_2_6_Amplitude">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Climatic_suitability">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Airgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Airgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Rated_insulation_voltage">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Rated_impulse_withstand_voltage">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Ambient_temperature">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Storage_temperature">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Protection_type_Mounting_e.g._cabinet">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Protection_type_Housing">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Protection_type_Terminals">
+  <rdfs:subClassOf rdf:resource="#Environmental_data"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mechanical_data">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Housing_material_Housing">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Housing_material_Front">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Cross_section_of_external_conductors_with_screw_terminals_1_core_flexible">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__with_crimp_connectors_without_insulating_sleeve">
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<owl:Class rdf:about="#Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__without_crimp_connectors_or_with_TWIN_crimp_connectors">
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Torque_setting_with_screw_terminals">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Dimensions_Height">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Dimensions_Width">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Dimensions_Depth">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Weight">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#Mechanical_data"/>
 </owl:Class>
 
 <P2HZ_X1 rdf:about="#774330">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en1"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en1"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en1"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en1">
+<Type rdf:about="#type1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en1">
+<Features rdf:about="#features1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en1">
+<Terminals rdf:about="#terminals1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en1">
+<Order_no. rdf:about="#order_no.1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 330</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 330</value>
+</Order_no.>
 
 <P2HZ_X1 rdf:about="#774331">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en2"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en2"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en2"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en2"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en2">
+<Type rdf:about="#type2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en2">
+<Features rdf:about="#features2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">42 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">42 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en2">
+<Terminals rdf:about="#terminals2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en2">
+<Order_no. rdf:about="#order_no.2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 331</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 331</value>
+</Order_no.>
 
 <P2HZ_X1 rdf:about="#774332">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en3"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en3"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en3"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en3"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en3">
+<Type rdf:about="#type3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en3">
+<Features rdf:about="#features3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">48 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">48 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en3">
+<Terminals rdf:about="#terminals3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en3">
+<Order_no. rdf:about="#order_no.3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 332</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 332</value>
+</Order_no.>
 
 <P2HZ_X1 rdf:about="#774434">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en4"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en4"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en4"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en4"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en4">
+<Type rdf:about="#type4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en4">
+<Features rdf:about="#features4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">110 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">110 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en4">
+<Terminals rdf:about="#terminals4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en4">
+<Order_no. rdf:about="#order_no.4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 434</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 434</value>
+</Order_no.>
 
 <P2HZ_X1 rdf:about="#774435">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en5"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en5"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en5"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en5"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en5">
+<Type rdf:about="#type5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en5">
+<Features rdf:about="#features5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">115 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">115 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en5">
+<Terminals rdf:about="#terminals5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en5">
+<Order_no. rdf:about="#order_no.5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 435</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 435</value>
+</Order_no.>
 
 <P2HZ_X1 rdf:about="#774436">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en6"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en6"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en6"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en6"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en6">
+<Type rdf:about="#type6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en6">
+<Features rdf:about="#features6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">120 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">120 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en6">
+<Terminals rdf:about="#terminals6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en6">
+<Order_no. rdf:about="#order_no.6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 436</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 436</value>
+</Order_no.>
 
 <P2HZ_X1 rdf:about="#774438">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en7"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en7"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en7"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en7"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en7">
+<Type rdf:about="#type7">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en7">
+<Features rdf:about="#features7">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">230 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">230 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en7">
+<Terminals rdf:about="#terminals7">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en7">
+<Order_no. rdf:about="#order_no.7">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 438</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 438</value>
+</Order_no.>
 
 <P2HZ_X1 rdf:about="#774439">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasAttributeOfType rdf:resource="#type_of_s1en8"/>
-  <hasAttributeOfFeatures rdf:resource="#features_of_s1en8"/>
-  <hasAttributeOfTerminals rdf:resource="#terminals_of_s1en8"/>
-  <hasAttributeOfOrder_no. rdf:resource="#order_no._of_s1en8"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_AC rdf:resource="#supply_voltage_supply_voltage_ub_ac1"/>
-  <hasAttributeOfSupply_voltage_Supply_voltage_UB_DC rdf:resource="#supply_voltage_supply_voltage_ub_dc1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance1"/>
-  <hasAttributeOfVoltage_tolerance rdf:resource="#voltage_tolerance2"/>
-  <hasAttributeOfPower_consumption_at_UB_AC rdf:resource="#power_consumption_at_ub_ac1"/>
-  <hasAttributeOfPower_consumption_at_UB_DC rdf:resource="#power_consumption_at_ub_dc1"/>
-  <hasAttributeOfFrequency_range_AC rdf:resource="#frequency_range_ac1"/>
-  <hasAttributeOfResidual_ripple_DC rdf:resource="#residual_ripple_dc1"/>
-  <hasAttributeOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:resource="#number_of_output_contacts_safety_contacts_s_instantaneous1"/>
-  <hasAttributeOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:resource="#number_of_output_contacts_auxiliary_contacts_n_c1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1"/>
-  <hasAttributeOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:resource="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1"/>
-  <hasAttributeOfConventional_thermal_current rdf:resource="#conventional_thermal_current1"/>
-  <hasAttributeOfContact_material rdf:resource="#contact_material1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1"/>
-  <hasAttributeOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:resource="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1"/>
-  <hasAttributeOfSemiconductor_outputs_short_circuit_proof rdf:resource="#semiconductor_outputs_short_circuit_proof1"/>
-  <hasAttributeOfExternal_supply_voltage rdf:resource="#external_supply_voltage1"/>
-  <hasAttributeOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:resource="#max._overall_cable_resistance_rlmax_per_input_circuit1"/>
-  <hasAttributeOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#pl_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfCategory_in_accordance_with_EN_954_1 rdf:resource="#category_in_accordance_with_en_954_11"/>
-  <hasAttributeOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:resource="#sil_cl_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfPFH_in_accordance_with_EN_IEC_62061 rdf:resource="#pfh_in_accordance_with_en_iec_620611"/>
-  <hasAttributeOfSIL_in_accordance_with_IEC_61511 rdf:resource="#sil_in_accordance_with_iec_615111"/>
-  <hasAttributeOfPFD_in_accordance_with_IEC_61511 rdf:resource="#pfd_in_accordance_with_iec_615111"/>
-  <hasAttributeOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:resource="#tm_year_in_accordance_with_en_iso_13849_1_20061"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1"/>
-  <hasAttributeOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:resource="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1"/>
-  <hasAttributeOfRecovery_time rdf:resource="#recovery_time1"/>
-  <hasAttributeOfSimultaneity_channel_1_and_2 rdf:resource="#simultaneity_channel_1_and_21"/>
-  <hasAttributeOfEMC rdf:resource="#emc1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Frequency rdf:resource="#vibration_to_en_60068_2_6_frequency1"/>
-  <hasAttributeOfVibration_to_EN_60068_2_6_Amplitude rdf:resource="#vibration_to_en_60068_2_6_amplitude1"/>
-  <hasAttributeOfClimatic_suitability rdf:resource="#climatic_suitability1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1"/>
-  <hasAttributeOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:resource="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1"/>
-  <hasAttributeOfRated_insulation_voltage rdf:resource="#rated_insulation_voltage1"/>
-  <hasAttributeOfRated_impulse_withstand_voltage rdf:resource="#rated_impulse_withstand_voltage1"/>
-  <hasAttributeOfAmbient_temperature rdf:resource="#ambient_temperature1"/>
-  <hasAttributeOfStorage_temperature rdf:resource="#storage_temperature1"/>
-  <hasAttributeOfProtection_type_Mounting_e.g._cabinet rdf:resource="#protection_type_mounting_e.g._cabinet1"/>
-  <hasAttributeOfProtection_type_Housing rdf:resource="#protection_type_housing1"/>
-  <hasAttributeOfProtection_type_Terminals rdf:resource="#protection_type_terminals1"/>
-  <hasAttributeOfHousing_material_Housing rdf:resource="#housing_material_housing1"/>
-  <hasAttributeOfHousing_material_Front rdf:resource="#housing_material_front1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1"/>
-  <hasAttributeOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:resource="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1"/>
-  <hasAttributeOfTorque_setting_with_screw_terminals rdf:resource="#torque_setting_with_screw_terminals1"/>
-  <hasAttributeOfDimensions_Height rdf:resource="#dimensions_height1"/>
-  <hasAttributeOfDimensions_Width rdf:resource="#dimensions_width1"/>
-  <hasAttributeOfDimensions_Depth rdf:resource="#dimensions_depth1"/>
-  <hasAttributeOfWeight rdf:resource="#weight1"/>
+  <hasAttribute rdf:resource="#weight1"/>
 </P2HZ_X1>
 
-<Type_of_S1EN rdf:about="#type_of_s1en8">
+<Type rdf:about="#type8">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</valueOfType>
-</Type_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2HZ X1</value>
+</Type>
 
-<Features_of_S1EN rdf:about="#features_of_s1en8">
+<Features rdf:about="#features8">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#string">240 VAC</valueOfFeatures>
-</Features_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">240 VAC</value>
+</Features>
 
-<Terminals_of_S1EN rdf:about="#terminals_of_s1en8">
+<Terminals rdf:about="#terminals8">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTerminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</valueOfTerminals>
-</Terminals_of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Screw terminals</value>
+</Terminals>
 
-<Order_no._of_S1EN rdf:about="#order_no._of_s1en8">
+<Order_no. rdf:about="#order_no.8">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfOrder_no. rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 439</valueOfOrder_no.>
-</Order_no._of_S1EN>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">774 439</value>
+</Order_no.>
 
 <Supply_voltage_Supply_voltage_UB_AC rdf:about="#supply_voltage_supply_voltage_ub_ac1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfSupply_voltage_Supply_voltage_UB_AC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 V, 42 V, 48 V, 110 V, 115 V, 120 V, 230 V, 240 V</valueOfSupply_voltage_Supply_voltage_UB_AC>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 V, 42 V, 48 V, 110 V, 115 V, 120 V, 230 V, 240 V</value>
 </Supply_voltage_Supply_voltage_UB_AC>
 
 <Supply_voltage_Supply_voltage_UB_DC rdf:about="#supply_voltage_supply_voltage_ub_dc1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfSupply_voltage_Supply_voltage_UB_DC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 V, 26 V</valueOfSupply_voltage_Supply_voltage_UB_DC>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24 V, 26 V</value>
 </Supply_voltage_Supply_voltage_UB_DC>
 
 <Voltage_tolerance rdf:about="#voltage_tolerance1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfVoltage_tolerance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-15 %/+10 %</valueOfVoltage_tolerance>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-15 %/+10 %</value>
 </Voltage_tolerance>
 
 <Power_consumption_at_UB_AC rdf:about="#power_consumption_at_ub_ac1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfPower_consumption_at_UB_AC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.0 VA No. 774330, 774331, 774332, 774434, 774435, 774436, 774438, 774439</valueOfPower_consumption_at_UB_AC>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6.0 VA No. 774330, 774331, 774332, 774434, 774435, 774436, 774438, 774439</value>
 </Power_consumption_at_UB_AC>
 
 <Power_consumption_at_UB_DC rdf:about="#power_consumption_at_ub_dc1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfPower_consumption_at_UB_DC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.5 W No. 774340, 774341</valueOfPower_consumption_at_UB_DC>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.5 W No. 774340, 774341</value>
 </Power_consumption_at_UB_DC>
 
 <Frequency_range_AC rdf:about="#frequency_range_ac1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfFrequency_range_AC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50 - 60 Hz</valueOfFrequency_range_AC>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50 - 60 Hz</value>
 </Frequency_range_AC>
 
 <Residual_ripple_DC rdf:about="#residual_ripple_dc1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfResidual_ripple_DC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 % No. 774340, 774341</valueOfResidual_ripple_DC>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 % No. 774340, 774341</value>
 </Residual_ripple_DC>
 
 <Number_of_output_contacts_Safety_contacts_S_instantaneous rdf:about="#number_of_output_contacts_safety_contacts_s_instantaneous1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfNumber_of_output_contacts_Safety_contacts_S_instantaneous rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</valueOfNumber_of_output_contacts_Safety_contacts_S_instantaneous>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</value>
 </Number_of_output_contacts_Safety_contacts_S_instantaneous>
 
 <Number_of_output_contacts_Auxiliary_contacts_N_C rdf:about="#number_of_output_contacts_auxiliary_contacts_n_c1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfNumber_of_output_contacts_Auxiliary_contacts_N_C rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</valueOfNumber_of_output_contacts_Auxiliary_contacts_N_C>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</value>
 </Number_of_output_contacts_Auxiliary_contacts_N_C>
 
 <Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_ac1_at_240_v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin: 0.01 A , Imax: 5.0 A Pmax:  1250 VA</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin: 0.01 A , Imax: 5.0 A Pmax:  1250 VA</value>
 </Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_AC1_at_240_V>
 
 <Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_safety_contacts_dc1_at_24_v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin:  0.01 A , Imax:  5.0 A Pmax:  125 W</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin:  0.01 A , Imax:  5.0 A Pmax:  125 W</value>
 </Utilisation_category_in_accordance_with_EN_60947_4_1_Safety_contacts_DC1_at_24_V>
 
 <Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_ac1_at_240_v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin:  0.01 A , Imax:  2.0 A Pmax:  500 VA</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin:  0.01 A , Imax:  2.0 A Pmax:  500 VA</value>
 </Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_AC1_at_240_V>
 
 <Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_auxiliary_contacts_dc1_at_24_v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin:  0.01 A , Imax:  2.0 A Pmax:  50 W</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imin:  0.01 A , Imax:  2.0 A Pmax:  50 W</value>
 </Utilisation_category_in_accordance_with_EN_60947_4_1_Auxiliary_contacts_DC1_at_24_V>
 
-<Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1">
+<Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:about="#utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_ac15_at_230_v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  2.5 A</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V>
-</Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  2.5 A</value>
+</Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_AC15_at_230_V>
 
-<Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1">
+<Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:about="#utilisation_category_in_accordance_with_en_60947_5_1_safety_contacts_dc13_at_24_v_6_cycles_min1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  1.5 A</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min>
-</Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  1.5 A</value>
+</Utilisation_category_in_accordance_with_EN_60947_5_1_Safety_contacts_DC13_at_24_V_6_cycles_min>
 
-<Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1">
+<Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:about="#utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_ac15_at_230_v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  2.0 A</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V>
-</Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  2.0 A</value>
+</Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_AC15_at_230_V>
 
-<Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:about="#utilisation_category_in_accordance_with_en_60947_4_1_utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1">
+<Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:about="#utilisation_category_in_accordance_with_en_60947_5_1_auxiliary_contacts_dc13_at_24_v_6_cycles_min1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  1.5 A</valueOfUtilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min>
-</Utilisation_category_in_accordance_with_EN_60947_4_1_Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imax:  1.5 A</value>
+</Utilisation_category_in_accordance_with_EN_60947_5_1_Auxiliary_contacts_DC13_at_24_V_6_cycles_min>
 
 <Conventional_thermal_current rdf:about="#conventional_thermal_current1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfConventional_thermal_current rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.0 A</valueOfConventional_thermal_current>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.0 A</value>
 </Conventional_thermal_current>
 
 <Contact_material rdf:about="#contact_material1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfContact_material rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AgSnO2 + 0.2µ Au</valueOfContact_material>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AgSnO2 + 0.2µ Au</value>
 </Contact_material>
 
 <External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_safety_contacts1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6 A</valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6 A</value>
 </External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Safety_contacts>
 
 <External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_auxiliary_contacts1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 A</valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 A</value>
 </External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Auxiliary_contacts>
 
-<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_safety_contacts1">
+<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Safety_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_slow_safety_contacts1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 A</valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts>
-</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Safety_contacts>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 A</value>
+</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Safety_contacts>
 
-<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_auxiliary_contacts1">
+<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Auxiliary_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_slow_auxiliary_contacts1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 A</valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts>
-</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Auxiliary_contacts>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 A</value>
+</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_slow_Auxiliary_contacts>
 
-<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1">
+<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_circuit_breaker_24_vac_dc_characteristic_b_c_safety_contacts1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 A</valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts>
-</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 A</value>
+</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Safety_contacts>
 
-<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_blow_out_fuse_quick_blow_out_fuse_slow_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1">
+<External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:about="#external_contact_fuse_protection_ik_equal_1_ka_to_en_60947_5_1_circuit_breaker_24_vac_dc_characteristic_b_c_auxiliary_contacts1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 A</valueOfExternal_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts>
-</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Blow_out_fuse_quick_Blow_out_fuse_slow_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 A</value>
+</External_contact_fuse_protection_IK_equal_1_kA_to_EN_60947_5_1_Circuit_breaker_24_VAC_DC_characteristic_B_C_Auxiliary_contacts>
 
 <Semiconductor_outputs_short_circuit_proof rdf:about="#semiconductor_outputs_short_circuit_proof1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfSemiconductor_outputs_short_circuit_proof rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24.0 V DC, 20 mA</valueOfSemiconductor_outputs_short_circuit_proof>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24.0 V DC, 20 mA</value>
 </Semiconductor_outputs_short_circuit_proof>
 
 <External_supply_voltage rdf:about="#external_supply_voltage1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfExternal_supply_voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24.0 V DC</valueOfExternal_supply_voltage>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24.0 V DC</value>
 </External_supply_voltage>
 
 <Voltage_tolerance rdf:about="#voltage_tolerance2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfVoltage_tolerance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-15% / +10%</valueOfVoltage_tolerance>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-15% / +10%</value>
 </Voltage_tolerance>
 
 <Max._overall_cable_resistance_Rlmax_per_input_circuit rdf:about="#max._overall_cable_resistance_rlmax_per_input_circuit1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfMax._overall_cable_resistance_Rlmax_per_input_circuit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 Ohm</valueOfMax._overall_cable_resistance_Rlmax_per_input_circuit>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 Ohm</value>
 </Max._overall_cable_resistance_Rlmax_per_input_circuit>
 
 <PL_in_accordance_with_EN_ISO_13849_1_2006 rdf:about="#pl_in_accordance_with_en_iso_13849_1_20061">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfPL_in_accordance_with_EN_ISO_13849_1_2006 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PL e (Cat. 4)</valueOfPL_in_accordance_with_EN_ISO_13849_1_2006>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PL e (Cat. 4)</value>
 </PL_in_accordance_with_EN_ISO_13849_1_2006>
 
 <Category_in_accordance_with_EN_954_1 rdf:about="#category_in_accordance_with_en_954_11">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfCategory_in_accordance_with_EN_954_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cat. 4</valueOfCategory_in_accordance_with_EN_954_1>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cat. 4</value>
 </Category_in_accordance_with_EN_954_1>
 
 <SIL_CL_in_accordance_with_EN_IEC_62061 rdf:about="#sil_cl_in_accordance_with_en_iec_620611">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfSIL_CL_in_accordance_with_EN_IEC_62061 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SIL CL 3</valueOfSIL_CL_in_accordance_with_EN_IEC_62061>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SIL CL 3</value>
 </SIL_CL_in_accordance_with_EN_IEC_62061>
 
 <PFH_in_accordance_with_EN_IEC_62061 rdf:about="#pfh_in_accordance_with_en_iec_620611">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfPFH_in_accordance_with_EN_IEC_62061 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.01E-09</valueOfPFH_in_accordance_with_EN_IEC_62061>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.01E-09</value>
 </PFH_in_accordance_with_EN_IEC_62061>
 
 <SIL_in_accordance_with_IEC_61511 rdf:about="#sil_in_accordance_with_iec_615111">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfSIL_in_accordance_with_IEC_61511 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SIL 3</valueOfSIL_in_accordance_with_IEC_61511>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SIL 3</value>
 </SIL_in_accordance_with_IEC_61511>
 
 <PFD_in_accordance_with_IEC_61511 rdf:about="#pfd_in_accordance_with_iec_615111">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfPFD_in_accordance_with_IEC_61511 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.24E-06</valueOfPFD_in_accordance_with_IEC_61511>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.24E-06</value>
 </PFD_in_accordance_with_IEC_61511>
 
 <TM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:about="#tm_year_in_accordance_with_en_iso_13849_1_20061">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTM_year_in_accordance_with_EN_ISO_13849_1_2006 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20</valueOfTM_year_in_accordance_with_EN_ISO_13849_1_2006>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20</value>
 </TM_year_in_accordance_with_EN_ISO_13849_1_2006>
 
-<Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:about="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_o_contact1">
+<Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574 rdf:about="#delay_on_de_energisation_reaction_time_in_accordance_with_en_5741">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15 ms</valueOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact>
-</Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_O_contact>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> </value>
+</Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574>
 
-<Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:about="#delay_on_de_energisation_reaction_time_in_accordance_with_en_574_n_c_contact1">
+<N_O_contact rdf:about="#n_o_contact1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30 ms</valueOfDelay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact>
-</Delay_on_de_energisation_reaction_time_in_accordance_with_EN_574_N_C_contact>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15 ms</value>
+</N_O_contact>
+
+<N_C_contact rdf:about="#n_c_contact1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30 ms</value>
+</N_C_contact>
 
 <Recovery_time rdf:about="#recovery_time1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfRecovery_time rdf:datatype="http://www.w3.org/2001/XMLSchema#string">250 ms</valueOfRecovery_time>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">250 ms</value>
 </Recovery_time>
 
 <Simultaneity_channel_1_and_2 rdf:about="#simultaneity_channel_1_and_21">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfSimultaneity_channel_1_and_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">500 ms</valueOfSimultaneity_channel_1_and_2>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">500 ms</value>
 </Simultaneity_channel_1_and_2>
 
 <EMC rdf:about="#emc1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfEMC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EN 60947-5-1, EN 61000-6-2</valueOfEMC>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EN 60947-5-1, EN 61000-6-2</value>
 </EMC>
 
 <Vibration_to_EN_60068_2_6_Frequency rdf:about="#vibration_to_en_60068_2_6_frequency1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfVibration_to_EN_60068_2_6_Frequency rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.0 - 55.0 Hz</valueOfVibration_to_EN_60068_2_6_Frequency>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.0 - 55.0 Hz</value>
 </Vibration_to_EN_60068_2_6_Frequency>
 
 <Vibration_to_EN_60068_2_6_Amplitude rdf:about="#vibration_to_en_60068_2_6_amplitude1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfVibration_to_EN_60068_2_6_Amplitude rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.35 mm</valueOfVibration_to_EN_60068_2_6_Amplitude>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.35 mm</value>
 </Vibration_to_EN_60068_2_6_Amplitude>
 
 <Climatic_suitability rdf:about="#climatic_suitability1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfClimatic_suitability rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EN 60068-2-78</valueOfClimatic_suitability>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EN 60068-2-78</value>
 </Climatic_suitability>
 
 <Airgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:about="#airgap_creepage_in_accordance_with_en_60947_1_pollution_degree1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</valueOfAirgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</value>
 </Airgap_creepage_in_accordance_with_EN_60947_1_Pollution_degree>
 
 <Airgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:about="#airgap_creepage_in_accordance_with_en_60947_1_overvoltage_category1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category rdf:datatype="http://www.w3.org/2001/XMLSchema#string">III</valueOfAirgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">III</value>
 </Airgap_creepage_in_accordance_with_EN_60947_1_Overvoltage_category>
 
 <Rated_insulation_voltage rdf:about="#rated_insulation_voltage1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfRated_insulation_voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">250 V</valueOfRated_insulation_voltage>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">250 V</value>
 </Rated_insulation_voltage>
 
 <Rated_impulse_withstand_voltage rdf:about="#rated_impulse_withstand_voltage1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfRated_impulse_withstand_voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.00 kV</valueOfRated_impulse_withstand_voltage>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.00 kV</value>
 </Rated_impulse_withstand_voltage>
 
 <Ambient_temperature rdf:about="#ambient_temperature1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfAmbient_temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-25 - 55 °C</valueOfAmbient_temperature>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-25 - 55 °C</value>
 </Ambient_temperature>
 
 <Storage_temperature rdf:about="#storage_temperature1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfStorage_temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-40 - 85 °C</valueOfStorage_temperature>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-40 - 85 °C</value>
 </Storage_temperature>
 
 <Protection_type_Mounting_e.g._cabinet rdf:about="#protection_type_mounting_e.g._cabinet1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfProtection_type_Mounting_e.g._cabinet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP54</valueOfProtection_type_Mounting_e.g._cabinet>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP54</value>
 </Protection_type_Mounting_e.g._cabinet>
 
 <Protection_type_Housing rdf:about="#protection_type_housing1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfProtection_type_Housing rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP40</valueOfProtection_type_Housing>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP40</value>
 </Protection_type_Housing>
 
 <Protection_type_Terminals rdf:about="#protection_type_terminals1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfProtection_type_Terminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP20</valueOfProtection_type_Terminals>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IP20</value>
 </Protection_type_Terminals>
 
 <Housing_material_Housing rdf:about="#housing_material_housing1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfHousing_material_Housing rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PPO UL 94 V0</valueOfHousing_material_Housing>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PPO UL 94 V0</value>
 </Housing_material_Housing>
 
 <Housing_material_Front rdf:about="#housing_material_front1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfHousing_material_Front rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABS UL 94 V0</valueOfHousing_material_Front>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABS UL 94 V0</value>
 </Housing_material_Front>
 
 <Cross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:about="#cross_section_of_external_conductors_with_screw_terminals_1_core_flexible1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.20 - 4.00 mm² , 24 - 10 AWG</valueOfCross_section_of_external_conductors_with_screw_terminals_1_core_flexible>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.20 - 4.00 mm² , 24 - 10 AWG</value>
 </Cross_section_of_external_conductors_with_screw_terminals_1_core_flexible>
 
-<Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:about="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve1">
+<Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__with_crimp_connectors_without_insulating_sleeve rdf:about="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__with_crimp_connectors_without_insulating_sleeve1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.20 - 2.50 mm² , 24 - 14 AWG</valueOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve>
-</Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_with_crimp_connectors_without_insulating_sleeve>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.20 - 2.50 mm² , 24 - 14 AWG</value>
+</Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__with_crimp_connectors_without_insulating_sleeve>
 
-<Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:about="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_twin_crimp_connectors1">
+<Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:about="#cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__without_crimp_connectors_or_with_twin_crimp_connectors1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.20 - 2.50 mm² , 24 - 14 AWG</valueOfCross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors>
-</Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible_without_crimp_connectors_or_with_TWIN_crimp_connectors>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.20 - 2.50 mm² , 24 - 14 AWG</value>
+</Cross_section_of_external_conductors_with_screw_terminals_2_core_same_cross_section_flexible__without_crimp_connectors_or_with_TWIN_crimp_connectors>
 
 <Torque_setting_with_screw_terminals rdf:about="#torque_setting_with_screw_terminals1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfTorque_setting_with_screw_terminals rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.60 Nm</valueOfTorque_setting_with_screw_terminals>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.60 Nm</value>
 </Torque_setting_with_screw_terminals>
 
 <Dimensions_Height rdf:about="#dimensions_height1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfDimensions_Height rdf:datatype="http://www.w3.org/2001/XMLSchema#string">87.0 mm</valueOfDimensions_Height>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">87.0 mm</value>
 </Dimensions_Height>
 
 <Dimensions_Width rdf:about="#dimensions_width1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfDimensions_Width rdf:datatype="http://www.w3.org/2001/XMLSchema#string">45.0 mm</valueOfDimensions_Width>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">45.0 mm</value>
 </Dimensions_Width>
 
 <Dimensions_Depth rdf:about="#dimensions_depth1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfDimensions_Depth rdf:datatype="http://www.w3.org/2001/XMLSchema#string">121.0 mm</valueOfDimensions_Depth>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">121.0 mm</value>
 </Dimensions_Depth>
 
 <Weight rdf:about="#weight1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <valueOfWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#string">280 g No. 774340, 774341 380 g No. 774330, 774331, 774332, 774434, 774435, 774436, 774438, 774439</valueOfWeight>
+  <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">280 g No. 774340, 774341 380 g No. 774330, 774331, 774332, 774434, 774435, 774436, 774438, 774439</value>
 </Weight>
 
 
