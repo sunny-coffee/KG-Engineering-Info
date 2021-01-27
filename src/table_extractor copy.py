@@ -344,12 +344,13 @@ filename = "../data/en/data_sheet/Pilz/P2HZ_X1_Data_sheet_1002151-EN-02.pdf"
 
 tableExtactor1 = TableExtractor(filename)
 otherList , referenceList = tableExtactor1.getTable()
-# for x in otherList:
+for x in otherList:
+    print(x)
 #     for index, row in x.iterrows():
 #         print(row[0], row[1])
-# print('__________________________')
-# for x in referenceList:
-#     print(x)
+print('__________________________')
+for x in referenceList:
+    print(x)
 
 IRI = "http://example.org/engineering-info.owl"
 FILE = "test.owl"

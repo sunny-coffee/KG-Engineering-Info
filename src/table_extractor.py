@@ -259,9 +259,9 @@ filename = "../data/en/data_sheet/Pilz/S1MO_Data_Sheet_1001859-EN-02.pdf"
 
 tableExtactor1 = TableExtractor(filename)
 otherList , referenceList = tableExtactor1.getTable()
-for x in otherList:
-    for index, row in x.iterrows():
-        print(row[0], row[1], row[2])
+# for x in otherList:
+#     for index, row in x.iterrows():
+#         print(row[0], row[1], row[2])
 # print('__________________________')
 # for x in referenceList:
 #     print(x)

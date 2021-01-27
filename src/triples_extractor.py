@@ -184,4 +184,5 @@ class TriplesExtractor:
         pd.set_option('display.max_rows', None)
         return [df_restriction, df_triple, df_inherit] 
 
+
    
