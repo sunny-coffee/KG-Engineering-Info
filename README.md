@@ -1,5 +1,7 @@
 # KG-Engineering-Info
 
+## python version = 3.7.9
+
 ## install camelot-py  version = 0.8.2
 ```bash
 pip install "camelot-py[cv]"
