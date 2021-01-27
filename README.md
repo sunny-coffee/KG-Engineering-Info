@@ -1,5 +1,5 @@
 # KG-Engineering-Info
-In this project, a Knowledge Graph can be constructed from data sheets and manuals automatically. 3 popular packages are imported in this project,i.e. Spacy, Pdfminer.six, Camelot. 
+In this project, a Knowledge Graph can be constructed from data sheets and manuals automatically. 3 popular packages are imported in this project,i.e. Spacy, Pdfminer.six, Camelot. Please be careful about the version of these packages, in order to avoid version conflicts.
 
 ## python  (version = 3.7.9)
 It is recommended to manange environments with Anaconda.
