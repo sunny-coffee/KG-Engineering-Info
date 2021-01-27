@@ -29,7 +29,7 @@ class TableExtractor:
 
     def extractStream(self,filename, page_num, regionList, extractType='other'):
         tables = []
-        nlp = spacy.load('en_core_web_lg')
+        nlp = spacy.load('en_core_web_md')
         for region in regionList:
             try:
                 table = camelot.read_pdf(filename, pages=str(page_num), flavor='stream', table_areas=[region])
