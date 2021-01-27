@@ -1,6 +1,11 @@
 # KG-Engineering-Info
 
 ## python version = 3.7.9
+It is recommended to manange environments with Anaconda.
+```bash
+conda create --name thesis_env python=3.7
+conda activate thesis_env
+```
 
 ## install camelot-py  version = 0.8.2
 ```bash
