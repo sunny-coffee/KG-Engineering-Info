@@ -1,5 +1,5 @@
 # KG-Engineering-Info
-In this project, a Knowledge Graph can be constructed from data sheets and manuals automatically. 3 popular packages are imported in this project, i.e. Spacy, Pdfminer.six, Camelot. Please be careful about the version of these packages, in order to avoid version conflicts.
+In this project, a Knowledge Graph can be constructed from data sheets and manuals automatically. Now it only can process the data sheet from Pilz. More table pattern recognization of other companies may be added into this project later. The demo data, including manuals and data sheets, are svaed in data file. 3 popular packages are imported in this project, i.e. Spacy, Pdfminer.six, Camelot. Please be careful about the version of these packages, in order to avoid version conflicts.
 
 ## python  (version = 3.7.9)
 It is recommended to manange environments with Anaconda.
@@ -37,6 +37,7 @@ python -m spacy download en_core_web_sm
 
 ## install neuralcoref  (version = 4.0)
 Since Neuralcoref may collide with Spacy with higher version, it is better to install NeuralCoref from source.
+reference: https://github.com/huggingface/neuralcoref/issues/197
 ```bash
 git clone https://github.com/huggingface/neuralcoref.git
 cd neuralcoref
