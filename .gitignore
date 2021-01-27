@@ -1,6 +1,6 @@
 __pycache__/
 .idea/
 .vscode/
+de/
 *.tar
-*.pdf
 *.owl
