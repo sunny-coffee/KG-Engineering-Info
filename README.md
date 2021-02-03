@@ -7,6 +7,14 @@ It is recommended to manange environments with Anaconda.
 conda create --name thesis_env python=3.7
 conda activate thesis_env
 ```
+alternatively via pip - get correct python version, create and activate virtual environment:
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.7 python3.7-dev python3.7-venv
+python3.7 -m venv .venv
+source .venv/bin/activate
+```
 
 ## install camelot-py  (version = 0.8.2)
 ```bash
@@ -50,3 +58,10 @@ pip install -e .
 pip install allennlp
 pip install --pre allennlp-models
 ```
+
+# further dependencies
+ghostscript - OS install: https://www.ghostscript.com/download/gsdnld.html
+```bash
+sudo apt-get install ghostscript 
+```
+

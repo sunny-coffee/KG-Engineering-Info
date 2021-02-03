@@ -340,7 +340,7 @@ class TableExtractor:
                                 self.referenceList.append(result)
         return self.otherList, self.referenceList
 
-filename = "./data/en/data_sheet/Pilz/P2HZ_X1_Data_sheet_1002151-EN-02.pdf"
+filename = "../data/en/data_sheet/Pilz/P2HZ_X1_Data_sheet_1002151-EN-02.pdf"
 
 tableExtactor1 = TableExtractor(filename)
 otherList , referenceList = tableExtactor1.getTable()
