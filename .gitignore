@@ -1,6 +1,12 @@
+# directories
 __pycache__/
 .idea/
 .vscode/
 de/
+.venv/
+neuralcoref/
+
+# files by extension
 *.tar
 *.owl
+
