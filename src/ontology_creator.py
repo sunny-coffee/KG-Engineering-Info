@@ -126,37 +126,6 @@ class OntologyCreator:
                                         setattr(product_instance, 'hasAttributeOf', attr_instance)
         onto.save(file = self.__filename)
         return instances
-        #     for tdf in referenceList:
-        #         attrList = tdf.columns
-        #         # print(attrList)
-        #         if ('Product type' in attrList or 'Type' in attrList) and 'Order no.' in attrList:
-        #             # print('11111')
-        #             # print(tdf)
-        #             for attr in attrList:
-        #                 if len(attr):                   
-        #                     attrspan = self.processStr(attr)
-        #                     attrSuperClass = types.new_class(attrspan,(Thing,))
-        #                     attrClass = types.new_class(attrspan+'_of_S1EN',(attrSuperClass,))
-        #                     value = types.new_class('valueOf'+attrspan,(DatatypeProperty, FunctionalProperty,))
-        #                     value.domain.append(attrClass)
-        #                     value.range.append(str)
-        #                     relation = types.new_class('hasAttributeOf'+attrspan,(hasAttributeOf,))
-        #                     relation.domain.append(P2HZ_X1)
-        #                     relation.range.append(attrClass)
-        #             for index, row in tdf.iterrows():
-        #                 product_instance = P2HZ_X1(self.processStr(row['Order no.'].replace(' ','')))
-        #                 instances.append(product_instance)
-        #                 for attr in attrList:
-        #                     if len(attr):
-        #                         if len(row[attr]):
-        #                             attrspan = self.processStr(attr)
-        #                             attr_instance = getattr(onto, attrspan+'_of_S1EN')()
-        #                             # print(type(getattr(attr_instance, 'valueOf'+attrspan)))
-        #                             # print(type(row[attr]))
-        #                             setattr(attr_instance, 'valueOf'+attrspan, row[attr])
-        #                             getattr(product_instance, 'hasAttributeOf'+attrspan).append(attr_instance)
-        # onto.save(file = self.__filename)
-        # return instances
 
     def add_from_otherList(self, otherList, instances):
         onto = get_ontology(self.__filename).load()

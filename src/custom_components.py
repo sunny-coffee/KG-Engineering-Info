@@ -32,7 +32,7 @@ class NounMerger(object):
             "NOUN",
             None,
             [{"POS":"PROPN", "OP": "?"},
-            {"POS":"ADJ", "OP": "*"},
+            {"DEP":"amod", "OP": "*"},
             {"DEP":"nummod", "OP": "*"}, 
             {"POS": "NOUN", "OP": "+"}]
         )
@@ -46,10 +46,14 @@ class NounMerger(object):
         for match_id, start, end in matches:
             spans.append(doc[start:end])
         filtered = filter_spans(spans)
-
         with doc.retokenize() as retokenizer:
-            for span in filtered:   
-                retokenizer.merge(span, attrs={"lemma": span.lemma_, "_": {"key":span.root.lemma_}})
+            for span in filtered:  
+                # print(span)
+                if len(span) >=2:
+                    span_lemma = span[0:-1].text + ' ' + span[-1].lemma_
+                else:
+                    span_lemma = span.lemma_
+                retokenizer.merge(span, attrs={"lemma": span_lemma, "_": {"key":span.root.lemma_}})
         return doc
 
 class BetweenMerger(object):
@@ -115,7 +119,7 @@ class VerbMerger(object):
     def __init__(self, nlp):
         self.matcher = Matcher(nlp.vocab)
         self.matcher.add(
-            "NOUN",
+            "Verb",
             None,
             [{"POS":"VERB"}, 
             {"POS": "ADP", "DEP": "prt"}]
@@ -135,6 +139,60 @@ class VerbMerger(object):
                 retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
         return doc
 
+class VerbPhraseMerger(object):
+    def __init__(self, nlp):
+        self.matcher = Matcher(nlp.vocab)
+        self.matcher.add(
+            "VerbPhrase",
+            None,
+            [{"TEXT":"be", "OP": "?"},
+            {"POS":"VERB"}, 
+            {"TAG":"RB" , "OP": "*"},
+            {"LEMMA": "to", "POS": "PART", "OP": "?"}]
+        )
+
+    def __call__(self, doc):
+        # This method is invoked when the component is called on a Doc
+        matches = self.matcher(doc)
+        spans = []  # Collect the matched spans here
+        
+        for match_id, start, end in matches:
+            spans.append(doc[start:end])
+        filtered = filter_spans(spans)
+
+        with doc.retokenize() as retokenizer:
+            for span in filtered:
+                if len(span) > 1:
+                    retokenizer.merge(span, attrs={"LEMMA": span[0].lemma_ + ' ' + span[1:end].text})
+                else:
+                    retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
+        return doc
+
+class LongestVerbMerger(object):
+    def __init__(self, nlp):
+        self.matcher = Matcher(nlp.vocab)
+        self.matcher.add(
+            "LongestVerb",
+            None,
+            [{"POS":"VERB", "OP": "+"}]
+        )
+
+    def __call__(self, doc):
+        # This method is invoked when the component is called on a Doc
+        matches = self.matcher(doc)
+        spans = []  # Collect the matched spans here
+        
+        for match_id, start, end in matches:
+            spans.append(doc[start:end])
+        filtered = filter_spans(spans)
+
+        with doc.retokenize() as retokenizer:
+            for span in filtered:
+                if len(span) > 1:
+                    retokenizer.merge(span, attrs={"LEMMA": span[0].lemma_ + ' ' + span[1:end].text})
+                else:
+                    retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
+        return doc
 
 class SRLComponent(object):
     def __init__(self, model_path):
@@ -145,7 +203,7 @@ class SRLComponent(object):
             self.predictor = Predictor.from_path("https://storage.googleapis.com/allennlp-public-models/bert-base-srl-2020.11.19.tar.gz")
         Token.set_extension('srl_arg0', default = None)
         Token.set_extension('srl_arg1', default = None)
-        Token.set_extension('srl_arg2', default = None)
+        # Token.set_extension('srl_arg2', default = None)
         Token.set_extension('srl_argm', default = [])
 
     def __call__(self, doc):
@@ -179,15 +237,20 @@ class SRLComponent(object):
                             end = start + 1
                         word._.set("srl_arg1", sent[start:end])
                     
-                    if "B-ARG2" in tags:
-                        start = tags.index("B-ARG2")
-                        if "I-ARG2" in tags:
-                            end = max([i for i, x in enumerate(tags) if x == "I-ARG2"] + [start]) + 1
-                        else:
-                            end = start + 1
-                        word._.set("srl_arg2", sent[start:end])
+                    # if "B-ARG2" in tags:
+                    #     start = tags.index("B-ARG2")
+                    #     if "I-ARG2" in tags:
+                    #         end = max([i for i, x in enumerate(tags) if x == "I-ARG2"] + [start]) + 1
+                    #     else:
+                    #         end = start + 1
+                    #     word._.set("srl_arg2", sent[start:end])
 
                     argm_list = []
+
+                    if "B-ARG2" in tags:
+                        start = tags.index("B-ARG2")
+                        end = max([i for i, x in enumerate(tags) if x == "I-ARG2"] + [start]) + 1
+                        argm_list.append(sent[start:end])
 
                     if "B-ARG3" in tags:
                         start = tags.index("B-ARG3")

@@ -1,7 +1,7 @@
 import spacy
 from spacy.matcher import Matcher
 from text_extractor import TextExtractor
-from custom_components import NounMerger, VerbMerger, SRLComponent, PrepMerger, DashMerger , BetweenMerger
+from custom_components import NounMerger, VerbMerger, SRLComponent, PrepMerger, DashMerger, BetweenMerger, VerbPhraseMerger, LongestVerbMerger
 import pandas as pd
 from span2triples import getNounPhrasefromSpan, getPobjfromSpan, getInffromSpan
 
@@ -19,6 +19,8 @@ class TriplesExtractor:
         nlp.add_pipe(BetweenMerger(nlp))
         nlp.add_pipe(NounMerger(nlp))
         nlp.add_pipe(VerbMerger(nlp))
+        nlp.add_pipe(VerbPhraseMerger(nlp))
+        nlp.add_pipe(LongestVerbMerger(nlp))
         nlp.add_pipe(SRLComponent(model_path), last=True)
         self.doc = nlp(text)
         # for tok in self.doc:
@@ -29,9 +31,12 @@ class TriplesExtractor:
                     {"POS": "NOUN"}]
         self.prepObjMatcher.add("pobj", None, pattern)
         self.infMatcher = Matcher(nlp.vocab)
-        pattern = [{"DEP": "prep"},
+        pattern1 = [{"DEP": "prep"},
                     {"TAG": "VB", "DEP":"acl"}]
-        self.infMatcher.add("infinitive", None, pattern)
+        pattern2 = [{"DEP": "aux", "TAG": "To"},
+                    {"TAG": "VB", "DEP":"advcl"}]
+        self.infMatcher.add("infinitive", None, pattern1)
+        self.infMatcher.add("infinitive", None, pattern2)
 
     def getPassiveTriples(self): 
         triples = []
@@ -55,11 +60,11 @@ class TriplesExtractor:
                 #生成介宾状语
                 pobjList = []
                 # print(verb._.srl_arg2)
-                if verb._.srl_arg2 != None:
-                    [pobjList, sub_restrictions, sub_inhers] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
-                # print(pobjList)
-                    restrictions.extend(sub_restrictions)
-                    inhers.extend(sub_inhers)
+                # if verb._.srl_arg2 != None:
+                #     [pobjList, sub_restrictions, sub_inhers] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
+                #     # print(pobjList)
+                #     restrictions.extend(sub_restrictions)
+                #     inhers.extend(sub_inhers)
                 # if len(pobjList):
                 #     for subj in subjList:
                 #         for pobj in pobjList:
@@ -100,7 +105,7 @@ class TriplesExtractor:
                 verb = tok 
                 # print(tok)
                 dobjSpan = None
-                # print(verb._.srl_arg0.text)
+
                 if verb._.srl_arg0 != None:
                     subjSpan = verb._.srl_arg0
                     if verb._.srl_arg1 != None:
@@ -110,6 +115,18 @@ class TriplesExtractor:
                         subjSpan= verb._.srl_arg1
                     else:
                         continue
+                # if verb._.srl_arg2 != None:
+                #     print(verb, '||',  verb._.srl_arg0, '||',  verb._.srl_arg2, '||',  verb._.srl_arg2.root)
+                #     print('1______________________')
+                # if verb._.srl_arg0 != None:
+                #     subjSpan = verb._.srl_arg0
+                #     if verb._.srl_arg1 != None:
+                #         dobjSpan= verb._.srl_arg1
+                # else:
+                #     continue
+                # if verb._.srl_arg2 != None:
+                #     print(verb, '||',  verb._.srl_arg0, '||',  verb._.srl_arg2, '||',  verb._.srl_arg2.root)
+                #     print('2______________________')
                 #生成主语列表   
                 subjList = []
                 subjPhrases = getNounPhrasefromSpan(self.prepObjMatcher,subjSpan,verb,'subj')
@@ -121,6 +138,10 @@ class TriplesExtractor:
                     [subjList, sub_restrictions, sub_inhers] = subjPhrases
                     restrictions.extend(sub_restrictions)
                     inhers.extend(sub_inhers)
+                # if verb._.srl_arg2 != None:
+                #     print(verb, '||',  verb._.srl_arg0, '||',  verb._.srl_arg2, '||',  verb._.srl_arg2.root)
+                #     print('3______________________')
+
                 # print(subjList)
                 # print('!!!!!!!!!!!!!!!!!!!!!!')
                 #生成直接宾语列表
@@ -131,21 +152,25 @@ class TriplesExtractor:
                         [dobjList, sub_restrictions, sub_inhers] = dobjPhrases
                         restrictions.extend(sub_restrictions)
                         inhers.extend(sub_inhers)
-                #生成介宾状语
+
+
+                # #生成介宾状语
                 pobjList = []
-                if verb._.srl_arg2 != None:
-                    arg2_dep = verb._.srl_arg2.root.dep_
-                    # print(verb._.srl_arg2.root)
-                    # print("!!!!!!!!!!!!!!!")
-                    if arg2_dep == 'prep':
-                        [pobjList, sub_restrictions,sub_inhers] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
-                    # print(pobjList)
-                        restrictions.extend(sub_restrictions)
-                        inhers.extend(sub_inhers)
-                    elif arg2_dep == 'dative':
-                        continue
-                    else:
-                        pass
+                # if verb._.srl_arg2 != None:
+                #     print(verb, '||',  verb._.srl_arg0, '||',  verb._.srl_arg2, '||',  verb._.srl_arg2.root)
+                #     arg2_dep = verb._.srl_arg2.root.dep_
+                #     # print(verb._.srl_arg2.root)
+                #     # print("!!!!!!!!!!!!!!!")
+                #     if arg2_dep == 'prep':
+                #         [pobjList, sub_restrictions,sub_inhers] = getPobjfromSpan(self.prepObjMatcher,verb._.srl_arg2, verb)
+                #         print(pobjList)
+                #         restrictions.extend(sub_restrictions)
+                #         inhers.extend(sub_inhers)
+                #     elif arg2_dep == 'dative':
+                #         continue
+                #     else:
+                #         pass
+
                 # if len(pobjList):
                 #     for subj in subjList:
                 #         for pobj in pobjList:

@@ -255,7 +255,7 @@ class TableExtractor:
                                 self.referenceList.append(result)
         return self.otherList, self.referenceList
 
-filename = "../data/en/data_sheet/Pilz/S1MO_Data_Sheet_1001859-EN-02.pdf"
+filename = "../data/en/data_sheet/Festo/VTEM_EN.PDF"
 
 tableExtactor1 = TableExtractor(filename)
 otherList , referenceList = tableExtactor1.getTable()

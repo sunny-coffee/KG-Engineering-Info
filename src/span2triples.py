@@ -10,7 +10,8 @@ def getNounPhrasefromSpan(prepObjMatcher,span,verb,type):
     inhers = []  
     # for tok in span:
     #     print(tok, tok.lemma_)   
-    if root_noun.head == verb and type in root_noun.dep_ and root_noun.pos_ == 'NOUN':
+    # if root_noun.head == verb and type in root_noun.dep_ and root_noun.pos_ == 'NOUN':
+    if type in root_noun.dep_ and root_noun.pos_ == 'NOUN':
         matches = prepObjMatcher(span)
 
         # conjList = list(tok.head  for tok in span if tok.lemma_ == 'and' or tok.lemma_ == 'or')
@@ -104,14 +105,31 @@ def getInffromSpan(infMatcher,prepObjMatcher,span,verb):
     infList = []
     restrictions = []
     inhers = []
+    # for tok in span:
+    #     print(tok, tok.dep_, tok.pos_,tok.tag_)
     matches = infMatcher(span)
     for match_id, start, end in matches:
 
         match_span = span[start:end] 
         prep = match_span[0]
-        if prep.head == verb:
-            inf_verb = match_span[-1]
-            dobj = inf_verb._.srl_arg1
+        inf_verb = match_span[-1]
+        if prep.head == verb or inf_verb.head == verb:
+            dobj = None
+            if hasattr(inf_verb._, 'srl_arg1'):
+                dobj = inf_verb._.srl_arg1
+            else:
+                for tok in span:
+                    if tok.dep_ == 'dobj' and tok.head == inf_verb:
+                        dobjList = list(t for t in span if t in tok.subtree)
+                        start = None
+                        end = None
+                        for idx,tok in enumerate(span):
+                            if tok == dobjList[0]:
+                                start = idx
+                            elif tok == dobjList[-1]:
+                                end = idx
+                        if start != None and end != None:
+                            dobj = span[start:end+1]
             if dobj == None:
                 continue
             else:

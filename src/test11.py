@@ -1,10 +1,19 @@
 import spacy
+# from spacyEntityLinker import EntityLinker
+from spacyEntityLinker import EntityLinker
+#Initialize Entity Linker
+entityLinker = EntityLinker()
 
-nlp = spacy.load('en_core_web_lg')
+#initialize language model
+nlp = spacy.load("en_core_web_sm")
 
-doc1 = nlp('1 core flexible')
-doc2 = nlp('Circuit breaker 24 VAC/DC, characteristic B/C')
+#add pipeline
+nlp.add_pipe(entityLinker, last=True, name="entityLinker")
 
-doc1_doc2 = doc1.similarity(doc2)
-print(doc1_doc2)
+doc = nlp("It is used to control the change of the guard locking status.")
 
+#returns all entities in the whole document
+# all_linked_entities=doc._.linkedEntities
+#iterates over sentences and prints linked entities
+for sent in doc.sents:
+    sent._.linkedEntities.pretty_print()

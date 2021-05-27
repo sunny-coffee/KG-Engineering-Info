@@ -41,6 +41,7 @@ class TextExtractor:
                             hasSubject = ('nsubj' in list_dep or 'nsubjpass' in list_dep)
                             if hasPredicate and hasSubject:
                                 text = text + ' ' + sent.text
+                                print(sent.text)
         return text
 
 # filename = "../data/en/PSSuniversal_Inst_Manual_21262-EN-07.pdf"
