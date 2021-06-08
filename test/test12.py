@@ -1,7 +1,4 @@
 # import spacy
-# from spacy.util import filter_spans
-# from spacy.tokens import Token
-# from spacy.matcher import Matcher
 # from text_extractor import TextExtractor
 
 
@@ -99,15 +96,89 @@
 #     print(tok, tok.dep_, tok.pos_, tok.head)
 
 import spacy
-import neuralcoref
+from spacy.util import filter_spans
+from spacy.tokens import Token, Span
+from spacy.matcher import Matcher
+from span2triples import getNounPhrasefromSpan
+# import neuralcoref
 nlp = spacy.load('en_core_web_sm')
-neuralcoref.add_to_pipe(nlp)
+# neuralcoref.add_to_pipe(nlp)
 
-doc = nlp('My sister has a dog. She loves him')
+class CopulaMerger(object):
+    def __init__(self, nlp):
+        self.matcher = Matcher(nlp.vocab)
+        self.matcher.add(
+            "Copula",
+            None,
+            [{"LEMMA":"be"}, 
+            {"POS": "ADJ"}]
+        )
 
-for sent in doc.sents:
-    print(sent._.is_coref)
-    print(sent._.coref_cluster)
+    def __call__(self, doc):
+        # This method is invoked when the component is called on a Doc
+        matches = self.matcher(doc)
+        spans = []  # Collect the matched spans here
+        
+        for match_id, start, end in matches:
+            spans.append(doc[start:end])
+        filtered = filter_spans(spans)
 
-print(doc._.has_coref)
-print(doc._.coref_resolved)
+        with doc.retokenize() as retokenizer:
+            for span in filtered:
+                retokenizer.merge(span, attrs={"LEMMA": span.lemma_})
+        return doc
+
+class NounMerger(object):
+    def __init__(self, nlp):
+        self.matcher = Matcher(nlp.vocab)
+        self.matcher.add(
+            "NOUN",
+            None,
+            [{"POS":"PROPN", "OP": "?"},
+            {"DEP":"nummod", "OP": "*"},
+            {"POS":"ADV", "OP": "*"},
+            {"POS":"ADJ", "OP": "*"}, 
+            {"POS":"NUM", "OP": "*"},
+            {"POS": "NOUN", "OP": "+"},
+            {"TAG": "NNP", "OP": "*"}]
+        )
+        Token.set_extension('key', default = None)
+
+    def __call__(self, doc):
+        # This method is invoked when the component is called on a Doc
+        matches = self.matcher(doc)
+        spans = []  # Collect the matched spans here
+        
+        for match_id, start, end in matches:
+            spans.append(doc[start:end])
+        filtered = filter_spans(spans)
+        # print(filtered)
+        with doc.retokenize() as retokenizer:
+            for span in filtered:  
+                # print(span)
+                if len(span) >=2:
+                    span_lemma = span[0:-1].text + ' ' + span[-1].lemma_
+                else:
+                    span_lemma = span.lemma_
+                retokenizer.merge(span, attrs={"lemma": span_lemma, "_": {"key":span.root.lemma_}})
+        return doc
+
+nlp.add_pipe(CopulaMerger(nlp))
+nlp.add_pipe(NounMerger(nlp))
+
+doc = nlp(' The error code can consist of up to 4 digits')
+prepObjMatcher = Matcher(nlp.vocab)
+pattern = [{"POS": "ADP"},
+            {"POS": "DET", "OP":"*"},
+            {"POS": "NOUN"}]
+prepObjMatcher.add("pobj", None, pattern)
+
+for tok in doc:
+    # for tok in sent:
+    print(tok.i, tok.text, tok.lemma_, tok.dep_, tok.pos_, tok.tag_, tok.head)
+# print(doc[0])
+# print(doc[1])
+# print(getNounPhrasefromSpan(prepObjMatcher, doc[0:8],doc[9],'all'))
+# print(type(doc[0]) == Token)
+
+

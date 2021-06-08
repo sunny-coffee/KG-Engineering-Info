@@ -41,6 +41,7 @@ def getPattern(filename):
 tables = camelot.read_pdf(filename, pages="1", flavor='lattice')
 
 pattern, articleNum = getPattern(filename)
+print(pattern, articleNum)
 
 # for table in tables:
 #     print(table.df)

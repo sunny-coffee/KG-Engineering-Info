@@ -1,0 +1,29 @@
+,0,1,2,3,4
+0,"Current consumption/power
+Controller
+Valve
+Digital input module
+Analogue input 
+module",,,,
+1,"Intrinsic current consumption
+At nominal operating voltage, 
+[mA]
+electronics/sensors
+At nominal operating voltage, load
+[mA]","115
+85","37
+24","12
+0","12
+0"
+2,,,,,
+3,"Power
+At nominal operating voltage, 
+[W]
+electronics/sensors
+At nominal operating voltage, load
+[W]","2.76
+2.04","0.89
+0.58","0.29
+0","0.29
+0"
+4,,,,,

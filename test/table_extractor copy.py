@@ -218,7 +218,7 @@ class TableExtractor:
         else:
             df = tables[0].df
             columns = list(df.iloc[0][i] for i in range(df.shape[1]))
-            if ('Product type' in columns or 'Type' in columns) and 'Order no.' in columns:
+            if ('Product type' in columns or 'Type' in columns) and ('Order no.' in columns or 'no.' in columns):
                 return df
             else:
                 return None
@@ -346,8 +346,8 @@ tableExtactor1 = TableExtractor(filename)
 otherList , referenceList = tableExtactor1.getTable()
 for x in otherList:
     print(x)
-#     for index, row in x.iterrows():
-#         print(row[0], row[1])
+    for index, row in x.iterrows():
+        print(row[0], row[1])
 print('__________________________')
 for x in referenceList:
     print(x)

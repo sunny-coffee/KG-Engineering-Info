@@ -1,3 +1,5 @@
+## This class is used to define the hierarchy of the sub-tables.
+
 class Tree:
     def __init__(self,rootObj):
         self.key = rootObj

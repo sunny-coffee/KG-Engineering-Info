@@ -1,65 +1,76 @@
-from owlready2 import DatatypeProperty, FunctionalProperty, get_ontology, Inverse, \
-     InverseFunctionalProperty, ObjectProperty, Thing, TransitiveProperty, SymmetricProperty,types
+from owlready2 import DataProperty, FunctionalProperty, get_ontology, ObjectProperty, Thing, types
+from owlready2.prop import DataPropertyClass, ObjectPropertyClass, ThingClass
 import pandas as pd
 import re
 
 class OntologyCreator:
-    # __iri: str
     __filename: str
 
     def __init__(self, iri,filename):
-        # self.__iri = iri
         self.__filename = filename
         onto = get_ontology(iri)
         onto.save(file=filename)
+
+    #create a new class 
+    def create_class(self, onto, className, classType):
+        if className[0].isupper() and className[1].islower():
+            className = self.processStr(className[:1].lower() + className[1:])
+        else:
+            className = self.processStr(className)
+        obj = getattr(onto,className.replace(" ", "_"))
+        if classType =='Thing':
+            if obj != None:
+                if type(obj) == ThingClass:
+                    newClass = obj
+                else:
+                    newClass = types.new_class(className+'/Thing',(Thing,))
+            else:
+                newClass = types.new_class(className,(Thing,))
+        elif classType =='ObjectProperty':
+            if obj != None:
+                if type(obj) == ObjectPropertyClass:
+                    newClass = obj
+                else:
+                    newClass = types.new_class(className+'/ObjectProp',(ObjectProperty,))
+            else:
+                newClass = types.new_class(className,(ObjectProperty,))
+        elif classType =='DataProperty':
+            if obj != None:
+                if type(obj) == DataPropertyClass:
+                    newClass = obj
+                else:
+                    newClass = types.new_class(className+'/Dataprop',(DataProperty,))
+            else:
+                newClass = types.new_class(className,(DataProperty,))
+        return newClass
 
     def dynamically_add_restrictions(self, input_df):
         """create restriction from list"""
         onto = get_ontology(self.__filename).load()
         with onto:
             for index, row in input_df.iterrows():
-
-                sup = getattr(onto,row['superclass'].replace(" ", "_"))
-                if sup != None:
-                    superclass = sup
-                else:
-                    superclass = types.new_class(row['superclass'].replace(" ", "_"),(Thing,))
-
-                subclass = types.new_class(row['subclass'].replace(" ", "_"),(superclass,))
-                subclass.equivalent_to.append(superclass)
+                superclass = self.create_class(onto, row['superclass'], "Thing")
+                subclass = self.create_class(onto, row['subclass'], "Thing")
+                subclass.is_a.append(superclass)
+                if Thing in subclass.is_a:
+                    subclass.is_a.remove(Thing)
+                    
                 for rel in row['relation']:
-                    pobj = types.new_class(rel[1].replace(" ", "_"),(Thing,))
-                    sup_predicate = types.new_class((rel[0]).replace(" ", "_"),(ObjectProperty,))
-                    sup_predicate.domain.append(subclass)
-                    sup_predicate.range.append(pobj)
-                    predicate = types.new_class((rel[0]+' '+rel[1]).replace(" ", "_"),(sup_predicate,))
-                    predicate.domain.append(subclass)
-                    predicate.range.append(pobj)
-                    subclass.equivalent_to = [(predicate.some(pobj)) & subclass.equivalent_to[0]]
+                    pobj = self.create_class(onto, rel[1], "Thing")
+                    predicate = self.create_class(onto, rel[0], "ObjectProperty")
+                    subclass.is_a.append(predicate.some(pobj))
         onto.save(file = self.__filename)
+
 
     def dynamically_add_relations(self, input_df):
         """create classes from list"""
         onto = get_ontology(self.__filename).load()
         with onto:
             for index, row in input_df.iterrows():
-                obj = getattr(onto,row['object'].replace(" ", "_"))
-                if obj != None:
-                    new_object = obj
-                else:
-                    new_object = types.new_class(row['object'].replace(" ", "_"),(Thing,))
-                
-                subj = getattr(onto,row['subject'].replace(" ", "_"))
-                if subj != None:
-                    new_subject = subj
-                else:
-                    new_subject = types.new_class(row['subject'].replace(" ", "_"),(Thing,))
-                sup_relation = types.new_class(row['relation'].replace(" ", "_"),(ObjectProperty,))
-                sup_relation.domain.append(new_subject)
-                sup_relation.range.append(new_object)
-                new_relation = types.new_class((row['relation']+ ' ' + row['object']).replace(" ", "_"),(sup_relation,))  
-                new_relation.domain.append(new_subject)
-                new_relation.range.append(new_object)
+                new_object = self.create_class(onto, row['object'], "Thing")
+                new_subject = self.create_class(onto, row['subject'], "Thing")
+                relation = self.create_class(onto, row['relation'], "ObjectProperty")
+                new_subject.is_a.append(relation.some(new_object))
         onto.save(file = self.__filename)
 
     def dynamically_add_category(self, input_df):
@@ -67,109 +78,120 @@ class OntologyCreator:
         onto = get_ontology(self.__filename).load()
         with onto:
             for index, row in input_df.iterrows():
-                superclass = types.new_class(row['superclass'].replace(" ", "_"),(Thing,))
-                
-                # sub = getattr(onto,row['subclass'].replace(" ", "_"))
-                # print(type(superclass))
-                # print(type(sub))
-                # print(sub.is_a)
-                subclass = types.new_class(row['subclass'].replace(" ", "_"),(superclass,))
-                # if sub != None:
-                #     subclass = sub
-                # subclass.is_a.append(superclass)
+                superclass = self.create_class(onto, row['superclass'], "Thing")
+                subclass = self.create_class(onto, row['subclass'], "Thing")
+                subclass.is_a.append(superclass)
+
                 if Thing in subclass.is_a:
                     subclass.is_a.remove(Thing)
-                # else:
-                
-                    
-                # sup_relation = types.new_class(row['relation'].replace(" ", "_"),(ObjectProperty,))
-                # new_relation = types.new_class((row['relation']+ ' ' + row['object']).replace(" ", "_"),(sup_relation,))  
-                # new_relation.domain.append(new_subject)
-                # new_relation.range.append(new_object)
+
         onto.save(file = self.__filename)
     
     def add_from_referenceList(self, referenceList):
-        instances = []
+        supList = []
         onto = get_ontology(self.__filename).load()
         with onto:
-            # classes
-            class product_Pilz(Thing):
-                comment = ["parent class of all Pilz products"]
-            class P2HZ_X1(product_Pilz):
+            class hasProperty(ObjectProperty):
                 pass
-            # class hasAttributeOf(ObjectProperty):
-            #     domain = [P2HZ_X1]
-            attrSuperClass = types.new_class('Order_reference',(Thing,))
+            class hasValue(DataProperty):
+                pass
+            class hasUnit(DataProperty):
+                pass
             for tdf in referenceList:
-                    attrList = tdf.columns
-                    # print(attrList)
-                    if ('Product type' in attrList or 'Type' in attrList) and 'Order no.' in attrList:
-                        # print('11111')
-                        # print(tdf)
+                attrList = tdf.columns
+                if ('Product type' in attrList or 'Type' in attrList) and ('Order no.' in attrList or 'no.' in attrList):
+                    prodType = None
+                    prodNum = None
+                    propList = []
+                    for prop in attrList:
+                        # print(prop)
+                        if prop == 'Product type' or prop == 'Type':
+                            prodType = prop
+                        elif prop == 'Order no.' or prop == 'no.':
+                            prodNum = prop
+                        else:      
+                            propList.append(prop)
+                    if prodType == None or prodNum == None:
+                        continue
 
-                        for index, row in tdf.iterrows():
-                            product_instance = P2HZ_X1(self.processStr(row['Order no.'].replace(' ','')))
-                            instances.append(product_instance)
-                            for attr in attrList:
-                                if len(attr):
-                                    if len(row[attr]):
-                                        attrspan = self.processStr(attr)
-                                        attrClass = types.new_class(attrspan,(attrSuperClass,))
-                                        value = types.new_class('value',(DatatypeProperty, FunctionalProperty,))
-                                        value.domain.append(attrClass)
-                                        value.range.append(str)
-                                        relation = types.new_class('hasAttribute',(ObjectProperty,FunctionalProperty,))
-                                        relation.domain.append(P2HZ_X1)
-                                        relation.range.append(attrClass)
-                                        attr_instance = attrClass()
-                                        setattr(attr_instance, 'value', row[attr])
-                                        setattr(product_instance, 'hasAttributeOf', attr_instance)
+                    for index, row in tdf.iterrows():
+                       
+                        supClass = self.create_class(onto, row[prodType], 'Thing')
+                        supList.append(supClass)
+                        subClass = self.create_class(onto, row[prodNum].replace(' ',''), 'Thing')
+                        subClass.is_a.append(supClass)
+
+                        if Thing in subClass.is_a:
+                            subClass.is_a.remove(Thing)
+
+                        for prop in propList:
+                            supprop = self.create_class(onto,prop, 'Thing')
+                            subprop = self.create_class(onto,prop+'_'+row[prodNum].replace(' ',''), 'Thing')
+                            subprop.is_a.append(supprop)
+
+                            if Thing in subprop.is_a:
+                                subprop.is_a.remove(Thing)
+                            
+                            subClass.is_a.append(hasProperty.only(subprop))
+                            # print(row[prop])
+                            subprop.is_a.append(hasValue.value(row[prop])) 
         onto.save(file = self.__filename)
-        return instances
+        return supList
 
-    def add_from_otherList(self, otherList, instances):
+    def add_from_otherList(self, otherList, supList):
         onto = get_ontology(self.__filename).load()
         with onto:
-            class product_Pilz(Thing):
-                comment = ["parent class of all Pilz products"]
-            class P2HZ_X1(product_Pilz):
+            class hasProperty(ObjectProperty):
                 pass
-            # class hasAttributeOf(ObjectProperty):
-            #     domain = [P2HZ_X1]
-
+            class hasValue(DataProperty):
+                pass
+            class hasUnit(DataProperty):
+                pass
             for tdf in otherList:
-                if tdf.shape[1] == 2:
-                    list0 = tdf.columns
-                    attr = list0[0]
-                    val = list0[1]
-                    if type(val) == int:
-                        product_instance = P2HZ_X1(self.processStr(val.replace(' ','')))
-                        iterinstances = [product_instance]
-                    else:
-                        iterinstances = instances
 
-                    attrSuperClass = types.new_class(self.processStr(attr),(Thing,))
+                if tdf.shape[1] == 2:
+                    prop = tdf.columns[0]
+                    val = tdf.columns[1]
+                    propCategory = self.create_class(onto, prop, 'Thing')
                     for index, row in tdf.iterrows():
-                        attrspan = self.processStr(row[attr])
-                        # print(attrspan)
-                        attrClass = types.new_class(attrspan,(attrSuperClass,))
-                        # value = types.new_class('valueOf'+attrspan,(DatatypeProperty, FunctionalProperty,))
-                        value = types.new_class('value',(DatatypeProperty, FunctionalProperty,))
-                        value.domain.append(attrClass)
-                        value.range.append(str)
-                        # relation = types.new_class('hasAttribute'+attrspan,(hasAttributeOf,))
-                        # relation.domain.append(P2HZ_X1)
-                        # relation.range.append(attrClass)
-                        relation = types.new_class('hasAttribute',(ObjectProperty,FunctionalProperty,))
-                        relation.domain.append(P2HZ_X1)
-                        relation.range.append(attrClass)
-                        attr_instance = attrClass()
-                        # print(row[val])
-                        # setattr(attr_instance, 'valueOf'+attrspan, row[val])
-                        setattr(attr_instance, 'value', row[val])
-                        for instance in iterinstances:
-                            # getattr(instance, 'hasAttributeOf'+attrspan).append(attr_instance)
-                            setattr(instance, 'hasAttribute', attr_instance)
+                        supprop = self.create_class(onto, row[prop], 'Thing')
+                        supprop.is_a.append(propCategory)
+                        if Thing in supprop.is_a: 
+                            supprop.is_a.remove(Thing)
+                        for supClass in supList:
+                            subprop = self.create_class(onto, row[prop]+'_'+supClass.__name__, 'Thing')
+                            subprop.is_a.append(supprop)
+                            if Thing in subprop.is_a:
+                                subprop.is_a.remove(Thing)
+                            subprop.is_a.append(hasValue.value(row[val])) 
+                            supClass.is_a.append(hasProperty.only(subprop))
+
+                if tdf.shape[1] > 2:
+                    attrList = tdf.columns
+                    prop = None
+                    prodNum = []
+                    for index, attr in enumerate(attrList):
+                        if index == 0:
+                            prop = attr
+                        else:
+                            prodNum.append(attr.replace(' ',''))
+
+                    propCategory = self.create_class(onto, prop, 'Thing')
+                    for index, row in tdf.iterrows():
+                        supprop = self.create_class(onto, row[prop], 'Thing')
+                        supprop.is_a.append(propCategory)
+                        if Thing in supprop.is_a: 
+                            supprop.is_a.remove(Thing)
+
+                        for num in prodNum:
+                            subClass = self.create_class(onto, num, 'Thing')
+                            subprop = self.create_class(onto, row[prop]+'_'+num, 'Thing')
+                            subprop.is_a.append(supprop)
+                            if Thing in subprop.is_a:
+                                subprop.is_a.remove(Thing)
+                            subprop.is_a.append(hasValue.value(row[num])) 
+                            subClass.is_a.append(hasProperty.only(subprop))
+
         onto.save(file = self.__filename)
         # return instances
 
@@ -188,25 +210,4 @@ class OntologyCreator:
             self.dynamically_add_category(triplesList[2])
 
 
-    # def dynamically_add_classes(self, className, input_df):
-    #     """create classes from list"""
-    #     onto = get_ontology(self.__filename).load()
-    #     with onto:
-    #         product_class = types.new_class(className,(getattr(onto,'Product'),))
-    #         for i in range(int(input_df.shape[0])):
-    #             new_class = types.new_class(input_df.iloc[i,0].replace(" ", "_").replace(",", ""),(getattr(onto,'Merkmal'),))
-    #             new_class.domain.append(product_class)
-    #     onto.save(file = self.__filename)
-
-    # def dynamically_add_instances(self, instanceName, className,input_df):
-    #     """create instances from list"""
-    #     onto = get_ontology(self.__filename).load()
-    #     with onto:
-    #         new_instance = getattr(onto, className)(instanceName)
-    #         for i in range(int(input_df.shape[0])): 
-    #             s = input_df.iloc[i,0].replace(" ", "_").replace(",", "")
-                        
-    #             getattr(new_instance,s).append(input_df.iloc[i,1])
-              
-    #     onto.save(file = self.__filename)
-     
+    

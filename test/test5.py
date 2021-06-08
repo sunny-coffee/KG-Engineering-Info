@@ -1,25 +1,29 @@
 from owlready2 import *
 
+
 onto = get_ontology("http://test.org/onto.owl")
 
 with onto:
-    # class Drug(Thing):
-    #     pass
-    # class ActivePrinciple(Thing):
-    #     pass
-    # class has_for_active_principle(Drug >> ActivePrinciple):
-    #     pass
-
-    # class Placebo(Drug):
-    #     equivalent_to = [Not(has_for_active_principle.some(ActivePrinciple))]
-
-    class A(Thing):
+    class DrugForm(Thing):
+        pass
+    class DrugForm2(Thing):
+        pass
+    class ii(DataProperty):
+        pass
+    class iiii(ObjectProperty):
         pass
 
-    class B(Thing):
-        pass
+# tablet     = DrugForm()
+# capsule    = DrugForm()
+# injectable = DrugForm()
+# pomade     = DrugForm()
+print(DrugForm.__name__, type(DrugForm.__name__))
 
-    class B(A):
-        pass
+# DrugForm.is_a.append(ii.value('11'))
+# print(type(DrugForm).__name__)
+# print(type(DrugForm) == ThingClass)
 
-onto.save('KKKKK.owl')
+# Assert that there is only four possible drug forms
+# DrugForm.is_a.append(OneOf([tablet, capsule, injectable, pomade]))
+
+# onto.save('KKKKK.owl')

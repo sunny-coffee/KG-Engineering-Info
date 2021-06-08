@@ -1,17 +1,25 @@
-import camelot
+# import spacy
+# # from spacyEntityLinker import EntityLinker
+# from spacyEntityLinker import EntityLinker
+# #Initialize Entity Linker
+# entityLinker = EntityLinker()
 
-# filename = "./data/en/data_sheet/Pilz/P2HZ_X1_Data_sheet_1002151-EN-02.pdf"
-# tables = camelot.read_pdf(filename, pages='8', flavor='stream', table_regions = ['0,677.9003,595.22,559.62'])
-# for table in tables:
-#     df = table.df
-#     print(df)
-    # columns = list(df.iloc[0][i] for i in range(df.shape[1]))
-    
-    # print(columns)
+# #initialize language model
+# nlp = spacy.load("en_core_web_sm")
 
-filename = "./data/en/data_sheet/Festo/VTEM_EN.PDF"
-tables = camelot.read_pdf(filename, pages='14', flavor='stream')
-for table in tables:
-    df = table.df
-    print(df)
-    df.to_csv('Excel File Path.csv')
+# #add pipeline
+# nlp.add_pipe(entityLinker, last=True, name="entityLinker")
+
+# doc = nlp("It is used to control the change of the guard locking status.")
+
+# #returns all entities in the whole document
+# # all_linked_entities=doc._.linkedEntities
+# #iterates over sentences and prints linked entities
+# for sent in doc.sents:
+#     sent._.linkedEntities.pretty_print()
+
+A= []
+for a in A:
+    if a == 'd':
+        b =a
+# print(b)
